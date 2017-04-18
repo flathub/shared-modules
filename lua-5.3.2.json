@@ -3,7 +3,7 @@
     "sources": [
         {
             "type": "archive",
-            "url": "http://www.lua.org/ftp/lua-5.3.2.tar.gz",
+            "url": "http://pkgs.fedoraproject.org/repo/extras/lua/lua-5.3.2.tar.gz/33278c2ab5ee3c1a875be8d55c1ca2a1/lua-5.3.2.tar.gz",
             "sha256": "c740c7bb23a936944e1cc63b7c3c5351a8976d7867c5252c8854f7b2af9da68f"
         },
         {
