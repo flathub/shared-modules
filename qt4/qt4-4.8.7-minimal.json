@@ -70,7 +70,7 @@
         },
         {
             "type": "patch",
-            "path": "shared-modules/qt4-aarch64.patch"
+            "path": "shared-modules/qt4/qt4-aarch64.patch"
         }
     ],
     "cleanup": [
