@@ -21,9 +21,9 @@
             "type": "patch",
             "path": "shared-modules/lua-5.3.0-idsize.patch"
         },
-        {        {
+        {
             "type": "patch",
-            "path": "lua-5.3.0-configure-compat-module.patch"
+            "path": "shared-modules/lua-5.3.0-configure-compat-module.patch"
         },
         {
             "type": "shell",
