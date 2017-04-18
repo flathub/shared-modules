@@ -12,11 +12,11 @@
         },
         {
             "type": "patch",
-            "path": "lua-5.3.0-autotoolize.patch"
+            "path": "shared-modules/lua-5.3.0-autotoolize.patch"
         },
         {
             "type": "patch",
-            "path": "lua-5.3.0-idsize.patch"
+            "path": "shared-modules/lua-5.3.0-idsize.patch"
         },
         {
             "type": "shell",
