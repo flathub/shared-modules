@@ -15,15 +15,15 @@
         },
         {
             "type": "patch",
-            "path": "shared-modules/lua-5.3.0-autotoolize.patch"
+            "path": "shared-modules/lua5.3/lua-5.3.0-autotoolize.patch"
         },
         {
             "type": "patch",
-            "path": "shared-modules/lua-5.3.0-idsize.patch"
+            "path": "shared-modules/lua5.3/lua-5.3.0-idsize.patch"
         },
         {
             "type": "patch",
-            "path": "shared-modules/lua-5.3.0-configure-compat-module.patch"
+            "path": "shared-modules/lua5.3/lua-5.3.0-configure-compat-module.patch"
         },
         {
             "type": "shell",
