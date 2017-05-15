@@ -1,0 +1,29 @@
+{
+  "name": "qt5-qtmultimedia",
+  "cleanup": [
+    "/doc",
+    "/include",
+    "/lib/*.a",
+    "/lib/*.la",
+    "/lib/*.prl",
+    "/lib/cmake",
+    "/lib/debug",
+    "/lib/mkspecs",
+    "/lib/pkgconfig",
+    "/lib/plugins"
+  ],
+  "sources": [
+    {
+      "type": "archive",
+      "url": "https://download.qt.io/official_releases/qt/5.8/5.8.0/submodules/qtmultimedia-opensource-src-5.8.0.tar.xz",
+      "sha256": "a8bc044834f95208261915feefe5e2fdb6761b76f0f99e21062963bd9f9d4a07"
+    },
+    {
+      "type": "script",
+      "commands": [
+        "qmake"
+      ],
+      "dest-filename": "configure"
+    }
+  ]
+}
