@@ -58,6 +58,10 @@
         "./configure.qt $processed"
       ],
       "dest-filename": "configure"
+    },
+    {
+      "type": "patch",
+      "path": "qtbase-hidpi_scale_at_192.patch"
     }
   ]
 }
