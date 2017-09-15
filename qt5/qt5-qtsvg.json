@@ -1,0 +1,29 @@
+{
+  "name": "qt5-qtsvg",
+  "cleanup": [
+    "/doc",
+    "/include",
+    "/lib/*.a",
+    "/lib/*.la",
+    "/lib/*.prl",
+    "/lib/cmake",
+    "/lib/debug",
+    "/lib/mkspecs",
+    "/lib/pkgconfig",
+    "/lib/plugins"
+  ],
+  "sources": [
+    {
+      "type": "archive",
+      "url": "https://download.qt.io/official_releases/qt/5.9/5.9.1/submodules/qtsvg-opensource-src-5.9.1.tar.xz",
+      "sha256": "99f294f874b13553e4ed49cd9465580ad0c9b92e29cdfa47b2e4096835c1e2e5"
+    },
+    {
+      "type": "script",
+      "commands": [
+        "qmake"
+      ],
+      "dest-filename": "configure"
+    }
+  ]
+}
