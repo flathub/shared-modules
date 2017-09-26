@@ -11,6 +11,9 @@
   ],
   "cleanup": [
     "/include",
+    "/etc",
+    "/libexec",
+    "/sbin",
     "/lib/pkgconfig",
     "/man",
     "/share/aclocal",
