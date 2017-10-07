@@ -28,5 +28,5 @@
       ]
     }
   ],
-  "cleanup": ["/share/doc", "/share/man"]
+  "cleanup": ["/bin", "/include", "/share/doc", "/share/man"]
 }
