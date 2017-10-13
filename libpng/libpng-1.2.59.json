@@ -1,5 +1,5 @@
 {
-    "name": "libpng-1.2.57",
+    "name": "libpng-1.2.59",
     "config-opts": [
         "--disable-static"
     ],
@@ -13,9 +13,9 @@
     ],
     "sources": [
         {
-            "type": "archive",
-            "url": "https://ftp-osl.osuosl.org/pub/libpng/src/libpng12/libpng-1.2.57.tar.xz",
-            "sha256": "0f4620e11fa283fedafb474427c8e96bf149511a1804bdc47350963ae5cf54d8"
+          "type": "git",
+          "url": "https://github.com/glennrp/libpng.git",
+          "commit": "5bb5bf345aef1e62adcfe30791f4364730a2aede"
         }
     ]
 }
