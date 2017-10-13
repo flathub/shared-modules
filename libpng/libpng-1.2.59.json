@@ -1,0 +1,21 @@
+{
+    "name": "libpng-1.2.59",
+    "config-opts": [
+        "--disable-static"
+    ],
+    "cleanup": [
+        "/bin",
+        "/include",
+        "/share",
+        "/lib/libpng.*",
+        "/lib/*.la",
+        "/lib/pkgconfig"
+    ],
+    "sources": [
+        {
+          "type": "git",
+          "url": "https://github.com/glennrp/libpng.git",
+          "commit": "5bb5bf345aef1e62adcfe30791f4364730a2aede"
+        }
+    ]
+}
