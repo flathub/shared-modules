@@ -22,7 +22,7 @@
     },
     {
       "type": "script",
-      "path": "autogen.sh",
+      "dest-filename": "autogen.sh",
       "commands": [
         "autoreconf -vfi"
       ]
