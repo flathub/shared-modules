@@ -1,0 +1,19 @@
+{
+  "name": "libpng",
+  "config-opts": [
+    "--disable-static"
+  ],
+  "cleanup": [
+    "/bin",
+    "/include",
+    "/lib/pkgconfig",
+    "/share"
+  ],
+  "sources": [
+    {
+      "type": "archive",
+      "url": "https://downloads.sourceforge.net/project/libpng/libpng12/1.2.59/libpng-1.2.59.tar.xz",
+      "sha256": "b4635f15b8adccc8ad0934eea485ef59cc4cae24d0f0300a9a941e51974ffcc7"
+    }
+  ]
+}

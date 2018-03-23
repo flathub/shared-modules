@@ -1,0 +1,18 @@
+{
+  "name": "libupnp",
+  "rm-configure": true,
+  "sources": [
+    {
+      "type": "archive",
+      "url": "http://http.debian.net/debian/pool/main/libu/libupnp/libupnp_1.6.24.orig.tar.bz2",
+      "sha256": "7d83d79af3bb4062e5c3a58bf2e90d2da5b8b99e2b2d57c23b5b6f766288cf96"
+    },
+    {
+      "type": "script",
+      "commands": [
+        "autoreconf -fiv"
+      ],
+      "dest-filename": "autogen.sh"
+    }
+  ]
+}

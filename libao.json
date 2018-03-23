@@ -1,0 +1,17 @@
+{
+  "name": "libao",
+  "cleanup": [
+    "/include",
+    "*.la",
+    "/lib/pkgconfig",
+    "/lib/ckport",
+    "/share"
+  ],
+  "sources": [
+    {
+      "type": "archive",
+      "url": "http://downloads.xiph.org/releases/ao/libao-1.2.0.tar.gz",
+      "sha256": "03ad231ad1f9d64b52474392d63c31197b0bc7bd416e58b1c10a329a5ed89caf"
+    }
+  ]
+}

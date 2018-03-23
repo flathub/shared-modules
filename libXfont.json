@@ -1,0 +1,16 @@
+{
+  "name": "libXfont",
+  "cleanup": [
+    "*"
+  ],
+  "config-opts": [
+    "--disable-static"
+  ],
+  "sources": [
+    {
+      "type": "git",
+      "url": "git://anongit.freedesktop.org/xorg/lib/libXfont",
+      "tag": "libXfont-1.5.4"
+    }
+  ]
+}

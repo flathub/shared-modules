@@ -1,0 +1,10 @@
+{
+  "name": "libevdev",
+  "sources": [
+    {
+      "type": "archive",
+      "url": "https://www.freedesktop.org/software/libevdev/libevdev-1.5.9.tar.xz",
+      "sha256": "e1663751443bed9d3e76a4fe2caf6fa866a79705d91cacad815c04e706198a75"
+    }
+  ]
+}

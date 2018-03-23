@@ -1,0 +1,14 @@
+{
+  "name": "libvncserver",
+  "sources": [
+    {
+      "type": "archive",
+      "url": "https://github.com/LibVNC/libvncserver/archive/LibVNCServer-0.9.11.tar.gz",
+      "sha256": "193d630372722a532136fd25c5326b2ca1a636cbb8bf9bb115ef869c804d2894"
+    },
+    {
+      "type": "patch",
+      "path": "libvncserver.patch"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "name": "libgfbgraph",
+  "cleanup": [
+    "/doc"
+  ],
+  "config-opts": [
+    "--disable-introspection"
+  ],
+  "sources": [
+    {
+      "type": "archive",
+      "url": "https://download.gnome.org/sources/gfbgraph/0.2/gfbgraph-0.2.3.tar.xz",
+      "sha256": "da1179083cde2b649d7491c745250a00d292e390fd620b7dd2dd95a122dae0b6"
+    }
+  ]
+}

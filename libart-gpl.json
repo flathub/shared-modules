@@ -1,0 +1,28 @@
+{
+  "name": "libart-gpl",
+  "rm-configure": true,
+  "cleanup": [
+    "/bin",
+    "/share"
+  ],
+  "sources": [
+    {
+      "type": "archive",
+      "url": "http://ftp.gnome.org/pub/GNOME/sources/libart_lgpl/2.3/libart_lgpl-2.3.21.tar.bz2",
+      "sha256": "fdc11e74c10fc9ffe4188537e2b370c0abacca7d89021d4d303afdf7fd7476fa"
+    },
+    {
+      "type": "shell",
+      "commands": [
+        "rm -f config.guess"
+      ]
+    },
+    {
+      "type": "script",
+      "commands": [
+        "autoreconf -fiv"
+      ],
+      "dest-filename": "autogen.sh"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "name": "libcxx",
+  "buildsystem": "cmake-ninja",
+  "builddir": true,
+  "make-args": [
+    "cxx"
+  ],
+  "no-make-install": true,
+  "config-opts": [
+    "-DCMAKE_BUILD_TYPE=Release"
+  ],
+  "cleanup": [
+    "/include",
+    "/lib/*.a"
+  ],
+  "build-commands": [
+    "ninja install-libcxxabi",
+    "ninja install-libcxx"
+  ],
+  "sources": [
+    {
+      "type": "archive",
+      "url": "https://releases.llvm.org/5.0.0/llvm-5.0.0.src.tar.xz",
+      "sha256": "e35dcbae6084adcf4abb32514127c5eabd7d63b733852ccdb31e06f1373136da"
+    },
+    {
+      "type": "archive",
+      "url": "https://releases.llvm.org/5.0.0/libcxx-5.0.0.src.tar.xz",
+      "sha256": "eae5981e9a21ef0decfcac80a1af584ddb064a32805f95a57c7c83a5eb28c9b1",
+      "dest": "projects/libcxx"
+    },
+    {
+      "type": "archive",
+      "url": "https://releases.llvm.org/5.0.0/libcxxabi-5.0.0.src.tar.xz",
+      "sha256": "176918c7eb22245c3a5c56ef055e4d69f5345b4a98833e0e8cb1a19cab6b8911",
+      "dest": "projects/libcxxabi"
+    }
+  ]
+}

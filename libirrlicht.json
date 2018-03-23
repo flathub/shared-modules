@@ -1,0 +1,23 @@
+{
+  "name": "libirrlicht",
+  "buildsystem": "simple",
+  "sources": [
+    {
+      "type": "archive",
+      "url": "http://downloads.sourceforge.net/irrlicht/irrlicht-1.8.4.zip",
+      "sha256": "f42b280bc608e545b820206fe2a999c55f290de5c7509a02bdbeeccc1bf9e433"
+    },
+    {
+      "type": "patch",
+      "path": "irrlicht-use-system-libs.patch"
+    },
+    {
+      "type": "patch",
+      "path": "irrlicht-link-against-needed-libs.patch"
+    }
+  ],
+  "build-commands": [
+    "make -C source/Irrlicht sharedlib ",
+    "make -C source/Irrlicht INSTALL_DIR=/app/lib install"
+  ]
+}

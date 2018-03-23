@@ -1,0 +1,15 @@
+{
+  "name": "libgdata",
+  "config-opts": [
+    "--disable-always-build-tests",
+    "--disable-introspection",
+    "--disable-static"
+  ],
+  "sources": [
+    {
+      "type": "archive",
+      "url": "https://download.gnome.org/sources/libgdata/0.17/libgdata-0.17.9.tar.xz",
+      "sha256": "85c4f7674c0098ffaf060ae01b6b832cb277b3673d54ace3bdedaad6b127453a"
+    }
+  ]
+}

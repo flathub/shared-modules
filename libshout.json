@@ -1,0 +1,18 @@
+{
+  "name": "libshout",
+  "rm-configure": true,
+  "sources": [
+    {
+      "type": "archive",
+      "url": "http://downloads.xiph.org/releases/libshout/libshout-2.4.1.tar.gz",
+      "sha256": "f3acb8dec26f2dbf6df778888e0e429a4ce9378a9d461b02a7ccbf2991bbf24d"
+    },
+    {
+      "type": "script",
+      "commands": [
+        "autoreconf -fiv"
+      ],
+      "dest-filename": "autogen.sh"
+    }
+  ]
+}

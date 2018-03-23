@@ -1,0 +1,21 @@
+{
+  "name": "libraw",
+  "config-opts": [
+    "--disable-examples",
+    "--disable-static"
+  ],
+  "cleanup": [
+    "/share/doc"
+  ],
+  "sources": [
+    {
+      "type": "archive",
+      "url": "https://www.libraw.org/data/LibRaw-0.18.8.tar.gz",
+      "sha256": "56aca4fd97038923d57d2d17d90aa11d827f1f3d3f1d97e9f5a0d52ff87420e2"
+    },
+    {
+      "type": "patch",
+      "path": "libraw-pkgconfig.patch"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "libtorrent",
+  "config-opts": [
+    "--disable-static",
+    "--with-boost=/app",
+    "--with-libiconv"
+  ],
+  "cleanup": [
+    "/include",
+    "/lib/pkgconfig",
+    "/lib/*.la",
+    "/share/cmake"
+  ],
+  "sources": [
+    {
+      "type": "archive",
+      "url": "https://github.com/arvidn/libtorrent/releases/download/libtorrent-1_1_6/libtorrent-rasterbar-1.1.6.tar.gz",
+      "sha256": "b7c74d004bd121bd6e9f8975ee1fec3c95c74044c6a6250f6b07f259f55121ef"
+    }
+  ]
+}

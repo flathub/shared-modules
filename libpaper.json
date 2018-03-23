@@ -1,0 +1,24 @@
+{
+  "name": "libpaper",
+  "config-opts": [
+    "--disable-static"
+  ],
+  "cleanup": [
+    "/bin",
+    "/sbin"
+  ],
+  "sources": [
+    {
+      "type": "archive",
+      "url": "http://http.debian.net/debian/pool/main/libp/libpaper/libpaper_1.1.24+nmu5.tar.gz",
+      "sha256": "e29deda4cd7350189c71af0925cbf4a4473f9841d1419a922e1e8ff1954db1f2"
+    },
+    {
+      "type": "script",
+      "commands": [
+        "autoreconf -vfi"
+      ],
+      "dest-filename": "autogen.sh"
+    }
+  ]
+}

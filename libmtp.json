@@ -1,0 +1,14 @@
+{
+  "name": "libmtp",
+  "config-opts": [
+    "--disable-static",
+    "--with-udev=/app/lib/udev"
+  ],
+  "sources": [
+    {
+      "type": "archive",
+      "url": "http://distcache.freebsd.org/ports-distfiles/libmtp-1.1.14.tar.gz",
+      "sha256": "3817d3e296be8f1bc527385585780e70984e8e0d6a0d00349240d67e3df412e8"
+    }
+  ]
+}

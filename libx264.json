@@ -1,0 +1,17 @@
+{
+  "name": "libx264",
+  "config-opts": [
+    "--enable-pic",
+    "--enable-shared"
+  ],
+  "sources": [
+    {
+      "type": "git",
+      "url": "https://git.videolan.org/git/x264.git",
+      "commit": "aaa9aa83a111ed6f1db253d5afa91c5fc844583f"
+    }
+  ],
+  "cleanup": [
+    "/bin/x264"
+  ]
+}

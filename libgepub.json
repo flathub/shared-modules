@@ -1,0 +1,10 @@
+{
+  "name": "libgepub",
+  "sources": [
+    {
+      "type": "archive",
+      "url": "https://download.gnome.org/sources/libgepub/0.5/libgepub-0.5.2.tar.xz",
+      "sha256": "848328999285441739a18664f62e8008aef8d87d1da00aeb91138035fc672b38"
+    }
+  ]
+}

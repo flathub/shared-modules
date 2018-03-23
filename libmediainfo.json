@@ -1,0 +1,22 @@
+{
+  "name": "libmediainfo",
+  "subdir": "Project/GNU/Library",
+  "config-opts": [
+    "--enable-shared",
+    "--disable-static",
+    "--with-libcurl"
+  ],
+  "cleanup": [
+    "/bin",
+    "/include",
+    "/lib/pkgconfig",
+    "/lib/*.la"
+  ],
+  "sources": [
+    {
+      "type": "archive",
+      "url": "https://mediaarea.net/download/source/libmediainfo/18.03/libmediainfo_18.03.tar.xz",
+      "sha256": "fb451233bea6bdf188ef76f237e02e907ef632b85a166e44d60e559d66c49fb4"
+    }
+  ]
+}

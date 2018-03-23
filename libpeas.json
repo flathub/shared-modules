@@ -1,0 +1,26 @@
+{
+  "name": "libpeas",
+  "config-opts": [
+    "--disable-gtk-doc",
+    "--disable-gtk-doc-html",
+    "--disable-gtk"
+  ],
+  "cleanup": [
+    "/include",
+    "*.la",
+    "/lib/pkgconfig"
+  ],
+  "build-options": {
+    "env": {
+      "PKG_CONFIG_GOBJECT_INTROSPECTION_1_0_GIRDIR": "/app/share/gir-1.0",
+      "PKG_CONFIG_GOBJECT_INTROSPECTION_1_0_TYPELIBDIR": "/app/lib/girepository-1.0"
+    }
+  },
+  "sources": [
+    {
+      "type": "archive",
+      "url": "https://download.gnome.org/sources/libpeas/1.20/libpeas-1.20.0.tar.xz",
+      "sha256": "f392fffe2dc00072a51bb2a1b274224a06bdc5f9c3b3c0ac4816909e9933d354"
+    }
+  ]
+}

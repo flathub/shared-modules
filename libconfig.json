@@ -1,0 +1,10 @@
+{
+  "name": "libconfig",
+  "sources": [
+    {
+      "type": "archive",
+      "url": "https://hyperrealm.github.io/libconfig/dist/libconfig-1.7.2.tar.gz",
+      "sha256": "7c3c7a9c73ff3302084386e96f903eb62ce06953bb1666235fac74363a16fad9"
+    }
+  ]
+}

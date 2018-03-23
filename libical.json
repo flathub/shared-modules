@@ -1,0 +1,18 @@
+{
+  "name": "libical",
+  "cleanup": [
+    "/lib/cmake"
+  ],
+  "buildsystem": "cmake",
+  "config-opts": [
+    "-DCMAKE_INSTALL_LIBDIR:PATH=/app/lib",
+    "-DBUILD_SHARED_LIBS:BOOL=ON"
+  ],
+  "sources": [
+    {
+      "type": "archive",
+      "url": "https://github.com/libical/libical/releases/download/v2.0.0/libical-2.0.0.tar.gz",
+      "sha256": "654c11f759c19237be39f6ad401d917e5a05f36f1736385ed958e60cf21456da"
+    }
+  ]
+}

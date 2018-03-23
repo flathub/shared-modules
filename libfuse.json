@@ -1,0 +1,21 @@
+{
+  "name": "libfuse",
+  "cleanup": [
+    "/bin"
+  ],
+  "config-opts": [
+    "UDEV_RULES_PATH=/app/etc/udev/rules.d",
+    "INIT_D_PATH=/app/etc/init.d"
+  ],
+  "sources": [
+    {
+      "type": "archive",
+      "url": "https://github.com/libfuse/libfuse/releases/download/fuse-2.9.7/fuse-2.9.7.tar.gz",
+      "sha256": "832432d1ad4f833c20e13b57cf40ce5277a9d33e483205fc63c78111b3358874"
+    },
+    {
+      "type": "patch",
+      "path": "fuse-2.9.2-namespace-conflict-fix.patch"
+    }
+  ]
+}

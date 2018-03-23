@@ -1,0 +1,23 @@
+{
+  "name": "libargon2",
+  "no-autogen": true,
+  "make-args": [
+    "PREFIX=/app",
+    "OPTTARGET=none"
+  ],
+  "make-install-args": [
+    "PREFIX=/app",
+    "OPTTARGET=none"
+  ],
+  "sources": [
+    {
+      "type": "git",
+      "url": "https://github.com/P-H-C/phc-winner-argon2.git",
+      "tag": "20171227",
+      "commit": "670229c849b9fe882583688b74eb7dfdc846f9f6"
+    }
+  ],
+  "post-install": [
+    "install -Dm644 LICENSE /app/share/licenses/libargon2/LICENSE"
+  ]
+}

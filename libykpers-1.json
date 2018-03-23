@@ -1,0 +1,25 @@
+{
+  "name": "libykpers-1",
+  "sources": [
+    {
+      "type": "git",
+      "url": "https://github.com/Yubico/yubikey-personalization.git",
+      "tag": "v1.18.1",
+      "commit": "2e008cfa4013ca2bc1a8eb7a112b7ee672820158"
+    },
+    {
+      "type": "script",
+      "dest-filename": "autogen.sh",
+      "commands": [
+        "autoreconf --install"
+      ]
+    }
+  ],
+  "post-install": [
+    "install -Dm644 COPYING /app/share/licenses/libykpers-1/COPYING"
+  ],
+  "cleanup": [
+    "/bin",
+    "/share/man"
+  ]
+}
