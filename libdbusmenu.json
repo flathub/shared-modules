@@ -1,0 +1,27 @@
+{
+  "name": "libdbusmenu",
+  "config-opts": [
+    "--with-gtk=2",
+    "-disable-static",
+    "--disable-tests",
+    "--disable-gtk-doc",
+    "--disable-doc",
+    "--disable-dumper",
+    "--enable-introspection=no",
+    "--disable-vala",
+    "--enable-gtk-doc=no"
+  ],
+  "build-options": {
+    "env": {
+      "HAVE_VALGRIND_TRUE": "'#'",
+      "HAVE_VALGRIND_FALSE": "''"
+    }
+  },
+  "sources": [
+    {
+      "type": "archive",
+      "url": "https://launchpad.net/libdbusmenu/12.10/12.10.2/+download/libdbusmenu-12.10.2.tar.gz",
+      "sha256": "9d6ad4a0b918b342ad2ee9230cce8a095eb601cb0cee6ddc1122d0481f9d04c9"
+    }
+  ]
+}

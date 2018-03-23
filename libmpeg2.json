@@ -1,0 +1,28 @@
+{
+  "name": "libmpeg2",
+  "cleanup": [
+    "/bin",
+    "/include",
+    "/lib/pkgconfig",
+    "/lib/*.la"
+  ],
+  "config-opts": [
+    "--disable-static"
+  ],
+  "rm-configure": true,
+  "sources": [
+    {
+      "type": "archive",
+      "url": "http://libmpeg2.sourceforge.net/files/libmpeg2-0.5.1.tar.gz",
+      "sha256": "dee22e893cb5fc2b2b6ebd60b88478ab8556cb3b93f9a0d7ce8f3b61851871d4"
+    },
+    {
+      "type": "script",
+      "dest-filename": "autogen.sh",
+      "commands": [
+        "cp -p /usr/share/automake-*/config.{sub,guess} .",
+        "autoreconf -vfi"
+      ]
+    }
+  ]
+}

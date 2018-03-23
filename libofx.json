@@ -1,0 +1,15 @@
+{
+  "name": "libofx",
+  "no-parallel-make": true,
+  "config-opts": [
+    "--with-opensp-includes=/app/include/OpenSP",
+    "--with-opensp-libs=/lib"
+  ],
+  "sources": [
+    {
+      "type": "archive",
+      "url": "https://github.com/libofx/libofx/archive/0.9.12.tar.gz",
+      "sha256": "0288d0166b3e60e8ebbdcf4ac54b034082820d856a09912b748f2aec9b247130"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "libcotp",
+  "buildsystem": "cmake-ninja",
+  "config-opts": [
+    "-DCMAKE_BUILD_TYPE=Release"
+  ],
+  "cleanup": [
+    "/include"
+  ],
+  "sources": [
+    {
+      "type": "archive",
+      "url": "https://github.com/paolostivanin/libcotp/archive/v1.0.11.tar.gz",
+      "sha256": "fd01f46a81a1f2811c932eab336276d982369401ae405e36034f1aa859b04a74"
+    }
+  ]
+}

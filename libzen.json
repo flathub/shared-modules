@@ -1,0 +1,21 @@
+{
+  "name": "libzen",
+  "subdir": "Project/GNU/Library",
+  "config-opts": [
+    "--enable-shared",
+    "--disable-static"
+  ],
+  "cleanup": [
+    "/bin",
+    "/include",
+    "/lib/pkgconfig",
+    "/lib/*.la"
+  ],
+  "sources": [
+    {
+      "type": "archive",
+      "url": "https://mediaarea.net/download/source/libzen/0.4.37/libzen_0.4.37.tar.xz",
+      "sha256": "401c34d93056a95f8392982f856d1371c5de6aec373d84dcbb356e1f473d0452"
+    }
+  ]
+}

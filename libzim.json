@@ -1,0 +1,35 @@
+{
+  "name": "libzim",
+  "buildsystem": "meson",
+  "builddir": true,
+  "cleanup": [
+    "/bin",
+    "/include",
+    "/lib/pkgconfig"
+  ],
+  "sources": [
+    {
+      "type": "archive",
+      "url": "https://github.com/openzim/libzim/archive/3.0.0.tar.gz",
+      "sha256": "eb2abc7cb99ba67e74004ded48c02fe4c2de40ee19f56896ee79e533af11159c"
+    },
+    {
+      "type": "shell",
+      "commands": [
+        "mkdir -p subprojects/packagecache"
+      ]
+    },
+    {
+      "type": "file",
+      "url": "https://github.com/google/googletest/archive/release-1.8.0.zip",
+      "sha256": "f3ed3b58511efd272eb074a3a6d6fb79d7c2e6a0e374323d1e6bcbcc1ef141bf",
+      "dest-filename": "subprojects/packagecache/gtest-1.8.0.zip"
+    },
+    {
+      "type": "file",
+      "url": "https://wrapdb.mesonbuild.com/v1/projects/gtest/1.8.0/4/get_zip",
+      "sha256": "0b90fe055acbdb002a37dfb035184b306008b763931158497ef5dbaa8c7925af",
+      "dest-filename": "subprojects/packagecache/gtest-1.8.0-4-wrap.zip"
+    }
+  ]
+}

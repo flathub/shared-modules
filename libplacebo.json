@@ -1,0 +1,11 @@
+{
+  "name": "libplacebo",
+  "buildsystem": "meson",
+  "sources": [
+    {
+      "type": "archive",
+      "url": "https://github.com/haasn/libplacebo/archive/v0.2.1.tar.gz",
+      "sha256": "d5d920a1745e4209287d32e8b96a85127b61b843304813980e11104cd9f15e82"
+    }
+  ]
+}

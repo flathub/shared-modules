@@ -1,0 +1,16 @@
+{
+  "name": "libgit2-glib",
+  "config-opts": [
+    "--libdir=/app/lib",
+    "--buildtype=release"
+  ],
+  "buildsystem": "meson",
+  "builddir": true,
+  "sources": [
+    {
+      "type": "git",
+      "url": "https://git.gnome.org/browse/libgit2-glib",
+      "branch": "v0.26.4"
+    }
+  ]
+}

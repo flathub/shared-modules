@@ -1,0 +1,29 @@
+{
+  "name": "libdbi-drivers",
+  "rm-configure": true,
+  "config-opts": [
+    "--disable-docs",
+    "--with-dbi-libdir=/app/lib/",
+    "--with-dbi-incdir=/app/include/",
+    "--with-mysql",
+    "--with-pgsql",
+    "--with-sqlite3"
+  ],
+  "cleanup": [
+    "/share",
+    "/var"
+  ],
+  "sources": [
+    {
+      "type": "archive",
+      "url": "http://downloads.sourceforge.net/project/libdbi-drivers/libdbi-drivers/libdbi-drivers-0.9.0/libdbi-drivers-0.9.0.tar.gz",
+      "sha256": "43d2eacd573a4faff296fa925dd97fbf2aedbf1ae35c6263478210c61004c854"
+    },
+    {
+      "type": "shell",
+      "commands": [
+        "rm -f config.guess"
+      ]
+    }
+  ]
+}

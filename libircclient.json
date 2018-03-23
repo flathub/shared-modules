@@ -1,0 +1,24 @@
+{
+  "name": "libircclient",
+  "config-opts": [
+    "--disable-static"
+  ],
+  "sources": [
+    {
+      "type": "archive",
+      "url": "https://downloads.sourceforge.net/project/libircclient/libircclient/1.9/libircclient-1.9.tar.gz",
+      "sha256": "81c397eee618667bccfe8960352ba5f829c8c2e9badc270594b91128cd89c064"
+    },
+    {
+      "type": "patch",
+      "path": "libircclient-proper-lib-building.patch"
+    },
+    {
+      "type": "script",
+      "dest-filename": "autogen.sh",
+      "commands": [
+        "autoreconf -vfi"
+      ]
+    }
+  ]
+}

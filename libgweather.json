@@ -1,0 +1,15 @@
+{
+  "name": "libgweather",
+  "build-options": {
+    "env": {
+      "PKG_CONFIG_VAPIGEN_VAPIDIR": "/app/share/vala/vapi"
+    }
+  },
+  "sources": [
+    {
+      "type": "archive",
+      "url": "https://download.gnome.org/sources/libgweather/3.26/libgweather-3.26.0.tar.xz",
+      "sha256": "5b84badc0b3ecffff5db1bb9a7cc4dd4e400a8eb3f1282348f8ee6ba33626b6e"
+    }
+  ]
+}

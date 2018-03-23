@@ -1,0 +1,27 @@
+{
+  "name": "libgnomecanvas",
+  "rm-configure": true,
+  "cleanup": [
+    "/share"
+  ],
+  "sources": [
+    {
+      "type": "archive",
+      "url": "https://download.gnome.org/sources/libgnomecanvas/2.30/libgnomecanvas-2.30.3.tar.bz2",
+      "sha256": "859b78e08489fce4d5c15c676fec1cd79782f115f516e8ad8bed6abcb8dedd40"
+    },
+    {
+      "type": "shell",
+      "commands": [
+        "rm -f config.guess"
+      ]
+    },
+    {
+      "type": "script",
+      "commands": [
+        "autoreconf -fiv"
+      ],
+      "dest-filename": "autogen.sh"
+    }
+  ]
+}

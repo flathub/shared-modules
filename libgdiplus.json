@@ -1,0 +1,17 @@
+{
+  "name": "libgdiplus",
+  "sources": [
+    {
+      "type": "archive",
+      "url": "https://download.mono-project.com/sources/libgdiplus/libgdiplus0-4.2.tar.gz",
+      "sha256": "f332b9b8b44fd1c50b8d8d01a7296360b806c790b8297614739b3de1edbadfeb"
+    }
+  ],
+  "cleanup": [
+    "/include",
+    "/lib/*.a",
+    "/lib/*.la",
+    "/lib/pkgconfig",
+    "/share/man"
+  ]
+}

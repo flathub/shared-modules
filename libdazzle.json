@@ -1,0 +1,16 @@
+{
+  "name": "libdazzle",
+  "config-opts": [
+    "--libdir=/app/lib",
+    "--buildtype=release"
+  ],
+  "buildsystem": "meson",
+  "builddir": true,
+  "sources": [
+    {
+      "type": "git",
+      "url": "https://gitlab.gnome.org/GNOME/libdazzle.git",
+      "branch": "libdazzle-3-28"
+    }
+  ]
+}

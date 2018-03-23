@@ -1,0 +1,13 @@
+{
+  "name": "libdsm",
+  "config-opts": [
+    "--disable-static"
+  ],
+  "sources": [
+    {
+      "type": "archive",
+      "url": "https://github.com/videolabs/libdsm/releases/download/v0.2.8/libdsm-0.2.8.tar.gz",
+      "sha256": "986696078f240086808191d7d739f2e4d3cc1af6695493d3845c58299feb7b38"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "libXmu",
+  "sources": [
+    {
+      "type": "archive",
+      "url": "https://www.x.org/archive//individual/lib/libXmu-1.1.2.tar.bz2",
+      "sha256": "756edc7c383254eef8b4e1b733c3bf1dc061b523c9f9833ac7058378b8349d0b"
+    }
+  ]
+}

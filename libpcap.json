@@ -1,0 +1,10 @@
+{
+  "name": "libpcap",
+  "sources": [
+    {
+      "type": "git",
+      "url": "https://github.com/the-tcpdump-group/libpcap.git",
+      "commit": "c955dc6facab1cca6b5b82c9274f295a58065ba0"
+    }
+  ]
+}

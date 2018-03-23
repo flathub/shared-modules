@@ -1,0 +1,11 @@
+{
+  "name": "libmanette",
+  "buildsystem": "meson",
+  "sources": [
+    {
+      "type": "archive",
+      "url": "https://download.gnome.org/sources/libmanette/0.2/libmanette-0.2.0.tar.xz",
+      "sha256": "af9e59b8d9ab792391a229c2824cac99740676785fdd460588fe9f5a05e613ff"
+    }
+  ]
+}

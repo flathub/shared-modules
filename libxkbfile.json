@@ -1,0 +1,19 @@
+{
+  "name": "libxkbfile",
+  "cleanup": [
+    "/include",
+    "/lib/*.la",
+    "/lib/pkgconfig"
+  ],
+  "config-opts": [
+    "--disable-static"
+  ],
+  "sources": [
+    {
+      "type": "git",
+      "url": "https://anongit.freedesktop.org/git/xorg/lib/libxkbfile.git",
+      "tag": "libxkbfile-1.0.9",
+      "commit": "de4f2307448583988a55a587cb6a3f43e4868378"
+    }
+  ]
+}

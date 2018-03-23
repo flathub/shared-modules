@@ -1,0 +1,18 @@
+{
+  "name": "libzim-glib",
+  "buildsystem": "meson",
+  "builddir": true,
+  "cleanup": [
+    "/include",
+    "/lib/girepository-1.0",
+    "/lib/pkgconfig",
+    "/share"
+  ],
+  "sources": [
+    {
+      "type": "archive",
+      "url": "https://github.com/birros/libzim-glib/archive/v3.0.0.tar.gz",
+      "sha256": "9caea46469afa6ab02f02f10ead90da57c9991afbed74e1c674c6138d99878d0"
+    }
+  ]
+}

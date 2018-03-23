@@ -1,0 +1,48 @@
+{
+  "name": "libyubikey",
+  "sources": [
+    {
+      "type": "git",
+      "url": "https://github.com/Yubico/yubico-c.git",
+      "tag": "libyubikey-1.13",
+      "commit": "0b4f3909416a5a5c4d5bbf5104682218fe3c7218"
+    },
+    {
+      "type": "script",
+      "dest-filename": "autogen.sh",
+      "commands": [
+        "autoreconf --install"
+      ]
+    }
+  ],
+  "post-install": [
+    "install -Dm644 COPYING /app/share/licenses/libyubikey/COPYING"
+  ],
+  "cleanup": [
+    "/bin",
+    "/share/man"
+  ],
+  "modules": [
+    {
+      "name": "asciidoc",
+      "sources": [
+        {
+          "type": "git",
+          "url": "https://github.com/asciidoc/asciidoc.git",
+          "tag": "8.6.10",
+          "commit": "37f6baaf04e2d6123a1f7318a5ec361d2ed6ca28"
+        },
+        {
+          "type": "script",
+          "dest-filename": "autogen.sh",
+          "commands": [
+            "autoreconf --install"
+          ]
+        }
+      ],
+      "cleanup": [
+        "*"
+      ]
+    }
+  ]
+}

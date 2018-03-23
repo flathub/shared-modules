@@ -1,0 +1,17 @@
+{
+  "name": "libkiwix",
+  "buildsystem": "meson",
+  "builddir": true,
+  "cleanup": [
+    "/bin",
+    "/include",
+    "/lib/pkgconfig"
+  ],
+  "sources": [
+    {
+      "type": "archive",
+      "url": "https://github.com/kiwix/kiwix-lib/archive/1.0.2.tar.gz",
+      "sha256": "b9f839217e84bbf098e20b00a3635d4c883c8e4bc874fe8721a1d02504fb2678"
+    }
+  ]
+}

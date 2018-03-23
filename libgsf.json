@@ -1,0 +1,28 @@
+{
+  "name": "libgsf",
+  "rm-configure": true,
+  "cleanup": [
+    "/bin",
+    "/share"
+  ],
+  "sources": [
+    {
+      "type": "archive",
+      "url": "https://ftp.gnome.org/pub/gnome/sources/libgsf/1.14/libgsf-1.14.41.tar.xz",
+      "sha256": "150b98586a1021d5c49b3d4d065d0aa3e3674ae31db131af5372499d2d3f08d3"
+    },
+    {
+      "type": "shell",
+      "commands": [
+        "rm -f config.guess"
+      ]
+    },
+    {
+      "type": "script",
+      "commands": [
+        "autoreconf -fiv"
+      ],
+      "dest-filename": "autogen.sh"
+    }
+  ]
+}

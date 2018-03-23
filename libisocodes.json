@@ -1,0 +1,19 @@
+{
+  "name": "libisocodes",
+  "cleanup": [
+    "/include",
+    "/lib/girepository-1.0",
+    "/lib/pkgconfig",
+    "/lib/*.la",
+    "/lib/*.a",
+    "/share/gir-1.0",
+    "/share/vala"
+  ],
+  "sources": [
+    {
+      "type": "archive",
+      "url": "http://snapshot.debian.org/archive/debian/20150603T050256Z/pool/main/libi/libisocodes/libisocodes_1.2.2.orig.tar.xz",
+      "sha256": "4cdf2c02486bb44902d95e2b86356ef348c65b5edff75925d6878fe5e5f038de"
+    }
+  ]
+}

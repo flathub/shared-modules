@@ -1,0 +1,22 @@
+{
+  "name": "libusb",
+  "config-opts": [
+    "--disable-static",
+    "--disable-udev"
+  ],
+  "cleanup": [
+    "/lib/*.la",
+    "/lib/pkgconfig",
+    "/include"
+  ],
+  "sources": [
+    {
+      "type": "archive",
+      "url": "https://github.com/libusb/libusb/archive/v1.0.21.tar.gz",
+      "sha256": "1a5b08c05bc5e38c81c2d59c29954d5916646f4ff46f51381b3f624384e4ac01"
+    }
+  ],
+  "post-install": [
+    "install -Dm644 COPYING /app/share/licenses/libusb/COPYING"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "name": "libkiwix-glib",
+  "buildsystem": "meson",
+  "builddir": true,
+  "cleanup": [
+    "/include",
+    "/lib/girepository-1.0",
+    "/lib/pkgconfig",
+    "/share"
+  ],
+  "sources": [
+    {
+      "type": "archive",
+      "url": "https://github.com/birros/libkiwix-glib/archive/v1.0.1.tar.gz",
+      "sha256": "dc6459d03e367bab08c721cee5196e27786a8bdfe0539a6bb1d3719732cddb89"
+    }
+  ]
+}
