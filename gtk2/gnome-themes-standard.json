@@ -1,0 +1,16 @@
+{
+    "name": "gnome-themes-standard",
+    "config-opts": ["--disable-gtk3-engine"],
+    "cleanup": [
+        "/share/themes/Adwaita/gtk-3.0",
+        "/share/themes/Adwaita-dark/gtk-3.0",
+        "/share/themes/HighContrast/gtk-3.0"
+    ],
+    "sources": [
+        {
+            "type": "archive",
+            "url": "https://download.gnome.org/sources/gnome-themes-standard/3.22/gnome-themes-standard-3.22.3.tar.xz",
+            "sha256": "61dc87c52261cfd5b94d65e8ffd923ddeb5d3944562f84942eeeb197ab8ab56a"
+        }
+    ]
+}
