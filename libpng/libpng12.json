@@ -1,0 +1,16 @@
+{
+    "name": "libpng",
+    "sources": [
+        {
+            "type": "archive",
+            "url": "https://razaoinfo.dl.sourceforge.net/project/libpng/libpng12/1.2.59/libpng-1.2.59.tar.gz",
+            "sha256": "4bd4b5ce04ce634c281ae76174714fa02b053b573ac2181c985db06aa57e1e9e"
+        }
+    ],
+    "cleanup": [
+        "/include",
+        "/lib/pkgconfig",
+        "/lib/*.la",
+        "/lib/*.a"
+    ]
+}
