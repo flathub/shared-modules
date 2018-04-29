@@ -36,6 +36,11 @@
         "sed -e '/APPINDICATOR_PYTHON/,/\\$PYGTK_CODEGEN/ d' -i configure.ac",
         "sed -e '/bindings/ d' -e '/example/ d' -i Makefile.am"
       ]
+    },
+    {
+      "type": "script",
+      "commands": ["autoreconf -sfi"],
+      "dest-filename": "autogen.sh"
     }
   ],
   "modules": [
@@ -105,6 +110,11 @@
             "# FTBFS fix",
             "sed -e '/LIBINDICATOR_LIBS/ s/\\$LIBM/ $LIBM/' -i configure.ac"
           ]
+        },
+        {
+          "type": "script",
+          "commands": ["autoreconf -sfi"],
+          "dest-filename": "autogen.sh"
         }
       ]
     }
