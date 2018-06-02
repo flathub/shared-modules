@@ -1,0 +1,24 @@
+name: lame
+rm-configure: true
+config-opts:
+  - --enable-shared
+  - --disable-static
+  - --enable-nasm
+  - --with-pic
+  - --enable-mp3rtp
+  - --disable-decoder
+  - --disable-gtktestnd
+cleanup:
+  - /bin
+  - /include
+  - /share/doc
+  - /share/man
+  - '*.la'
+sources:
+  - type: archive
+    url: http://http.debian.net/debian/pool/main/l/lame/lame_3.100.orig.tar.gz
+    sha256: ddfe36cab873794038ae2c1210557ad34857a4b6bdc515785d1da9e175b1da1e
+  - type: script
+    dest-filename: autogen.sh
+    commands:
+      - autoreconf -vfi
