@@ -13,7 +13,7 @@
     ],
     "buildsystem": "simple",
     "build-commands": [
-      "/usr/bin/pip3 install --ignore-installed --no-deps --prefix=/app ."
+      "pip3 install --ignore-installed --no-deps --prefix=/app ."
     ],
     "build-options": {
       "env": {
