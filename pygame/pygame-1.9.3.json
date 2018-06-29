@@ -54,6 +54,9 @@
         {
             "name": "fluidsynth",    
             "buildsystem": "cmake-ninja",
+            "config-opts": [
+              "-DCMAKE_BUILD_TYPE=Release"
+            ],
             "sources": [
                 {
                     "type": "archive",
@@ -70,6 +73,7 @@
             "name": "portmidi",
             "buildsystem": "cmake-ninja",
             "config-opts": [
+              "-DCMAKE_BUILD_TYPE=Release",
               "-DCMAKE_LIBRARY_OUTPUT_DIRECTORY:STRING=/app/lib",
               "-DCMAKE_ARCHIVE_OUTPUT_DIRECTORY:STRING=/app/lib",
               "-DCMAKE_RUNTIME_OUTPUT_DIRECTORY:STRING=/app/bin"
