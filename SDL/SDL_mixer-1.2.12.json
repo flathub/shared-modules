@@ -12,7 +12,9 @@
             "type": "script",
             "dest-filename": "autogen.sh",
             "commands": [
-                "AUTOMAKE=\"automake --foreign\" autoreconf -vfi",
+                "rm acinclude/libtool.m4",
+                "rm acinclude/lt*",
+                "AUTOMAKE=\"automake --foreign\" autoreconf -vfi -I acinclude",
                 "cp -p /usr/share/automake-*/config.{sub,guess} build-scripts"
             ]
         }
