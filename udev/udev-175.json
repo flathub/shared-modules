@@ -37,5 +37,8 @@
         "autoreconf -vfi"
       ]
     }
+  ],
+  "post-install": [
+    "sed -i 's|${exec_prefix}|/app|g' /app/share/pkgconfig/udev.pc"
   ]
 }
