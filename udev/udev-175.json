@@ -4,7 +4,6 @@
   "config-opts": [
     "--disable-hwdb",
     "--disable-logging",
-    "--disable-gudev",
     "--disable-introspection",
     "--disable-keymap",
     "--disable-mtd_probe"
