@@ -21,6 +21,11 @@
       "path": "lame-ansi2knr2devnull.patch"
     },
     {
+      "type": "patch",
+      "path": "lame-tinfo.patch",
+      "strip-components": 0
+    },
+    {
       "type": "script",
       "dest-filename": "autogen.sh",
       "commands": [
