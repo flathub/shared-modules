@@ -85,8 +85,16 @@
             ]
         },
         {
-            "type": "patch",
+            "type": "file",
             "path": "qt4-openssl-1.1.patch"
+        },
+        {
+            "type": "shell",
+            "commands": [
+                "echo -e '#include<openssl/opensslv.h>\nint main(){return OPENSSL_VERSION_NUMBER>=0x010100000L?0:1;}' >has_openssl_1_1.c",
+                "gcc ${CFLAGS} has_openssl_1_1.c -o has_openssl_1_1",
+                "if ./has_openssl_1_1; then patch -p1 -i qt4-openssl-1.1.patch; fi"
+            ]
         }
     ],
     "cleanup": [
