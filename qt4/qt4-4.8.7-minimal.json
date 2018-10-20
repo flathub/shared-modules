@@ -58,7 +58,7 @@
     ],
     "build-options": {
         "env": {
-            "CXXFLAGS": "-std=gnu++98",
+            "CXXFLAGS": "-std=gnu++98 -O2",
             "LD_LIBRARY_PATH": "/run/build/qt4/lib/"
         }
     },
