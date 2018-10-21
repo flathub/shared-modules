@@ -58,7 +58,7 @@
     ],
     "build-options": {
         "env": {
-            "CXXFLAGS": "-std=gnu++98",
+            "CXXFLAGS": "-std=gnu++98 -O2",
             "LD_LIBRARY_PATH": "/run/build/qt4/lib/"
         }
     },
@@ -71,6 +71,30 @@
         {
             "type": "patch",
             "path": "qt4-aarch64.patch"
+        },
+        {
+            "type": "patch",
+            "path": "disable-sslv3.patch"
+        },
+        {
+            "type": "shell",
+            "commands": [
+                "sed -i \"s|-O2|${CXXFLAGS}|\" mkspecs/common/{g++,gcc}-base.conf",
+                "sed -i \"/^QMAKE_LFLAGS_RPATH/s| -Wl,-rpath,||g\" mkspecs/common/gcc-base-unix.conf",
+                "sed -i \"/^QMAKE_LFLAGS\s/s|+=|+= ${LDFLAGS}|g\" mkspecs/common/gcc-base.conf"
+            ]
+        },
+        {
+            "type": "file",
+            "path": "qt4-openssl-1.1.patch"
+        },
+        {
+            "type": "shell",
+            "commands": [
+                "echo -e '#include<openssl/opensslv.h>\nint main(){return OPENSSL_VERSION_NUMBER>=0x010100000L?0:1;}' >has_openssl_1_1.c",
+                "gcc ${CFLAGS} has_openssl_1_1.c -o has_openssl_1_1",
+                "if ./has_openssl_1_1; then patch -p1 -i qt4-openssl-1.1.patch; fi"
+            ]
         }
     ],
     "cleanup": [
