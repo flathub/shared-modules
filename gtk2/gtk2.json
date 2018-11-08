@@ -64,6 +64,45 @@
           "path": "gtk2-use-adwaita-theme.patch"
         }
       ]
+    },
+    {
+      "name": "ibus-gtk2",
+      "no-make-install": true,
+      "config-opts": [
+        "--disable-xim",
+        "--disable-dconf",
+        "--disable-gconf",
+        "--disable-memconf",
+        "--disable-schemas-compile",
+        "--disable-schemas-install",
+        "--disable-gtk3",
+        "--disable-setup",
+        "--disable-ui",
+        "--disable-engine",
+        "--disable-python-library",
+        "--disable-libnotify",
+        "--disable-emoji-dict",
+        "--disable-appindicator",
+        "--disable-glibtest",
+        "--disable-tests",
+        "--disable-unicode-dict",
+        "--disable-introspection",
+        "--disable-python2"
+      ],
+      "ensure-writable": [
+        "/lib/gtk-2.0/2.10.0/immodules.cache"
+      ],
+      "post-install": [
+        "install -m644 --target-directory=/app/lib/gtk-2.0/2.10.0/immodules client/gtk2/.libs/im-ibus.so",
+        "gtk-query-immodules-2.0 > /app/lib/gtk-2.0/2.10.0/immodules.cache"
+      ],
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://github.com/ibus/ibus/releases/download/1.5.19/ibus-1.5.19.tar.gz",
+          "sha256": "4b66c798dab093f0fa738e5c10688d395a463287d13678c208a81051af5d2429"
+        }
+      ]
     }
   ]
 }
