@@ -13,13 +13,13 @@
     ],
     "buildsystem": "simple",
     "build-commands": [
-      "pip3 install --ignore-installed --no-deps --prefix=/app ."
+        "pip3 install --ignore-installed --no-deps --prefix=/app ."
     ],
     "build-options": {
-      "env": {
-        "PORTMIDI_INC_PORTTIME": "1",
-        "LOCALBASE": "/app"
-      }
+        "env": {
+            "PORTMIDI_INC_PORTTIME": "1",
+            "LOCALBASE": "/app"
+        }
     },
     "modules": [
         "../SDL/SDL-1.2.15.json",
@@ -55,7 +55,7 @@
             "name": "fluidsynth",
             "buildsystem": "cmake-ninja",
             "config-opts": [
-              "-DCMAKE_BUILD_TYPE=Release"
+                "-DCMAKE_BUILD_TYPE=Release"
             ],
             "sources": [
                 {
@@ -73,10 +73,10 @@
             "name": "portmidi",
             "buildsystem": "cmake-ninja",
             "config-opts": [
-              "-DCMAKE_BUILD_TYPE=Release",
-              "-DCMAKE_LIBRARY_OUTPUT_DIRECTORY:STRING=/app/lib",
-              "-DCMAKE_ARCHIVE_OUTPUT_DIRECTORY:STRING=/app/lib",
-              "-DCMAKE_RUNTIME_OUTPUT_DIRECTORY:STRING=/app/bin"
+                "-DCMAKE_BUILD_TYPE=Release",
+                "-DCMAKE_LIBRARY_OUTPUT_DIRECTORY:STRING=/app/lib",
+                "-DCMAKE_ARCHIVE_OUTPUT_DIRECTORY:STRING=/app/lib",
+                "-DCMAKE_RUNTIME_OUTPUT_DIRECTORY:STRING=/app/bin"
             ],
             "sources": [
                 {
