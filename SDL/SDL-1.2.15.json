@@ -22,6 +22,10 @@
             "path": "sdl-libx11-build.patch"
         },
         {
+            "type": "patch",
+            "path": "sdl-check-for-SDL_VIDEO_X11_BACKINGSTORE.patch"
+        },
+        {
             "type": "script",
             "dest-filename": "autogen.sh",
             "commands": [
