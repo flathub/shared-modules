@@ -9,23 +9,6 @@
       "sha256": "ddfe36cab873794038ae2c1210557ad34857a4b6bdc515785d1da9e175b1da1e"
     },
     {
-      "type": "patch",
-      "path": "lame-msse.patch"
-    },
-    {
-      "type": "patch",
-      "path": "lame-gtk1-ac-directives.patch"
-    },
-    {
-      "type": "patch",
-      "path": "lame-ansi2knr2devnull.patch"
-    },
-    {
-      "type": "patch",
-      "path": "lame-tinfo.patch",
-      "strip-components": 0
-    },
-    {
       "type": "script",
       "dest-filename": "autogen.sh",
       "commands": [
