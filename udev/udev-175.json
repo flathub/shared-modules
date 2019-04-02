@@ -32,6 +32,10 @@
       "sha256": "4c7937fe5a1521316ea571188745b9a00a9fdf314228cffc53a7ba9e5968b7ab"
     },
     {
+      "type": "patch",
+      "path": "sysmacros.patch"
+    },
+    {
       "type": "script",
       "dest-filename": "autogen.sh",
       "commands": [
