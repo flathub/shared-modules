@@ -24,7 +24,7 @@
             },
             "arm": {
                 "env": {
-                    "ORIGLIBDIRS": "/lib:/lib/arm-linux-gnu"
+                    "ORIGLIBDIRS": "/lib:/lib/arm-linux-gnueabihf"
                 }
             },
             "i386": {
