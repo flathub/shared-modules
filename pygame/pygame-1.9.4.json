@@ -5,10 +5,6 @@
             "type": "archive",
             "url": "https://files.pythonhosted.org/packages/b2/6b/c510f0853765eb2219ca5aa3d416d65bb0dea7cd9bb2984aea0a0e04c24d/pygame-1.9.4.tar.gz",
             "sha256": "700d1781c999af25d11bfd1f3e158ebb660f72ebccb2040ecafe5069d0b2c0b6"
-        },
-        {
-            "type": "patch",
-            "path": "pygame-add-search-dirs.patch"
         }
     ],
     "buildsystem": "simple",
@@ -18,7 +14,7 @@
     "build-options": {
         "env": {
             "PORTMIDI_INC_PORTTIME": "1",
-            "LOCALBASE": "/app"
+            "PYGAME_EXTRA_BASE": "/app"
         }
     },
     "modules": [
