@@ -15,6 +15,28 @@
         "env": {
             "PORTMIDI_INC_PORTTIME": "1",
             "PYGAME_EXTRA_BASE": "/app"
+        },
+        "arch": {
+            "aarch64": {
+                "env": {
+                    "ORIGLIBDIRS": "/lib:/lib64:/lib/aarch64-linux-gnu"
+                }
+            },
+            "arm": {
+                "env": {
+                    "ORIGLIBDIRS": "/lib:/lib/arm-linux-gnu"
+                }
+            },
+            "i386": {
+                "env": {
+                    "ORIGLIBDIRS": "/lib:/lib/i386-linux-gnu"
+                }
+            },
+            "x86_64": {
+                "env": {
+                    "ORIGLIBDIRS": "/lib:/lib64:/lib/x86_64-linux-gnu"
+                }
+            }
         }
     },
     "modules": [
