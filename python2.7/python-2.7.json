@@ -41,6 +41,9 @@
         "/lib/python*/idlelib",
         "/lib/python*/tkinter*",
         "/lib/python*/turtle*",
-        "/lib/python*/lib2to3*"
+        "/lib/python*/lib2to3*",
+        
+        /* Static library */
+        "/lib/python2.7/config/libpython2.7.a"
     ]
 }
