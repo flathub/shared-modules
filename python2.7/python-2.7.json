@@ -18,7 +18,7 @@
     ],
     "post-install": [
         /* Theres seem to be a permissions missmatch that causes the debug stripping to fail */
-        "chmod 644 /app/lib/libpython2.7.so.1.0"
+        "chmod 644 $FLATPAK_DEST/lib/libpython2.7.so.1.0"
     ],
     "cleanup": [
         "/bin/2to3*",
