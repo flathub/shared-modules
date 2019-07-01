@@ -29,6 +29,13 @@
     {
       "type": "patch",
       "path": "libmad-0.15.1b-cflags-O2.patch"
+    },
+    {
+      "type": "shell",
+      "commands": [
+        "cp /usr/share/gnu-config/config.sub .",
+        "cp /usr/share/gnu-config/config.guess ."
+      ]
     }
   ]
 }
