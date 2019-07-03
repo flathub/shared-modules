@@ -93,8 +93,8 @@
         "/lib/gtk-2.0/2.10.0/immodules.cache"
       ],
       "post-install": [
-        "install -m644 --target-directory=/app/lib/gtk-2.0/2.10.0/immodules client/gtk2/.libs/im-ibus.so",
-        "gtk-query-immodules-2.0 > /app/lib/gtk-2.0/2.10.0/immodules.cache"
+        "install -m644 --target-directory=${FLATPAK_DEST}/lib/gtk-2.0/2.10.0/immodules client/gtk2/.libs/im-ibus.so",
+        "gtk-query-immodules-2.0 > ${FLATPAK_DEST}/lib/gtk-2.0/2.10.0/immodules.cache"
       ],
       "sources": [
         {
