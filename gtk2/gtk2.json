@@ -103,6 +103,7 @@
           "sha256": "4cf1e5ca4b067a3bed3cdfa658d49ac597d817b2de627a1095214565f862d034"
         }
       ]
-    }
+    },
+    "../intltool/intltool-0.51.json"
   ]
 }
