@@ -30,5 +30,5 @@
             "commands": [ "autoreconf -i" ]
         }
     ],
-    "cleanup": [ "/bin" ]
+    "cleanup": [ "/bin", "/include", "/lib/pkgconfig" ]
 }
