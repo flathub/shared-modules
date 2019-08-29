@@ -32,6 +32,7 @@
     }
   ],
   "modules": [
+    "../intltool/intltool-0.51.json",
     {
       "name": "gtk2",
       "cleanup": [
@@ -103,7 +104,6 @@
           "sha256": "4b66c798dab093f0fa738e5c10688d395a463287d13678c208a81051af5d2429"
         }
       ]
-    },
-    "../intltool/intltool-0.51.json"
+    }
   ]
 }
