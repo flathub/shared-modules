@@ -44,6 +44,7 @@
     }
   ],
   "modules": [
+    "../intltool/intltool-0.51.json",
     {
       "name": "libdbusmenu",
       "build-options": {
