@@ -30,12 +30,8 @@
       "path": "libappindicator-ftbfs.patch"
     },
     {
-      "type": "shell",
-      "commands": [
-        "# Disable python bindings",
-        "sed -e '/APPINDICATOR_PYTHON/,/\\$PYGTK_CODEGEN/ d' -i configure.ac",
-        "sed -e '/bindings/ d' -e '/example/ d' -i Makefile.am"
-      ]
+      "type": "patch",
+      "path": "libappindicator-no-python.patch"
     },
     {
       "type": "script",
