@@ -1,7 +1,7 @@
 {
   "name": "libappindicator",
   "build-options": {
-    "cflags": "-Wno-error=deprecated-declarations"
+    "cflags": "-Wno-error"
   },
   "rm-configure": true,
   "config-opts": [
@@ -80,7 +80,7 @@
     {
       "name": "libindicator",
       "build-options": {
-        "cflags": "-Wno-error=deprecated-declarations"
+        "cflags": "-Wno-error"
       },
       "cleanup": [
         "/include",
