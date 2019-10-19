@@ -24,9 +24,12 @@
         "/bin/2to3*",
         "/bin/easy_install*",
         "/bin/idle*",
-        "/bin/pyvenv*",
         "/bin/pydoc*",
+        "/bin/python*-config",
+        "/bin/pyvenv*",
         "/include",
+        "/lib/pkgconfig",
+        "/lib/python*/config",
         "/share",
 
         /* Test scripts */
