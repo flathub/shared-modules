@@ -100,8 +100,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://github.com/ibus/ibus/releases/download/1.5.19/ibus-1.5.19.tar.gz",
-          "sha256": "4b66c798dab093f0fa738e5c10688d395a463287d13678c208a81051af5d2429"
+          "url": "https://github.com/ibus/ibus/releases/download/1.5.21/ibus-1.5.21.tar.gz",
+          "sha256": "adc1e5e620d6a89a49306f022b50561f2c05218dec13d0c9b136dc8b6568a2b9"
         }
       ]
     }
