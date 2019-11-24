@@ -17,6 +17,13 @@ Then modules from this repository can be specified in a manifest JSON file like 
 ]
 ```
 
+To update the submodule:
+
+```
+git submodule update --remote --merge
+```
+
+
 [See the description in the Flathub wiki](https://github.com/flathub/flathub/wiki/App-Requirements#shared-modules) for more information.
 
 Please do not request adding modules unless they have many users in the Flathub repository.
