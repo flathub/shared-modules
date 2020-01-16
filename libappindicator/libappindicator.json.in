@@ -41,6 +41,7 @@
   ],
   "modules": [
     "../intltool/intltool-0.51.json",
+    "../dbus-glib/dbus-glib-0.110.json",
     {
       "name": "libdbusmenu",
       "build-options": {
