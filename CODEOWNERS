@@ -1,0 +1,10 @@
+# Fallback on Flathub admins for unowned shared modules
+*                  @flathub/reviewers
+
+/dbus-glib/        @TingPing
+/gtk2/             @TingPing
+/gudev/            @Erick555
+/intltool/         @TingPing
+/libappindicator/  @TingPing
+/libsecret/        @Lctrs
+/openjpeg/         @bochecha
