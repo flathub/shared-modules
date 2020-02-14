@@ -1,0 +1,14 @@
+name: auto PR
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: flathub/actions/shared-modules-auto-pr@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.FLATHUBBOT_TOKEN }}
