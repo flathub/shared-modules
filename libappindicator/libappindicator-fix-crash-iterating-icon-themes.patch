@@ -1,7 +1,5 @@
-diff --git a/libappindicator-12.10.0/src/app-indicator.c b/libappindicator-12.10.0/src/app-indicator.c
-index 2e98b48..715182d 100644
---- a/libappindicator-12.10.0/src/app-indicator.c
-+++ b/libappindicator-12.10.0/src/app-indicator.c
+--- libappindicator-12.10.0/src/app-indicator.c
++++ libappindicator-12.10.0/src/app-indicator.c
 @@ -1606,7 +1606,7 @@ status_icon_changes (AppIndicator * self, gpointer data)
  		gint n_elements, i;
  		gboolean found=FALSE;
