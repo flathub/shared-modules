@@ -68,7 +68,6 @@
     },
     {
       "name": "ibus-gtk2",
-      "no-make-install": true,
       "config-opts": [
         "--disable-xim",
         "--disable-dconf",
@@ -90,8 +89,8 @@
         "--disable-introspection",
         "--disable-python2"
       ],
-      "build-commands": [
-        "make -C client/gtk2 install"
+      "make-install-args": [
+        "-C", "client/gtk2"
       ],
       "post-install": [
         "gtk-query-immodules-2.0 > immodules.cache",
