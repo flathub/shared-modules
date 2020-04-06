@@ -68,7 +68,6 @@
     },
     {
       "name": "ibus-gtk2",
-      "no-make-install": true,
       "config-opts": [
         "--disable-xim",
         "--disable-dconf",
@@ -90,12 +89,12 @@
         "--disable-introspection",
         "--disable-python2"
       ],
-      "ensure-writable": [
-        "/lib/gtk-2.0/2.10.0/immodules.cache"
+      "make-install-args": [
+        "-C", "client/gtk2"
       ],
       "post-install": [
-        "install -m644 --target-directory=${FLATPAK_DEST}/lib/gtk-2.0/2.10.0/immodules client/gtk2/.libs/im-ibus.so",
-        "gtk-query-immodules-2.0 > ${FLATPAK_DEST}/lib/gtk-2.0/2.10.0/immodules.cache"
+        "gtk-query-immodules-2.0 > immodules.cache",
+        "install immodules.cache -t $(pkg-config --variable=libdir gtk+-2.0)/gtk-2.0/2.10.0/"
       ],
       "sources": [
         {
