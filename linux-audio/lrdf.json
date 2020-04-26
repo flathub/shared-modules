@@ -4,20 +4,6 @@
     "modules": [
         "ladspa.json",
         {
-            "name": "libxml2",
-            "config-opts": [
-                "--without-python",
-                "--disable-static"
-            ],
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://github.com/GNOME/libxml2/archive/v2.9.8.tar.gz",
-                    "sha256": "ff879b0d9142564bfe63df9753df936f05150afdd7bae07261f12d4dad33ba4a"
-                }
-            ]
-        },
-        {
             "name": "raptor2",
             "config-opts": [
                 "--disable-static"
