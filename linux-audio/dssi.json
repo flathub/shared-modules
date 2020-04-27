@@ -4,6 +4,13 @@
     "config-opts": [
         "--disable-static"
     ],
+    "cleanup": [
+      "/bin",
+      "/lib/dssi",
+      "/lib/pkgconfig",
+      "/share/man",
+      "*.la"
+    ],
     "sources": [
         {
             "type": "archive",
