@@ -6,6 +6,7 @@
     ],
     "cleanup": [
       "/bin",
+      "/include",
       "/lib/dssi",
       "/lib/pkgconfig",
       "/share/man",
