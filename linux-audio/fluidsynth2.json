@@ -4,6 +4,13 @@
     "config-opts": [
         "-DLIB_SUFFIX="
     ],
+    "cleanup": [
+        "/bin",
+        "/include",
+        "/lib/pkgconfig",
+        "/share/man",
+        "*.so"
+    ],
     "sources": [
         {
             "type": "archive",
