@@ -6,6 +6,9 @@
         "./waf build -j $FLATPAK_BUILDER_N_JOBS",
         "./waf install"
     ],
+    "cleanup": [
+        "/include"
+    ],
     "sources": [
         {
             "type": "archive",

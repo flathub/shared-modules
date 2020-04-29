@@ -1,11 +1,20 @@
 {
     "name": "lrdf",
     "rm-configure": true,
+    "cleanup": [
+        "/include",
+        "/lib/pkgconfig"
+    ],
     "modules": [
         "ladspa.json",
         {
             "name": "raptor2",
+            "cleanup": [
+                "/include",
+                "/lib/pkgconfig"
+            ],
             "config-opts": [
+                "--disable-documentation",
                 "--disable-static"
             ],
             "sources": [
