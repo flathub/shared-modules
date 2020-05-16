@@ -23,6 +23,14 @@ To update the submodule:
 git submodule update --remote --merge
 ```
 
+To remove the submodule:
+
+```
+git submodule deinit -f -- shared-modules
+rm -rf .git/modules/shared-modules
+git rm -f shared-modules
+```
+
 
 [See the description in the Flathub wiki](https://github.com/flathub/flathub/wiki/App-Requirements#shared-modules) for more information.
 
