@@ -29,6 +29,7 @@ To remove the submodule:
 git submodule deinit -f -- shared-modules
 rm -rf .git/modules/shared-modules
 git rm -f shared-modules
+rm .gitmodules
 ```
 
 
