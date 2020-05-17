@@ -57,6 +57,8 @@
     {
       "name": "arc-gtk2-theme",
       "// NOTE": "This is used by Solus and is popular",
+      "// FIXME": "This has a dependency on inkscape and my patch isn't quite good enough sadly",
+      "disabled": true,
       "config-opts": [
         "--disable-gnome-shell",
         "--disable-cinnamon",
