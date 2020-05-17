@@ -17,7 +17,7 @@ index 186a8f5cb2..f5c39b5afe 100644
 +  if (var)
 +    path = g_build_filename (var, "share", "themes", NULL);
 +  else
-+    path = g_build_filename ("/usr", "share", "themes", NULL);
++    path = g_build_filename ("/app", "share", "themes", NULL);
 +
 +  return path;
 +}
