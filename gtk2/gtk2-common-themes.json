@@ -37,10 +37,26 @@
       ]
     },
     {
+      "name": "gtk2-murrine-engine",
+      "// NOTE": "Used by Arc",
+      "cleanup": [
+        "*.la"
+      ],
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://download.gnome.org/sources/murrine/0.98/murrine-0.98.2.tar.xz",
+          "sha256": "e9c68ae001b9130d0f9d1b311e8121a94e5c134b82553ba03971088e57d12c89"
+        },
+        {
+          "type": "patch",
+          "path": "murrine-engine-fix-crash.patch"
+        }
+      ]
+    },
+    {
       "name": "arc-gtk2-theme",
       "// NOTE": "This is used by Solus and is popular",
-      "// FIXME": "Disabled because it depends on Inkscape at build time...",
-      "disabled": true,
       "config-opts": [
         "--disable-gnome-shell",
         "--disable-cinnamon",
@@ -48,7 +64,8 @@
         "--disable-metacity",
         "--disable-xfwm",
         "--disable-plank",
-        "--disable-openbox"
+        "--disable-openbox",
+        "--disable-unity"
       ],
       "sources": [
         {
@@ -57,8 +74,25 @@
           "sha256": "cd268b878d6ad7c81b7acc0f89b66e26ee9a9a92eafb03b792318d51707f1962"
         },
         {
+          "type": "patch",
+          "path": "arc-gtk2-theme-Replace-Inkscape-dependency-with-rsvg-convert.patch"
+        },
+        {
           "type": "shell",
           "commands": ["sed -i 's|\"$srcdir/configure\" $@||' autogen.sh"]
+        }
+      ],
+      "modules": [
+        {
+          "name": "optipng",
+          "cleanup": ["*"],
+          "sources": [
+            {
+              "type": "archive",
+              "url": "https://prdownloads.sourceforge.net/optipng/optipng-0.7.7.tar.gz",
+              "sha256": "4f32f233cef870b3f95d3ad6428bfe4224ef34908f1b42b0badf858216654452"
+            }
+          ]
         }
       ]
     },
