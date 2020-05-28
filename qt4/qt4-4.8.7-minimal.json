@@ -77,6 +77,10 @@
             "path": "disable-sslv3.patch"
         },
         {
+            "type": "patch",
+            "path": "fixgcc9.patch"
+        },
+        {
             "type": "shell",
             "commands": [
                 "sed -i \"s|-O2|${CXXFLAGS}|\" mkspecs/common/{g++,gcc}-base.conf",
