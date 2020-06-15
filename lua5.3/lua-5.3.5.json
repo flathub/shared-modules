@@ -3,7 +3,9 @@
     "buildsystem": "simple",
     "build-commands": [
         "make CFLAGS=\"$CFLAGS -fPIC -DLUA_COMPAT_5_2 -DLUA_COMPAT_5_1 -DLUA_USE_DLOPEN\" linux",
-        "make TO_LIB='liblua.so liblua.so.5.3 liblua.so.5.3.5' INSTALL_TOP=${FLATPAK_DEST} install",
+        "make TO_LIB=liblua.so.5.3.5 INSTALL_TOP=$FLATPAK_DEST install",
+        "ln -sf liblua.so.5.3.5 $FLATPAK_DEST/lib/liblua.so",
+        "ln -sf liblua.so.5.3.5 $FLATPAK_DEST/lib/liblua.so.5.3",
         "make INSTALL_TOP=${FLATPAK_DEST} pc > lua.pc",
         "cat lua.pc.in >> lua.pc",
         "install -Dm644 lua.pc $FLATPAK_DEST/lib/pkgconfig/lua.pc",
