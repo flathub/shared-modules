@@ -2,7 +2,7 @@
     "name": "lua-5.1",
     "buildsystem": "simple",
     "build-commands": [
-        "make -j $FLATPAK_BUILDER_N_JOBS CFLAGS=\"$CFLAGS -fPIC\" linux",
+        "make -j $FLATPAK_BUILDER_N_JOBS CFLAGS=\"$CFLAGS -fPIC -DLUA_USE_LINUX\" linux",
         "make INSTALL_TOP=$FLATPAK_DEST TO_LIB='liblua.a liblua.so.5.1.5' install",
         "ln -sf liblua.so.5.1.5 $FLATPAK_DEST/lib/liblua.so",
         "ln -sf liblua.so.5.1.5 $FLATPAK_DEST/lib/liblua.so.5.1",
