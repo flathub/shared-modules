@@ -2,14 +2,18 @@
         "name": "glew",
         "no-autogen": true,
         "make-args": [
-                "GLEW_PREFIX=/app",
-                "GLEW_DEST=/app",
-                "LIBDIR=/app/lib"
+                "GLEW_PREFIX=${FLATPAK_DEST}",
+                "GLEW_DEST=${FLATPAK_DEST}",
+                "LIBDIR=${FLATPAK_DEST}/lib",
+                "CFLAGS.EXTRA:=${CFLAGS} -fPIC",
+                "LDFLAGS.EXTRA=${LDFLAGS}"
         ],
         "make-install-args": [
-                "GLEW_PREFIX=/app",
-                "GLEW_DEST=/app",
-                "LIBDIR=/app/lib"
+                "GLEW_PREFIX=${FLATPAK_DEST}",
+                "GLEW_DEST=${FLATPAK_DEST}",
+                "LIBDIR=${FLATPAK_DEST}/lib",
+                "CFLAGS.EXTRA:=${CFLAGS} -fPIC",
+                "LDFLAGS.EXTRA=${LDFLAGS}"
         ],
         "sources": [
                 {
