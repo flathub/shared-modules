@@ -1,0 +1,22 @@
+{
+  "name": "libmac",
+  "buildsystem": "simple",
+  "build-commands": [
+    "make -f Source/Projects/NonWindows/Makefile prefix=/app all install"
+  ],
+  "cleanup": [
+    "/bin/mac"
+  ],
+  "sources": [
+    {
+        "type": "archive",
+        "url": "https://freac.org/patches/MAC_SDK_544.zip",
+        "sha256": "d5d2c2de4f64c61bc98c59a8691e47a6e2bb1beb3a3ae50d98bb0fdfdb91e480",
+        "strip-components": 0
+    },
+    {
+        "type": "patch",
+        "path": "mac-sdk-5.44-gcc.patch"
+    }
+  ]
+}

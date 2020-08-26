@@ -1,0 +1,291 @@
+diff -Naur mac-sdk-5.44/Makefile mac-sdk-5.44-gcc/Makefile
+--- mac-sdk-5.44/Makefile	1970-01-01 00:00:00 +0000
++++ mac-sdk-5.44-gcc/Makefile	2019-11-21 21:28:57 +0000
+@@ -0,0 +1,8 @@
++all:
++	$(MAKE) -f Source/Projects/NonWindows/Makefile
++
++install:
++	$(MAKE) -f Source/Projects/NonWindows/Makefile install
++
++clean:
++	$(MAKE) -f Source/Projects/NonWindows/Makefile clean
+diff -Naur mac-sdk-5.44/Shared/All.h mac-sdk-5.44-gcc/Shared/All.h
+--- mac-sdk-5.44/Shared/All.h	2020-04-24 13:08:43 +0000
++++ mac-sdk-5.44-gcc/Shared/All.h	2020-05-04 13:10:52 +0000
+@@ -117,46 +117,17 @@
+ #define ENABLE_COMPRESSION_MODE_HIGH
+ #define ENABLE_COMPRESSION_MODE_EXTRA_HIGH
+ 
+-// 64 bit platform
+-#ifdef PLATFORM_64BIT
+-    #ifndef PLATFORM_x64
+-        #define PLATFORM_x64
+-    #endif
+-#endif
+-
+-#if __x86_64__ || __aarch64__
+-    #ifndef PLATFORM_x64
+-        #define PLATFORM_x64
+-    #endif
+-#endif
+-
+ /*****************************************************************************************
+ Global types
+ *****************************************************************************************/
+ namespace APE
+ {
+     // integer types
+-#if defined(PLATFORM_x64)
+-    typedef int64_t                                     int64; // native integer, can safely hold a pointer
+     typedef int32_t                                     int32;
+-#else
+-    typedef intptr_t                                    int32; // native integer, can safely hold a pointer
+     typedef int64_t                                     int64;
+-#endif
+ 
+-#if defined(PLATFORM_x64)
+-// DO NOT CHANGE THE FOLLOWING 6 LINES! They are necessary for building Media Center 64 bit on non-windows platforms!
+-    #ifndef PLATFORM_WINDOWS
+-        typedef long long intn;
+-        typedef unsigned long long uintn;
+-    #else
+-        typedef int64_t intn;
+-        typedef uint64_t uintn;
+-    #endif    
+-#else
+-    typedef int32_t intn;
+-    typedef uint32_t uintn;
+-#endif
++    typedef intptr_t                                    intn; // native integer, can safely hold a pointer
++    typedef uintptr_t                                   uintn;
+ 
+     typedef uint64_t                                    uint64;
+     typedef uint32_t                                    uint32;
+@@ -210,10 +181,14 @@
+     #define TICK_COUNT_FREQ                             1000000
+     #undef    ASSERT
+     #define ASSERT(e)
++#endif
++
++#if !defined(PLATFORM_WINDOWS) || !defined(_MSC_VER)
+     #define wcsncpy_s(A, B, COUNT) wcsncpy(A, B, COUNT)
+     #define wcscpy_s(A, B, C) wcscpy(A, C)
+     #define wcscat_s(A, B, C) wcscat(A, C)
+-    #define sprintf_s(A, B, C, D) sprintf(A, C, D)
++    #define sprintf_s(A, B, C, ...) sprintf(A, C, __VA_ARGS__)
++    #define _stprintf_s(A, B, C, ...) _stprintf(A, C, __VA_ARGS__)
+     #define strcpy_s(A, B, C) strcpy(A, C)
+     #define _tcscat_s(A, B, C) _tcscat(A, C)
+ #endif
+diff -Naur mac-sdk-5.44/Shared/NoWindows.h mac-sdk-5.44-gcc/Shared/NoWindows.h
+--- mac-sdk-5.44/Shared/NoWindows.h	2020-06-18 15:34:55 +0000
++++ mac-sdk-5.44-gcc/Shared/NoWindows.h	2020-06-19 17:01:26 +0000
+@@ -48,7 +48,7 @@
+ #define _totlower towlower
+ #define _totupper towupper
+ #define _tcschr wcschr
+-#define _tcsicmp wcscasecmp
++#define _tcsicmp wcscmp
+ #define _tcscpy wcscpy
+ #define _tcslen wcslen
+ #define _tcsncpy wcsncpy
+diff -Naur mac-sdk-5.44/Source/Console/Console.cpp mac-sdk-5.44-gcc/Source/Console/Console.cpp
+--- mac-sdk-5.44/Source/Console/Console.cpp	2020-06-18 15:33:19 +0000
++++ mac-sdk-5.44-gcc/Source/Console/Console.cpp	2020-06-19 17:35:08 +0000
+@@ -23,17 +23,27 @@
+ #define UNDEFINED_MODE        -1
+ 
+ // use 8 bit character functions on non-Windows platforms
+-#ifndef PLATFORM_WINDOWS
++#ifdef PLATFORM_WINDOWS
++    #ifndef _MSC_VER
++        #define _tcscpy_s(dst, num, src) wcscpy(dst, src)
++        #define _tcsncpy_s(dst, num, src, count) wcsncpy(dst, src, count)
++    #endif
++#else
+     #define _tmain(argc, argv) main(argc, argv)
++    #define _tcscpy(dst, src) strcpy(dst, src)
+     #define _tcscpy_s(dst, num, src) strcpy(dst, src)
++    #define _tcsncpy(dst, src, count) strncpy(dst, src, count)
+     #define _tcsncpy_s(dst, num, src, count) strncpy(dst, src, count)
+     #define _tcsnicmp(str1, str2, count) strncasecmp(str1, str2, count)
++    #define _tcslen(str) strlen(str)
++    #define _tcsstr(str1, str2) strstr(str1, str2)
+     #define _ftprintf fprintf
+     #define _ttoi(str) atoi(str)
+     #ifdef _T
+       #undef _T
+     #endif
+     #define TCHAR char
++    #define LPCTSTR const char *
+     #define _T(x) x
+ #endif
+ 
+@@ -347,7 +357,22 @@
+                     TCHAR cRight[256];
+                     _tcscpy(cRight, &pEqual[1]);
+ 
+-                    pTag->SetFieldString(cLeft, cRight);
++                    CSmartPtr<wchar_t> spLeft; CSmartPtr<wchar_t> spRight;
++
++                    #ifdef PLATFORM_WINDOWS
++                        #ifdef _UNICODE
++                            spLeft.Assign(cLeft, TRUE, FALSE);
++                            spRight.Assign(cRight, TRUE, FALSE);
++                        #else
++                            spLeft.Assign(CAPECharacterHelper::GetUTF16FromANSI(cLeft), TRUE);
++                            spRight.Assign(CAPECharacterHelper::GetUTF16FromANSI(cRight), TRUE);
++                        #endif
++                    #else
++                        spLeft.Assign(CAPECharacterHelper::GetUTF16FromUTF8((str_utf8*) cLeft), TRUE);
++                        spRight.Assign(CAPECharacterHelper::GetUTF16FromUTF8((str_utf8*) cRight), TRUE);
++                    #endif
++
++                    pTag->SetFieldString(spLeft, spRight);
+                 }
+ 
+                 delete [] pParameter;
+diff -Naur mac-sdk-5.44/Source/MACLib/APEInfo.cpp mac-sdk-5.44-gcc/Source/MACLib/APEInfo.cpp
+--- mac-sdk-5.44/Source/MACLib/APEInfo.cpp	2020-04-13 22:37:20 +0000
++++ mac-sdk-5.44-gcc/Source/MACLib/APEInfo.cpp	2020-05-04 13:15:05 +0000
+@@ -15,7 +15,7 @@
+ /*****************************************************************************************
+ Construction
+ *****************************************************************************************/
+-CAPEInfo::CAPEInfo(int * pErrorCode, const wchar_t * pFilename, CAPETag * pTag, bool bAPL)
++CAPEInfo::CAPEInfo(int * pErrorCode, const wchar_t * pFilename, CAPETag * pTag, bool bAPL, bool bReadOnly)
+ {
+     *pErrorCode = ERROR_SUCCESS;
+     CloseFile();
+@@ -26,7 +26,7 @@
+     // open the file
+     m_spIO.Assign(new IO_CLASS_NAME);
+     
+-    if (m_spIO->Open(pFilename) != 0)
++    if (m_spIO->Open(pFilename, bReadOnly) != 0)
+     {
+         CloseFile();
+         *pErrorCode = ERROR_INVALID_INPUT_FILE;
+diff -Naur mac-sdk-5.44/Source/MACLib/APEInfo.h mac-sdk-5.44-gcc/Source/MACLib/APEInfo.h
+--- mac-sdk-5.44/Source/MACLib/APEInfo.h	2020-06-09 18:21:40 +0000
++++ mac-sdk-5.44-gcc/Source/MACLib/APEInfo.h	2020-06-13 16:06:24 +0000
+@@ -75,7 +75,7 @@
+ public:
+     
+     // construction and destruction
+-    CAPEInfo(int * pErrorCode, const wchar_t * pFilename, CAPETag * pTag = NULL, bool bAPL = false);
++    CAPEInfo(int * pErrorCode, const wchar_t * pFilename, CAPETag * pTag = NULL, bool bAPL = false, bool bReadOnly = false);
+     CAPEInfo(int * pErrorCode, APE::CIO * pIO, CAPETag * pTag = NULL);
+     virtual ~CAPEInfo();
+ 
+diff -Naur mac-sdk-5.44/Source/MACLib/MACLib.cpp mac-sdk-5.44-gcc/Source/MACLib/MACLib.cpp
+--- mac-sdk-5.44/Source/MACLib/MACLib.cpp	2020-04-24 13:17:55 +0000
++++ mac-sdk-5.44-gcc/Source/MACLib/MACLib.cpp	2020-05-04 13:13:59 +0000
+@@ -94,7 +94,7 @@
+     else if (StringIsEqual(pExtension, L".mac", false) || StringIsEqual(pExtension, L".ape", false))
+     {
+         // plain .ape file
+-        pAPEInfo = new CAPEInfo(&nErrorCode, pFilename);
++        pAPEInfo = new CAPEInfo(&nErrorCode, pFilename, NULL, false, true);
+     }
+ 
+     // fail if we couldn't get the file information
+diff -Naur mac-sdk-5.44/Source/Projects/NonWindows/Makefile mac-sdk-5.44-gcc/Source/Projects/NonWindows/Makefile
+--- mac-sdk-5.44/Source/Projects/NonWindows/Makefile	2020-04-24 21:09:10 +0000
++++ mac-sdk-5.44-gcc/Source/Projects/NonWindows/Makefile	2020-06-18 19:16:27 +0000
+@@ -85,7 +85,7 @@
+ 	$(CC) $(SHAREDOBJECTS) $(LIBOBJECTS) $(DLLOBJECTS) $(LDOPTS) $(LDFLAGS) $(DLLLDOPTS) -o $@
+ 
+ $(CMDNAME): $(DLLNAME) $(CMDOBJECTS)
+-	$(CC) $(SHAREDOBJECTS) $(CMDOBJECTS) $(DLLNAME) $(LDOPTS) $(LDFLAGS) $(CMDLDOPTS) -o $@
++	$(CC) $(SHAREDOBJECTS) $(LIBOBJECTS) $(CMDOBJECTS) $(LDOPTS) $(LDFLAGS) $(CMDLDOPTS) -o $@
+ 
+ Source/Shared/%.o: Source/Shared/%.cpp
+ 	$(CXX) $(CXXOPTS) $(CXXFLAGS) $< -o $@
+diff -Naur mac-sdk-5.44/Source/Shared/All.h mac-sdk-5.44-gcc/Source/Shared/All.h
+--- mac-sdk-5.44/Source/Shared/All.h	2020-04-24 13:08:43 +0000
++++ mac-sdk-5.44-gcc/Source/Shared/All.h	2020-05-04 13:10:52 +0000
+@@ -117,46 +117,17 @@
+ #define ENABLE_COMPRESSION_MODE_HIGH
+ #define ENABLE_COMPRESSION_MODE_EXTRA_HIGH
+ 
+-// 64 bit platform
+-#ifdef PLATFORM_64BIT
+-    #ifndef PLATFORM_x64
+-        #define PLATFORM_x64
+-    #endif
+-#endif
+-
+-#if __x86_64__ || __aarch64__
+-    #ifndef PLATFORM_x64
+-        #define PLATFORM_x64
+-    #endif
+-#endif
+-
+ /*****************************************************************************************
+ Global types
+ *****************************************************************************************/
+ namespace APE
+ {
+     // integer types
+-#if defined(PLATFORM_x64)
+-    typedef int64_t                                     int64; // native integer, can safely hold a pointer
+     typedef int32_t                                     int32;
+-#else
+-    typedef intptr_t                                    int32; // native integer, can safely hold a pointer
+     typedef int64_t                                     int64;
+-#endif
+ 
+-#if defined(PLATFORM_x64)
+-// DO NOT CHANGE THE FOLLOWING 6 LINES! They are necessary for building Media Center 64 bit on non-windows platforms!
+-    #ifndef PLATFORM_WINDOWS
+-        typedef long long intn;
+-        typedef unsigned long long uintn;
+-    #else
+-        typedef int64_t intn;
+-        typedef uint64_t uintn;
+-    #endif    
+-#else
+-    typedef int32_t intn;
+-    typedef uint32_t uintn;
+-#endif
++    typedef intptr_t                                    intn; // native integer, can safely hold a pointer
++    typedef uintptr_t                                   uintn;
+ 
+     typedef uint64_t                                    uint64;
+     typedef uint32_t                                    uint32;
+@@ -210,10 +181,14 @@
+     #define TICK_COUNT_FREQ                             1000000
+     #undef    ASSERT
+     #define ASSERT(e)
++#endif
++
++#if !defined(PLATFORM_WINDOWS) || !defined(_MSC_VER)
+     #define wcsncpy_s(A, B, COUNT) wcsncpy(A, B, COUNT)
+     #define wcscpy_s(A, B, C) wcscpy(A, C)
+     #define wcscat_s(A, B, C) wcscat(A, C)
+-    #define sprintf_s(A, B, C, D) sprintf(A, C, D)
++    #define sprintf_s(A, B, C, ...) sprintf(A, C, __VA_ARGS__)
++    #define _stprintf_s(A, B, C, ...) _stprintf(A, C, __VA_ARGS__)
+     #define strcpy_s(A, B, C) strcpy(A, C)
+     #define _tcscat_s(A, B, C) _tcscat(A, C)
+ #endif
+diff -Naur mac-sdk-5.44/Source/Shared/NoWindows.h mac-sdk-5.44-gcc/Source/Shared/NoWindows.h
+--- mac-sdk-5.44/Source/Shared/NoWindows.h	2020-06-18 15:34:55 +0000
++++ mac-sdk-5.44-gcc/Source/Shared/NoWindows.h	2020-06-19 17:01:26 +0000
+@@ -48,7 +48,7 @@
+ #define _totlower towlower
+ #define _totupper towupper
+ #define _tcschr wcschr
+-#define _tcsicmp wcscasecmp
++#define _tcsicmp wcscmp
+ #define _tcscpy wcscpy
+ #define _tcslen wcslen
+ #define _tcsncpy wcsncpy
+diff -Naur mac-sdk-5.44/configure mac-sdk-5.44-gcc/configure
+--- mac-sdk-5.44/configure	1970-01-01 00:00:00 +0000
++++ mac-sdk-5.44-gcc/configure	2019-11-21 21:28:57 +0000
+@@ -0,0 +1 @@
++#!/bin/sh
+
