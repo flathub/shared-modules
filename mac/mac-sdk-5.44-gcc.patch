@@ -288,4 +288,3 @@ diff -Naur mac-sdk-5.44/configure mac-sdk-5.44-gcc/configure
 +++ mac-sdk-5.44-gcc/configure	2019-11-21 21:28:57 +0000
 @@ -0,0 +1 @@
 +#!/bin/sh
-
