@@ -38,6 +38,7 @@
     },
     {
       "name": "gtk2-murrine-engine",
+      "rm-configure": true,
       "// NOTE": "Used by Arc",
       "cleanup": [
         "*.la"
@@ -51,6 +52,10 @@
         {
           "type": "patch",
           "path": "murrine-engine-fix-crash.patch"
+        },
+        {
+          "type": "script",
+          "commands": ["autoreconf -si"]
         }
       ]
     },
