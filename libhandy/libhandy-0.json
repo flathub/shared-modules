@@ -1,0 +1,18 @@
+{
+    "name" : "libhandy-0",
+    "buildsystem" : "meson",
+    "config-opts" : [
+        "-Dexamples=false",
+        "-Dglade_catalog=disabled",
+        "-Dintrospection=disabled",
+        "-Dtests=false",
+        "-Dvapi=false"
+    ],
+    "sources" : [
+        {
+            "type": "archive",
+            "url": "https://gitlab.gnome.org/GNOME/libhandy/-/archive/v0.0.13/libhandy-v0.0.13.tar.gz",
+            "sha256": "645355a009f23f254eaec7752b9489c3c2f5832397fcec75433a7e00efbfe52f"
+        }
+    ]
+}
