@@ -55,7 +55,10 @@
         },
         {
           "type": "script",
-          "commands": ["autoreconf -si"]
+          "commands": [
+            "rm config.guess",
+            "autoreconf -si"
+          ]
         }
       ]
     },
