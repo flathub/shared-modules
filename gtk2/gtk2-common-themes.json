@@ -39,7 +39,7 @@
     {
       "name": "gtk2-murrine-engine",
       "rm-configure": true,
-      "// NOTE": "Used by Arc",
+      "// NOTE": "Used by Arc and CrosAdapta",
       "cleanup": [
         "*.la"
       ],
@@ -56,6 +56,22 @@
         {
           "type": "script",
           "commands": ["autoreconf -si"]
+        }
+      ]
+    },
+    {
+      "name": "cros-adapta-gtk2-theme",
+      "// NOTE": "This is used by Chrome OS",
+      "buildsystem": "simple",
+      "build-commands": [
+        "install -Dm644 index.theme ${FLATPAK_DEST}/share/themes/CrosAdapta/index.theme",
+        "cp -r gtk-2.0 ${FLATPAK_DEST}/share/themes/CrosAdapta"
+      ],
+      "sources": [
+        {
+          "type": "git",
+          "url": "https://chromium.googlesource.com/chromiumos/third_party/cros-adapta",
+          "commit": "eb6d8c1832b9181926df107faf41a80887fd982c"
         }
       ]
     },
