@@ -57,8 +57,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://download.gnome.org/sources/gtk+/2.24/gtk+-2.24.32.tar.xz",
-          "sha256": "b6c8a93ddda5eabe3bfee1eb39636c9a03d2a56c7b62828b359bf197943c582e"
+          "url": "https://download.gnome.org/sources/gtk+/2.24/gtk+-2.24.33.tar.xz",
+          "sha256": "ac2ac757f5942d318a311a54b0c80b5ef295f299c2a73c632f6bfb1ff49cc6da"
         },
         {
           "type": "patch",
