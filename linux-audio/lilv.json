@@ -18,8 +18,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://download.drobilla.net/serd-0.30.2.tar.bz2",
-          "sha256": "9d3102701172804f823f2215ca3147c50eba992641f9fbe014272355f4937202"
+          "url": "https://download.drobilla.net/serd-0.30.10.tar.bz2",
+          "sha256": "affa80deec78921f86335e6fc3f18b80aefecf424f6a5755e9f2fa0eb0710edf"
         }
       ],
       "post-install": [
@@ -43,8 +43,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://download.drobilla.net/sord-0.16.4.tar.bz2",
-          "sha256": "b15998f4e7ad958201346009477d6696e90ee5d3e9aff25e7e9be074372690d7"
+          "url": "https://download.drobilla.net/sord-0.16.8.tar.bz2",
+          "sha256": "7c289d2eaabf82fa6ac219107ce632d704672dcfb966e1a7ff0bbc4ce93f5e14"
         }
       ],
       "post-install": [
@@ -72,8 +72,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://download.drobilla.net/sratom-0.6.4.tar.bz2",
-          "sha256": "146c8f14b8902ac3c8fa8c2e0a014eb8a38fab60090c5adbfbff3e3b7c5c006e"
+          "url": "https://download.drobilla.net/sratom-0.6.8.tar.bz2",
+          "sha256": "3acb32b1adc5a2b7facdade2e0818bcd6c71f23f84a1ebc17815bb7a0d2d02df"
         }
       ],
       "post-install": [
@@ -84,8 +84,8 @@
   "sources": [
     {
       "type": "archive",
-      "url": "https://download.drobilla.net/lilv-0.24.6.tar.bz2",
-      "sha256": "5f544cf79656e0782a03a2cc7ab1d31a93f36d71d4187bd427ade8d7b55370dc"
+      "url": "https://download.drobilla.net/lilv-0.24.12.tar.bz2",
+      "sha256": "26a37790890c9c1f838203b47f5b2320334fe92c02a4d26ebbe2669dbd769061"
     }
   ],
   "post-install": [
