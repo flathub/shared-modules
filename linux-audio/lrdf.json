@@ -3,7 +3,11 @@
     "rm-configure": true,
     "cleanup": [
         "/include",
-        "/lib/pkgconfig"
+        "/lib/pkgconfig",
+        "*.so"
+    ],
+    "config-opts": [
+        "--disable-static"
     ],
     "modules": [
         "ladspa.json",
@@ -11,7 +15,9 @@
             "name": "raptor2",
             "cleanup": [
                 "/include",
-                "/lib/pkgconfig"
+                "/lib/pkgconfig",
+                "/share/gtk-doc",
+                "*.so"
             ],
             "config-opts": [
                 "--disable-documentation",
