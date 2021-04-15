@@ -8,6 +8,8 @@
     ],
     "cleanup": [
         "/include",
+        "/lib/jack",
+        "/lib/libjack*",
         "/lib/pkgconfig",
         "/share/man"
     ],
