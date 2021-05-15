@@ -1,5 +1,9 @@
 {
   "name" : "libmad",
+  "post-install": [
+    "install -d $FLATPAK_DEST/lib/pkgconfig",
+    "install -Dm644 -t $FLATPAK_DEST/lib/pkgconfig mad.pc"
+  ],
   "sources" : [
     {
       "type" : "archive",
@@ -29,6 +33,10 @@
     {
       "type": "patch",
       "path": "libmad-0.15.1b-cflags-O2.patch"
+    },
+    {
+      "type": "file",
+      "path": "mad.pc"
     },
     {
       "type": "shell",
