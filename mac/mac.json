@@ -2,7 +2,8 @@
   "name": "libmac",
   "buildsystem": "simple",
   "build-commands": [
-    "make -f Source/Projects/NonWindows/Makefile prefix=/app all install"
+    "make -f Source/Projects/NonWindows/Makefile -j $FLATPAK_BUILDER_N_JOBS",
+    "make -f Source/Projects/NonWindows/Makefile prefix=/app install"
   ],
   "cleanup": [
     "/include/MAC"
