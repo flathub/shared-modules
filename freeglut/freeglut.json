@@ -1,0 +1,31 @@
+{
+    "name": "freeglut",
+    "buildsystem": "cmake",
+    "build-options": {
+        "cflags": "-fcommon"
+    },
+    "config-opts": [
+        "-DFREEGLUT_BUILD_STATIC_LIBS=OFF",
+        "-DCMAKE_BUILD_TYPE=None"
+    ],
+    "sources": [
+        {
+            "type": "archive",
+            "url": "https://downloads.sourceforge.net/freeglut/freeglut-3.2.1.tar.gz",
+            "sha256": "d4000e02102acaf259998c870e25214739d1f16f67f99cb35e4f46841399da68",
+            "x-checker-data": {
+                "type": "anitya",
+                "project-id": "846",
+                "url-template": "https://downloads.sourceforge.net/freeglut/freeglut-$version.tar.gz"
+            }
+        }
+    ],
+    "cleanup": [
+        "/include",
+        "/lib/cmake",
+        "/lib/pkgconfig"
+    ],
+    "modules": [
+        "../glu/glu-9.json"
+    ]
+}
