@@ -1,0 +1,43 @@
+{
+    "name": "pyqt5-webengine",
+    "build-options": {
+        "env": [
+            "QMAKEPATH=/app/lib"
+        ]
+    },
+    "config-opts": [
+        "--concatenate",
+        "--no-dist-info",
+        "--no-docstrings",
+        "--no-qsci-api",
+        "--no-sip-files",
+        "--verbose",
+        "QMAKE_CFLAGS_RELEASE='-I/usr/include/python3.8/'",
+        "QMAKE_CXXFLAGS_RELEASE='-I/usr/include/python3.8/'",
+        "QMAKE_INCDIR+=/app/include/QtWebEngine",
+        "QMAKE_INCDIR+=/app/include/QtWebEngineCore",
+        "QMAKE_INCDIR+=/app/include/QtWebEngineWidgets"
+    ],
+    "sources": [
+        {
+            "type": "archive",
+            "url": "https://pypi.python.org/packages/source/P/PyQtWebEngine/PyQtWebEngine-5.15.4.tar.gz",
+            "sha256": "cedc28f54165f4b8067652145aec7f732a17eadf6736835852868cf76119cc19",
+            "x-checker-data": {
+                "type": "pypi",
+                "name": "PyQtWebEngine"
+            }
+        },
+        {
+            "type": "script",
+            "commands": [
+                "processed=`sed -e 's|prefix|sysroot|' <<< $@`",
+                "python3 configure.py $processed"
+            ],
+            "dest-filename": "configure"
+        }
+    ],
+    "modules": [
+        "pyqt5.json"
+    ]
+}
