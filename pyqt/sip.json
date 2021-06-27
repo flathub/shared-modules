@@ -1,32 +1,78 @@
 {
-    "name": "sip4",
-    "config-opts": [
-        "--no-dist-info",
-        "--no-stubs",
-        "--bindir=/app/bin",
-        "--destdir=/app/lib/python3.8/site-packages",
-        "--incdir=/app/include",
-        "--pyidir=/app/lib/python3.8/site-packages",
-        "--sipdir=/app/share/sip",
-        "--sip-module PyQt5.sip"
+    "name": "sip",
+    "buildsystem": "simple",
+    "build-commands": [
+        "python setup.py build",
+        "python setup.py install --skip-build --prefix=/app --root=/ --optimize=1"
     ],
     "sources": [
         {
             "type": "archive",
-            "url": "https://www.riverbankcomputing.com/static/Downloads/sip/4.19.25/sip-4.19.25.tar.gz",
-            "sha256": "b39d93e937647807bac23579edbff25fe46d16213f708370072574ab1f1b4211"
-        },
-        {
-            "type": "script",
-            "commands": [
-                "processed=`sed -e 's|--prefix=/app||' <<< $@`",
-                "python3 configure.py $processed"
-            ],
-            "dest-filename": "configure"
+            "url": "https://files.pythonhosted.org/packages/f8/b2/fcd5e964eefce0737512fb4ea263308769c671c3b1b9b1e380a5008ffef0/sip-6.1.1.tar.gz",
+            "sha256": "52d25af2fcd764c4e15cc9cd1350bdb0e63f52dfa2aa3c5e7679af7fde9f7e20",
+            "x-checker-data": {
+                "type": "pypi",
+                "name": "sip"
+            }
         }
     ],
     "cleanup": [
-        "/bin",
-        "/include"
+        "/bin"
+    ],
+    "modules": [
+        {
+            "name": "python-pyparsing",
+            "buildsystem": "simple",
+            "build-commands": [
+                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pyparsing\" --no-build-isolation"
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/c1/47/dfc9c342c9842bbe0036c7f763d2d6686bcf5eb1808ba3e170afdb282210/pyparsing-2.4.7.tar.gz",
+                    "sha256": "c203ec8783bf771a155b207279b9bccb8dea02d8f0c9e5f8ead507bc3246ecc1",
+                    "x-checker-data": {
+                        "type": "pypi",
+                        "name": "pyparsing"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "python-packaging",
+            "buildsystem": "simple",
+            "build-commands": [
+                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"packaging\" --no-build-isolation"
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/86/3c/bcd09ec5df7123abcf695009221a52f90438d877a2f1499453c6938f5728/packaging-20.9.tar.gz",
+                    "sha256": "5b327ac1320dc863dca72f4514ecc086f31186744b84a230374cc1fd776feae5",
+                    "x-checker-data": {
+                        "type": "pypi",
+                        "name": "packaging"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "python-toml",
+            "buildsystem": "simple",
+            "build-commands": [
+                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"toml\" --no-build-isolation"
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/be/ba/1f744cdc819428fc6b5084ec34d9b30660f6f9daaf70eead706e3203ec3c/toml-0.10.2.tar.gz",
+                    "sha256": "b3bda1d108d5dd99f4a20d24d9c348e91c4db7ab1b749200bded2f839ccbe68f",
+                    "x-checker-data": {
+                        "type": "pypi",
+                        "name": "toml"
+                    }
+                }
+            ]
+        }
     ]
 }
