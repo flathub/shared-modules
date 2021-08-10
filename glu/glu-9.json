@@ -4,8 +4,8 @@
   "sources": [
     {
       "type": "archive",
-      "url": "https://gitlab.freedesktop.org/mesa/glu/-/archive/glu-9.0.2/glu-glu-9.0.2.tar.bz2",
-      "sha256": "67f446cbbb9787f8392b03c111638974c5e50c969849720fff950b7bafbf54bd"
+      "url": "https://mesa.freedesktop.org/archive/glu/glu-9.0.1.tar.xz",
+      "sha256": "6e7280ff585c6a1d9dfcdf2fca489251634b3377bfc33c29e4002466a38d02d4"
     }
   ],
   "cleanup": [ "/include", "/lib/*.a", "/lib/*.la", "/lib/pkgconfig" ]
