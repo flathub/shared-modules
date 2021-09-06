@@ -13,6 +13,12 @@
             "sha256": "1276ea797dd9fde8a12dd3f33f180153922544c28ca9fc7b477c018876be1916"
         },
         {
+            "type": "shell",
+            "commands": [
+                "sed -i '/^## libtool.m4/,/^#####/d' acinclude.m4"
+            ]
+        },
+        {
             "type": "script",
             "dest-filename": "autogen.sh",
             "commands": [
