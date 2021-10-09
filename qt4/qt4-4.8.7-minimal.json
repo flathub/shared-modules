@@ -81,6 +81,10 @@
             "path": "fixgcc9.patch"
         },
         {
+            "type": "patch",
+            "path": "fixgcc11.patch"
+        },
+        {
             "type": "shell",
             "commands": [
                 "sed -i \"s|-O2|${CXXFLAGS}|\" mkspecs/common/{g++,gcc}-base.conf",
