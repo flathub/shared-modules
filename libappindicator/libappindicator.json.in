@@ -1,7 +1,8 @@
 {
   "name": "libappindicator",
   "build-options": {
-    "cflags": "-Wno-error"
+    "cflags": "-Wno-error",
+    "make-args": [ "-j1" ]
   },
   "rm-configure": true,
   "config-opts": [
@@ -49,7 +50,7 @@
   ],
   "modules": [
     "../intltool/intltool-0.51.json",
-    "../dbus-glib/dbus-glib-0.110.json",
+    "../dbus-glib/dbus-glib.json",
     {
       "name": "libdbusmenu",
       "build-options": {

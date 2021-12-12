@@ -3,8 +3,8 @@
     "sources": [
         {
             "type": "archive",
-            "url": "https://files.pythonhosted.org/packages/b2/6b/c510f0853765eb2219ca5aa3d416d65bb0dea7cd9bb2984aea0a0e04c24d/pygame-1.9.4.tar.gz",
-            "sha256": "700d1781c999af25d11bfd1f3e158ebb660f72ebccb2040ecafe5069d0b2c0b6"
+            "url": "https://files.pythonhosted.org/packages/0f/9c/78626be04e193c0624842090fe5555b3805c050dfaa81c8094d6441db2be/pygame-1.9.6.tar.gz",
+            "sha256": "301c6428c0880ecd4a9e3951b80e539c33863b6ff356a443db1758de4f297957"
         }
     ],
     "buildsystem": "simple",
@@ -78,8 +78,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://downloads.sourceforge.net/project/fluidsynth/fluidsynth-1.1.6/fluidsynth-1.1.6.tar.bz2",
-                    "sha256": "d28b47dfbf7f8e426902ae7fa2981d821fbf84f41da9e1b85be933d2d748f601"
+                    "url": "https://github.com/FluidSynth/fluidsynth/archive/refs/tags/v1.1.11.tar.gz",
+                    "sha256": "da8878ff374d12392eecf87e96bad8711b8e76a154c25a571dd8614d1af80de8"
                 },
                 {
                     "type": "patch",
