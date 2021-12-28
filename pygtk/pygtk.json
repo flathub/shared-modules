@@ -20,12 +20,26 @@
       ]
     }
   ],
+  "cleanup": [
+    "/bin",
+    "/include/pygtk-2.0",
+    "*.la",
+    "/lib/pkgconfig",
+    "/lib/pygtk",
+    "/share/gtk-doc",
+    "/share/pygtk"
+  ],
   "modules": [
     {
       "name": "python2-pycairo",
       "buildsystem": "meson",
       "config-opts": [
         "-Dpython=python2"
+      ],
+      "cleanup": [
+        "/include/pycairo",
+        "/lib/pkgconfig",
+        "/lib/python2.7/site-packages/cairo/include"
       ],
       "sources": [
         {
@@ -41,7 +55,12 @@
         "--disable-glibtest"
       ],
       "cleanup": [
-        "/bin"
+        "/bin",
+        "/include/pygtk-2.0",
+        "*.la",
+        "/lib/pkgconfig",
+        "/share/gtk-doc",
+        "/share/pygobject"
       ],
       "sources": [
         {
@@ -55,7 +74,13 @@
       "name": "libglade",
       "rm-configure": true,
       "cleanup": [
-        "/bin"
+        "/bin",
+        "/include/libglade-2.0",
+        "*.a",
+        "*.la",
+        "/lib/pkgconfig",
+        "/share/gtk-doc",
+        "/share/xml/libglade"
       ],
       "sources": [
         {
