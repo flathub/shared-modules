@@ -1,6 +1,9 @@
 {
     "name": "vorbisgain",
     "buildsystem": "autotools",
+    "cleanup": [
+        "/man"
+    ],
     "sources": [
         {
             "type": "archive",
