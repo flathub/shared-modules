@@ -1,0 +1,16 @@
+#!/bin/bash
+echo "opts: $@"
+export PATH=${BUILD_PYQT_PATH}/bin:${PATH}
+
+PY_VER=python$(python3 -c 'import sys; print(sys.version[:3])')
+export PYTHONPATH=${BUILD_PYQT_PATH}/lib/${PY_VER}/site-packages
+
+sip-install \
+  --target-dir ${FLATPAK_DEST}/lib/${PY_VER}/site-packages \
+  --scripts-dir ${FLATPAK_DEST}/bin \
+  --jobs ${FLATPAK_BUILDER_N_JOBS} \
+  --build-dir ./build \
+  --concatenate 1 \
+  --no-docstrings \
+  --debug \
+  --verbose $@

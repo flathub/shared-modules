@@ -1,0 +1,14 @@
+{
+    "name": "python3-PyQt5-sip",
+    "buildsystem": "simple",
+    "build-commands": [
+        "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"PyQt5-sip\" --no-build-isolation"
+    ],
+    "sources": [
+        {
+            "type": "file",
+            "url": "https://files.pythonhosted.org/packages/c0/86/6b60c6a1b1d10524ed50fc4c6a2989492512bd46292a711318a53b243774/PyQt5_sip-12.9.1.tar.gz",
+            "sha256": "2f24f299b44c511c23796aafbbb581bfdebf78d0905657b7cee2141b4982030e"
+        }
+    ]
+}
