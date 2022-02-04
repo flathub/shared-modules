@@ -47,3 +47,8 @@ modules:
 
 
 
+## pyqtwebengine.yml
+
+Depends on `pyqt5.yml` and [io.qt.qtwebengine.BaseApp](https://github.com/flathub/io.qt.qtwebengine.BaseApp)
+
+Add BaseApp and `shared-modules/pyqt5/pyqtwebengine.yml` to use, and need to add `pyqt5.yml` before this
