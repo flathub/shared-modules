@@ -17,7 +17,7 @@
         {
             "type": "archive",
             "url": "https://www.lua.org/ftp/lua-5.4.4.tar.gz",
-            "sha256": "2ff89bbea22a7c8b910d6b006f5ba4559edcf468a25537cedf9988ed90f6b450"
+            "sha256": "164c7849653b80ae67bec4b7473b884bf5cc8d2dca05653475ec2ed27b9ebf61"
         },
         {
             "type": "patch",
