@@ -2,7 +2,7 @@
         "name": "boost",
         "buildsystem": "simple",
         "build-commands": [
-            "./bootstrap.sh --prefix=${FLATPAK_DEST} --with-libraries=locale,filesystem,system,date_time,regex,program_options",
+            "./bootstrap.sh --prefix=${FLATPAK_DEST} --with-toolset=gcc --with-libraries=all",
             "./b2  variant=release -j $FLATPAK_BUILDER_N_JOBS install"
         ],
         "sources": [
