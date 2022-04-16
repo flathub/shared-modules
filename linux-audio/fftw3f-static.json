@@ -7,9 +7,7 @@
     "--enable-float"
   ],
   "build-options": {
-    "env": {
-      "CFLAGS": "-fPIC"
-    },
+    "cflags": "-fPIC",
     "arch": {
       "x86_64": {
         "config-opts": [

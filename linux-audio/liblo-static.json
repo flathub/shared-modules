@@ -9,9 +9,7 @@
     "*.so"
   ],
   "build-options": {
-    "env": {
-      "CFLAGS": "-fPIC"
-    }
+    "cflags": "-fPIC"
   },
   "config-opts": [
     "--enable-static",
