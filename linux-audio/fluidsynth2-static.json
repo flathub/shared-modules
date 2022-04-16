@@ -2,10 +2,8 @@
   "name": "fluidsynth",
   "buildsystem": "cmake-ninja",
   "build-options": {
-    "env": {
-      "CFLAGS": "-fPIC",
-      "CXXFLAGS": "-fPIC"
-    }
+    "cflags": "-fPIC",
+    "cxxflags": "-fPIC"
   },
   "config-opts": [
     "-DLIB_SUFFIX=",
