@@ -14,12 +14,12 @@
         {
             "type": "git",
             "url": "https://github.com/coelckers/gzdoom.git",
-            "tag": "g4.7.1",
-            "commit": "107ff702423686414680d6458fea63a2647692c4"
+            "tag": "g4.8.0",
+            "commit": "08e46766ad442037a0129362b0e7ae7bcd1e8080"
         },
         {
             "type": "file",
-            "url": "https://github.com/coelckers/gzdoom/raw/g4.7.1/soundfont/gzdoom.sf2",
+            "url": "https://github.com/coelckers/gzdoom/raw/g4.8.0/soundfont/gzdoom.sf2",
             "sha256": "fca3e514b635a21789d4224e84865d2954a2a914d46b64aa8219ddb565c44869"
         },
         /* I've discussed these patches upstream and a special -DFLATPAK_BUNDLE has been approved */
@@ -41,8 +41,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/coelckers/ZMusic/archive/1.1.8.tar.gz",
-                    "sha256": "73082f661b7b0bb33348d1d186c132deec9132a1613480348a00172b49c9fd68"
+                    "url": "https://github.com/coelckers/ZMusic/archive/1.1.9.tar.gz",
+                    "sha256": "4bf39917028bbe2f382748b4400a1cbaeb8975157fe404cff53411297d6ac68c"
                 }
             ]
         }
