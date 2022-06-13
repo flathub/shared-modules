@@ -1,5 +1,8 @@
 {
     "name": "clutter-gtk",
+    "cleanup": [
+        "/share/gtk-doc"
+    ],
     "sources": [
         {
             "type": "archive",
@@ -12,8 +15,13 @@
             "name": "cogl",
             "config-opts": [
                 "--disable-cogl-gst",
+                "--disable-gtk-doc",
                 "--enable-xlib-egl-platform",
                 "--enable-wayland-egl-platform"
+            ],
+            "cleanup": [
+                "/share/gtk-doc",
+                "/share/cogl/examples-data"
             ],
             "sources": [
                 {
@@ -26,8 +34,12 @@
         {
             "name": "clutter",
             "config-opts": [
+                "--disable-gtk-doc",
                 "--enable-egl-backend",
                 "--enable-wayland-backend"
+            ],
+            "cleanup": [
+                "/share/gtk-doc"
             ],
             "sources": [
                 {
@@ -39,6 +51,12 @@
         },
         {
             "name": "clutter-gst",
+            "config-opts": [
+                "--disable-gtk-doc"
+            ],
+            "cleanup": [
+                "/share/gtk-doc"
+            ],
             "sources": [
                 {
                     "type": "archive",
