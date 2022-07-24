@@ -8,8 +8,8 @@
     ],
     "sources": [
         {
-            "type":"archive",
-            "url":"https://github.com/libusb/libusb/archive/v1.0.26.tar.gz",
+            "type": "archive",
+            "url": "https://github.com/libusb/libusb/archive/v1.0.26.tar.gz",
             "sha256": "a09bff99c74e03e582aa30759cada218ea8fa03580517e52d463c59c0b25e240"
         }
     ],
