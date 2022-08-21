@@ -26,6 +26,10 @@
         {
             "type": "patch",
             "path": "description.patch"
+        },
+        {
+            "type": "patch",
+            "path": "0001-fix-gzdoom.pk3-not-found-error.patch"
         }
     ],
     "post-install": [
