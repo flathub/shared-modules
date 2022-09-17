@@ -6,7 +6,7 @@ To use shared modules for packaging an application, add the submodule:
 git submodule add https://github.com/flathub/shared-modules.git
 ```
 
-Then modules from this repository can be specified in a manifest JSON file like this:
+Then modules from this repository can be specified in a JSON manifest file like this:
 
 ```json
 "modules": [
@@ -16,6 +16,14 @@ Then modules from this repository can be specified in a manifest JSON file like 
   }
 ]
 ```
+And for a YAML manifest:
+```YAML
+modules:
+  - shared-modules/SDL/SDL-1.2.15.json
+
+  - name: foo
+```
+
 
 To update the submodule:
 
