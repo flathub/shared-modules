@@ -90,8 +90,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/coelckers/ZMusic/archive/1.1.9.tar.gz",
-                    "sha256": "4bf39917028bbe2f382748b4400a1cbaeb8975157fe404cff53411297d6ac68c",
+                    "url": "https://github.com/coelckers/ZMusic/archive/1.1.10.tar.gz",
+                    "sha256": "378435b35f02a3123ee9e01b5e7990017f9bc1244b788e3bf54b37b34a2985ba",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 153600,
