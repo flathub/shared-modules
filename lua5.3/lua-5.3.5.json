@@ -41,6 +41,6 @@
         "/bin",
         "/include",
         "/lib/pkgconfig",
-        "/share/man"
+        "/man"
     ]
 }
