@@ -1,5 +1,5 @@
 {
-  "../libdecor/libdecor-0.1.1.json"
+  "../libdecor/libdecor-0.1.1.json",
   
   "name": "SDL2",
   "buildsystem": "autotools",
