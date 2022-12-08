@@ -1,0 +1,14 @@
+{
+  "name": "libdecor",
+  "buildsystem": "meson",
+  "config-opts": [
+    "-Ddemo=false"
+  ],
+  "sources": [
+    {
+      "type": "git",
+      "url": "https://gitlab.freedesktop.org/libdecor/libdecor.git",
+      "tag": "0.1.1"
+    }
+  ]
+}
