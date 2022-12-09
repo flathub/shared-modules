@@ -7,6 +7,9 @@ socket=wayland
 socket=fallback-x11
 share=ipc
 ```
-### PLEASE ADD LIBDECOR AS A SUBMODULE AS WELL
-Without libdecor, SDL2 applications don't have any window decorations on Wayland compositors that don't implement SSDs, so they're effectively unusable.
-Add it the same as you would SDL2.
+
+This SDL2 module contains two manifests; one containing SDL2 without libdecor, and the other with.
+
+If your application utilizes SDL2 but doesn't work on Wayland, even with libdecor, you might opt for the `-no-libdecor` manifest, and disable Wayland support.
+
+Otherwise, flatpak maintainers can use the `-with-libdecor` manifest.
