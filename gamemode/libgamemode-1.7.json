@@ -1,0 +1,17 @@
+{
+  "name": "libgamemode",
+  "buildsystem": "meson",
+  "config-opts": [
+    "-Dwith-examples=false",
+    "-Dwith-util=false",
+    "-Dwith-sd-bus-provider=no-daemon" 
+  ],
+  "sources": [
+    {
+      "type": "archive",
+      "url": "https://github.com/FeralInteractive/gamemode/archive/refs/tags/1.7.tar.gz",
+      "sha256": "8a1718c657cb1d3c8269edfd397faf3cb41fccd885198ef0225bf8f82217c42f"
+    }
+  ],
+  "cleanup": [ "/include", "/lib/pkgconfig", "/lib/libgamemodeauto.a" ]
+}
