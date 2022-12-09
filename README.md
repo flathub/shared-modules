@@ -1,5 +1,7 @@
 This repository contains commonly shared modules and is intended to be used as a git submodule.
 
+Each submodule may include additional instructions to be used properly. Please check the folder containing that module to see if anything extra needs to be done.
+
 To use shared modules for packaging an application, add the submodule:
 
 ```
