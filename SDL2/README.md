@@ -1,6 +1,6 @@
 This SDL2 module is intended for use with flatpaks that rely on SDL2. 
 
-If your app or game wants to use a newer version of SDL2, or default to Wayland, you can use this, and set the following permissions:
+If your app or game wants to use a newer version of SDL2, or default to Wayland, you can use this. Set the following permissions for using Wayland:
 
 ```
 socket=wayland
