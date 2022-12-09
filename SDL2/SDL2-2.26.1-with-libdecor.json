@@ -19,6 +19,6 @@
                "/lib/libSDL2_test.la", 
                "/lib/cmake", 
                "/share/aclocal",
-               "/lib/pkgconfig"]
+               "/lib/pkgconfig"],
   "modules": [ "../libdecor/libdecor-0.1.1.json" ]
 }
