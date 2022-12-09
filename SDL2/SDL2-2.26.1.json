@@ -18,5 +18,5 @@
                "/lib/libSDL2_test.la", 
                "/lib/cmake", 
                "/share/aclocal",
-               "/lib/pkgconfig"],
+               "/lib/pkgconfig"]
 }
