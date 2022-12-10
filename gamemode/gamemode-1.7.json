@@ -15,9 +15,7 @@
   ],
   "cleanup": [ "/include", "/lib/pkgconfig" ],
   "post-install": [
-    "mkdir -p /app/bin/",
-    "mv ../data/gamemoderun /app/bin/gamemoderun",
-    "chmod +x /app/bin/gamemoderun",
+    "install -t /app/bin -Dm755 ../data/gamemoderun",
     "rm /app/lib/libgamemodeauto.a"
   ]
 }
