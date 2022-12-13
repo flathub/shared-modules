@@ -5,9 +5,15 @@
         "/bin",
         "/etc",
         "/include",
+        "/lib/gnome-settings-daemon-3.0",
+        "/lib/pkgconfig",
         "/libexec",
+        "/share/doc",
+        "/share/gdm",
+        "/share/gnome",
         "/share/gtk-doc",
-        "/share/man"
+        "/share/man",
+        "/share/vala"
     ],
     "config-opts": [
         "--disable-static",
