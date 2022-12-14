@@ -6,6 +6,7 @@
         "/etc",
         "/include",
         "/lib/gnome-settings-daemon-3.0",
+        "/lib/gtk-3.0",
         "/lib/pkgconfig",
         "/libexec",
         "/share/doc",
