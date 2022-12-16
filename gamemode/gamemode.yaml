@@ -1,0 +1,20 @@
+- name: gamemode
+  buildsystem: meson
+  config-opts:
+    - -Dwith-examples=false
+    - -Dwith-util=false
+    - -Dwith-sd-bus-provider=no-daemon
+  sources: &gamemode_sources
+    - type: git
+      url: https://github.com/FeralInteractive/gamemode.git
+      tag: "1.7"
+      commit: 4dc99dff76218718763a6b07fc1900fa6d1dafd9
+      x-checker-data:
+        type: git
+        tag-pattern: ^v([\\d.]+)$
+
+- name: gamemoderun
+  buildsystem: simple
+  build-commands:
+    - install -Dm755 data/gamemoderun -t /app/bin
+  sources: *gamemode_sources
