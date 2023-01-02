@@ -14,6 +14,6 @@
         }
     ],
     "post-install": [
-        "install -Dm644 COPYING /app/share/licenses/libusb/COPYING"
+        "install -Dm644 COPYING ${FLATPAK_DEST}/share/licenses/libusb/COPYING"
     ]
 }
