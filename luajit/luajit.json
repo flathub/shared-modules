@@ -2,6 +2,7 @@
     "name": "luajit",
     "no-autogen": true,
     "make-args": [
+        "BUILDMODE=dynamic",
         "PREFIX=${FLATPAK_DEST}"
     ],
     "make-install-args": [
@@ -23,7 +24,6 @@
     "cleanup": [
         "/bin",
         "/include",
-        "/lib/*.a",
         "/lib/pkgconfig",
         "/share/man"
     ]
