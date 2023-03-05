@@ -6,7 +6,13 @@
     {
       "type": "archive",
       "url": "https://github.com/libsdl-org/SDL/archive/refs/tags/release-2.26.3.tar.gz",
-      "sha256": "c661205a553b7d252425f4b751ff13209e5e020b876bbfa1598494af61790057"
+      "sha256": "c661205a553b7d252425f4b751ff13209e5e020b876bbfa1598494af61790057",
+      "x-checker-data": {
+          "type": "anitya",
+          "project-id": 4779,
+          "versions": {"<": "3"},
+          "url-template": "https://github.com/libsdl-org/SDL/archive/refs/tags/release-$version.tar.gz"
+        }
     }
   ],
   "cleanup": [ "/bin/sdl2-config", 
