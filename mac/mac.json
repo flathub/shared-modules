@@ -1,18 +1,14 @@
 {
   "name": "libmac",
-  "subdir": "Source/Projects/NonWindows",
-  "no-autogen": true,
-  "make-install-args": [
-    "prefix=/app"
-  ],
+  "buildsystem": "cmake",
   "cleanup": [
     "/include/MAC"
   ],
   "sources": [
     {
         "type": "archive",
-        "url": "https://freac.org/patches/MAC_SDK_723.zip",
-        "sha256": "1d17d469dd2b4652e19cb91aa7cf76786fec999871a8f5729cd24064f989e9ae",
+        "url": "https://freac.org/patches/MAC_920_SDK.zip",
+        "sha256": "54a99ff50b589d4afdb0e38aa86dba2c6a9fe1a086330209ecd563f09e46fd66",
         "strip-components": 0
     }
   ]
