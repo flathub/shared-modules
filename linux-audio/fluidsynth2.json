@@ -12,8 +12,8 @@
     "sources": [
         {
             "type": "archive",
-            "url": "https://github.com/FluidSynth/fluidsynth/archive/v2.3.1.tar.gz",
-            "sha256": "d734e4cf488be763cf123e5976f3154f0094815093eecdf71e0e9ae148431883"
+            "url": "https://github.com/FluidSynth/fluidsynth/archive/v2.3.2.tar.gz",
+            "sha256": "cd610810f30566e28fb98c36501f00446a06fa6bae3dc562c8cd3868fe1c0fc7"
         }
     ]
 }
