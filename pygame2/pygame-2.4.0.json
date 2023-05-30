@@ -1,0 +1,48 @@
+{
+    "name": "pygame2",
+    "sources": [
+        {
+            "type": "archive",
+            "url": "https://files.pythonhosted.org/packages/b9/42/154038c4988d750ded799dc5d6ca4e631db93888e3d76084625b0588dfd2/pygame-2.4.0.tar.gz",
+            "sha256": "e3603e70e96ee30af1954ce57d4922a059402f368013e7138e90f1c03d185267"
+        }
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+        "pip3 install --ignore-installed --no-deps --prefix=/app ."
+    ],
+    "build-options": {
+        "env": {
+            "PORTMIDI_INC_PORTTIME": "1",
+            "PYGAME_EXTRA_BASE": "/app"
+        },
+        "arch": {
+            "aarch64": {
+                "env": {
+                    "ORIGLIBDIRS": "/lib:/lib64:/lib/aarch64-linux-gnu"
+                }
+            },
+            "arm": {
+                "env": {
+                    "ORIGLIBDIRS": "/lib:/lib/arm-linux-gnueabihf"
+                }
+            },
+            "i386": {
+                "env": {
+                    "ORIGLIBDIRS": "/lib:/lib/i386-linux-gnu"
+                }
+            },
+            "x86_64": {
+                "env": {
+                    "ORIGLIBDIRS": "/lib:/lib64:/lib/x86_64-linux-gnu"
+                }
+            }
+        }
+    },
+    "modules": [
+        "../SDL2/SDL2-with-libdecor.json",
+        "../SDL2/SDL2_image-2.6.3.json",
+        "../SDL2/SDL2_ttf-2.20.2.json",
+        "../SDL2/SDL2_mixer-2.6.3.json"
+    ]
+}
