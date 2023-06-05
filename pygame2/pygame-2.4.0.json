@@ -38,11 +38,5 @@
                 }
             }
         }
-    },
-    "modules": [
-        "../SDL2/SDL2-with-libdecor.json",
-        "../SDL2/SDL2_image-2.6.3.json",
-        "../SDL2/SDL2_ttf-2.20.2.json",
-        "../SDL2/SDL2_mixer-2.6.3.json"
-    ]
+    }
 }
