@@ -22,16 +22,6 @@
                     "ORIGLIBDIRS": "/lib:/lib64:/lib/aarch64-linux-gnu"
                 }
             },
-            "arm": {
-                "env": {
-                    "ORIGLIBDIRS": "/lib:/lib/arm-linux-gnueabihf"
-                }
-            },
-            "i386": {
-                "env": {
-                    "ORIGLIBDIRS": "/lib:/lib/i386-linux-gnu"
-                }
-            },
             "x86_64": {
                 "env": {
                     "ORIGLIBDIRS": "/lib:/lib64:/lib/x86_64-linux-gnu"
