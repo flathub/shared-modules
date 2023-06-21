@@ -19,7 +19,6 @@
     "/lib/*.a"
   ],
   "post-install": [
-    "install -t /app/bin -Dm755 ../data/gamemoderun",
-    "rm /app/lib/libgamemodeauto.a"
+    "install -t /app/bin -Dm755 ../data/gamemoderun"
   ]
 }
