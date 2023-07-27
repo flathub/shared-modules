@@ -124,39 +124,76 @@
     },
     {
       "name": "breeze-gtk2-theme",
-      "// NOTE": "This is used by some KDE distros",
-      "// FIXME": "This is disabled because breeze depends on KDecoration/Qt5...",
-      "disabled": true,
-      "buildsystem": "cmake-ninja",
+      "// NOTE": "This is used by KDE by default.",
+      "buildsystem": "simple",
+      "build-commands": [
+        "find breeze-gtk/src -name '*.scss' -print -execdir sed -i 's#\\.\\./assets/#./assets/#' {} \\;",
+        "cd breeze-gtk/src && sed -i 's/@PYTHON_EXECUTABLE@/python3/g' build_theme.sh.cmake && ./build_theme.sh.cmake -c BreezeLight -t ${FLATPAK_BUILDER_BUILDDIR}/Breeze -r ${FLATPAK_BUILDER_BUILDDIR}/breeze/colors",
+        "mkdir -p ${FLATPAK_DEST}/share/themes/Breeze/",
+        "cp -rv --no-preserve=ownership ${FLATPAK_BUILDER_BUILDDIR}/Breeze/gtk-2.0 ${FLATPAK_DEST}/share/themes/Breeze/",
+        "cp -rv --no-preserve=ownership ${FLATPAK_BUILDER_BUILDDIR}/Breeze/assets ${FLATPAK_DEST}/share/themes/Breeze/"
+      ],
       "sources": [
         {
           "type": "archive",
-          "url": "https://github.com/KDE/breeze-gtk/archive/v5.18.90.tar.gz",
-          "sha256": "73ff1fee8afb2fc498075d1693a664f6a749b763606d4548f74e225983107730"
+          "url": "https://download.kde.org/stable/plasma/5.27.6/breeze-gtk-5.27.6.tar.xz",
+          "sha256": "ac2aab13b9224ddea6560fdbac9fe9d93a08a86787f95b95c43a95b134836bda",
+          "dest": "breeze-gtk",
+          "x-checker-data": {
+            "type": "anitya",
+            "project-id": 8761,
+            "stable-only": true,
+            "url-template": "https://download.kde.org/stable/plasma/$version/breeze-gtk-$version.tar.xz"
+          }
+        },
+        {
+          "type": "archive",
+          "url": "https://download.kde.org/stable/plasma/5.27.6/breeze-5.27.6.tar.xz",
+          "sha256": "5d9a8d7e5b061ce4183c4f842b0e82e6132b6c8e7ebc2c1d579baa066ffa6c6c",
+          "dest": "breeze",
+          "x-checker-data": {
+            "type": "anitya",
+            "project-id": 8761,
+            "stable-only": true,
+            "url-template": "https://download.kde.org/stable/plasma/$version/breeze-$version.tar.xz"
+          }
         }
       ],
       "modules": [
         {
-          "name": "extra-cmake-modules",
-          "buildsystem": "cmake-ninja",
+          "name": "python3-cairo",
           "cleanup": ["*"],
+          "buildsystem": "simple",
+          "build-commands": [
+            "pip3 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=\"${FLATPAK_DEST}\" pycairo"
+          ],
           "sources": [
             {
-              "type": "archive",
-              "url": "https://github.com/KDE/extra-cmake-modules/archive/v5.70.0.tar.gz",
-              "sha256": "0e6d0694b2372cbdbc9e64abcaaac21196a15355b360e02e2e833885ae0c62f2"
-            }
-          ]
-        },
-        {
-          "name": "breeze",
-          "buildsystem": "cmake-ninja",
-          "cleanup": ["*"],
-          "sources": [
+              "type": "file",
+              "url": "https://files.pythonhosted.org/packages/69/ca/9e9fa2e8be0876a9bbf046a1be7ee33e61d4fdfbd1fd25c76c1bdfddf8c4/pycairo-1.23.0.tar.gz",
+              "sha256": "9b61ac818723adc04367301317eb2e814a83522f07bbd1f409af0dada463c44c",
+              "x-checker-data": {
+                "type": "pypi",
+                "name": "pycairo"
+              }
+            },
             {
-              "type": "archive",
-              "url": "https://github.com/KDE/breeze/archive/v5.18.90.tar.gz",
-              "sha256": "55e42656601dd79db1bc40589764606ec203c7f99c84340deed6e3847a4fdaf6"
+              "type": "file",
+              "url": "https://files.pythonhosted.org/packages/25/f3/d68c20919bc774c6cb127f1762f2f2f999d700a58198556e883dd3700e58/setuptools-67.6.0.tar.gz",
+              "sha256": "2ee892cd5f29f3373097f5a814697e397cf3ce313616df0af11231e2ad118077",
+              "x-checker-data": {
+                "type": "pypi",
+                "name": "setuptools"
+              }
+            },
+            {
+              "type": "file",
+              "url": "https://files.pythonhosted.org/packages/a2/b8/6a06ff0f13a00fc3c3e7d222a995526cbca26c1ad107691b6b1badbbabf1/wheel-0.38.4.tar.gz",
+              "sha256": "965f5259b566725405b05e7cf774052044b1ed30119b5d586b2703aafe8719ac",
+              "x-checker-data": {
+                "type": "pypi",
+                "name": "wheel"
+              }
             }
           ]
         }
