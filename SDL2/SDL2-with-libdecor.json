@@ -11,6 +11,7 @@
   ],
   "cleanup": [ "/bin/sdl2-config", 
                "/include", 
+               "/lib/debug",
                "/lib/libSDL2.la", 
                "/lib/libSDL2main.a", 
                "/lib/libSDL2main.la", 
