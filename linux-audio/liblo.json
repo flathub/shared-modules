@@ -1,5 +1,8 @@
 {
   "name": "liblo",
+  "build-options": {
+    "cflags": "-Wno-error=use-after-free"
+  },
   "cleanup": [
     "/bin",
     "/include",
