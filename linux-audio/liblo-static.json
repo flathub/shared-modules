@@ -9,7 +9,7 @@
     "*.so"
   ],
   "build-options": {
-    "cflags": "-fPIC"
+    "cflags": "-fPIC -Wno-error=use-after-free"
   },
   "config-opts": [
     "--enable-static",
