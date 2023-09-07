@@ -1,6 +1,6 @@
 {
   "name": "glu",
-  "config-opts": ["--disable-static"],
+  "buildsystem": "meson",
   "sources": [
     {
       "type": "archive",
