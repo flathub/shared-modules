@@ -16,8 +16,8 @@
     "sources": [
         {
             "type": "archive",
-            "url": "https://github.com/jackaudio/jack2/archive/v1.9.17.tar.gz",
-            "sha256": "38f674bbc57852a8eb3d9faa1f96a0912d26f7d5df14c11005ad499c8ae352f2"
+            "url": "https://github.com/jackaudio/jack2/archive/v1.9.22.tar.gz",
+            "sha256": "1e42b9fc4ad7db7befd414d45ab2f8a159c0b30fcd6eee452be662298766a849"
         }
     ]
 }
