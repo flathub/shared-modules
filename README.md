@@ -42,6 +42,12 @@ git rm -f shared-modules
 rm .gitmodules
 ```
 
+We provide an automatic updating mechanism for submodules located here. In order to utilize it:
+
+- Set up x-checker-data for your sources: https://github.com/flathub/flatpak-external-data-checker#url-checker
+
+And it will check for an update every hour.
+
 
 [See the description in the Flathub wiki](https://github.com/flathub/flathub/wiki/App-Requirements#shared-modules) for more information.
 
