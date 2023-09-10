@@ -10,6 +10,7 @@
 /libcanberra/      @hadess
 /libdecor/         @orowith2os
 /SDL2/             @orowith2os
+/libnotify/        @bbhtt
 /libsecret/        @Lctrs
 /libusb/           @A6GibKm
 /openjpeg/         @mbridon
