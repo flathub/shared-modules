@@ -1,6 +1,11 @@
 {
     "name": "SDL_mixer",
     "config-opts": ["--disable-static"],
+    "cleanup": [
+        "/include",
+        "/lib/pkgconfig",
+        "/lib/*.la"
+    ],
     "rm-configure": true,
     "sources": [
         {
