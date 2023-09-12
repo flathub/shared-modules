@@ -2,6 +2,12 @@
     "name": "SDL_image",
     "config-opts": ["--disable-static"],
     "rm-configure": true,
+    "cleanup": [
+        "/include",
+        "/lib/pkgconfig",
+        "*.la",
+        "*.a"
+    ],
     "sources": [
         {
             "type": "archive",

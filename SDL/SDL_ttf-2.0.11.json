@@ -5,6 +5,12 @@
     "config-opts": [
         "ac_cv_path_FREETYPE_CONFIG=pkg-config freetype2"
     ],
+    "cleanup": [
+        "/include",
+        "/lib/pkgconfig",
+        "*.la",
+        "*.a"
+    ],
     "sources": [
         {
             "type": "archive",

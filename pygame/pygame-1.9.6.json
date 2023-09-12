@@ -15,6 +15,13 @@
     "build-commands": [
         "python setup.py cython install --prefix=/app --root=/"
     ],
+    "cleanup": [
+        "/include",
+        "/lib/pkgconfig",
+        "/share/man",
+        "*.la",
+        "*.a"
+    ],
     "build-options": {
         "env": {
             "PORTMIDI_INC_PORTTIME": "1",
@@ -51,6 +58,13 @@
         "../SDL/SDL_mixer-1.2.12.json",
         {
             "name": "audiofile",
+            "cleanup": [
+                "/include",
+                "/lib/pkgconfig",
+                "/share/man",
+                "*.la",
+                "*.a"
+            ],
             "sources": [
                 {
                     "type": "archive",
@@ -65,6 +79,15 @@
         },
         {
             "name": "libmikmod",
+            "cleanup": [
+                "/include",
+                "/lib/pkgconfig",
+                "/share/aclocal",
+                "/share/info",
+                "/share/man",
+                "*.la",
+                "*.a"
+            ],
             "sources": [
                 {
                     "type": "archive",
@@ -78,6 +101,14 @@
             "buildsystem": "cmake-ninja",
             "config-opts": [
                 "-DCMAKE_BUILD_TYPE=Release"
+            ],
+            "cleanup": [
+                "/include",
+                "/lib/pkgconfig",
+                "/lib64/pkgconfig",
+                "/share/man",
+                "*.la",
+                "*.a"
             ],
             "sources": [
                 {
@@ -103,6 +134,13 @@
                 "-DCMAKE_LIBRARY_OUTPUT_DIRECTORY:STRING=/app/lib",
                 "-DCMAKE_ARCHIVE_OUTPUT_DIRECTORY:STRING=/app/lib",
                 "-DCMAKE_RUNTIME_OUTPUT_DIRECTORY:STRING=/app/bin"
+            ],
+            "cleanup": [
+                "/include",
+                "/lib/pkgconfig",
+                "/share/man",
+                "*.la",
+                "*.a"
             ],
             "sources": [
                 {
