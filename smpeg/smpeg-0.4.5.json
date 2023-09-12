@@ -3,7 +3,12 @@
     "config-opts": ["--disable-static"],
     "cleanup": [
         "/bin",
-        "/man"
+        "/man",
+        "/include",
+        "/share/aclocal",
+        "/share/man",
+        "*.la",
+        "*.a"
     ],
     "rm-configure": true,
     "sources": [
