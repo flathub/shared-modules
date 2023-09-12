@@ -5,11 +5,15 @@
             "type": "archive",
             "url": "https://files.pythonhosted.org/packages/0f/9c/78626be04e193c0624842090fe5555b3805c050dfaa81c8094d6441db2be/pygame-1.9.6.tar.gz",
             "sha256": "301c6428c0880ecd4a9e3951b80e539c33863b6ff356a443db1758de4f297957"
+        },
+        {
+            "type": "patch",
+            "path": "cython-fixes.patch"
         }
     ],
     "buildsystem": "simple",
     "build-commands": [
-        "pip3 install --ignore-installed --no-deps --prefix=/app ."
+        "python setup.py cython install --prefix=/app --root=/"
     ],
     "build-options": {
         "env": {
@@ -84,6 +88,10 @@
                 {
                     "type": "patch",
                     "path": "fluidsynth-no-rawmidi.patch"
+                },
+                {
+                    "type": "patch",
+                    "path": "glib.patch"
                 }
             ]
         },
