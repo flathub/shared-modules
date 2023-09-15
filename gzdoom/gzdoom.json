@@ -86,8 +86,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/zdoom/ZMusic/archive/1.1.11.tar.gz",
-                    "sha256": "623c3d7edfcdbe1ba4e7a9dc9a4d834fb92a228881621247855ecd57447631dd",
+                    "url": "https://github.com/zdoom/ZMusic/archive/1.1.12.tar.gz",
+                    "sha256": "da818594b395aa9174561a36362332b0ab8e7906d2e556ec47669326e67613d4",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 153600,
