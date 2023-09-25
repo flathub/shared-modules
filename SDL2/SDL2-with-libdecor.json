@@ -19,5 +19,5 @@
                "/lib/cmake",
                "/share/aclocal",
                "/lib/pkgconfig"],
-  "modules": [ "../libdecor/libdecor-0.1.1.json" ]
+  "modules": [ "../libdecor/libdecor-0.2.0.json" ]
 }
