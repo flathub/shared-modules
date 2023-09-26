@@ -14,8 +14,8 @@
         {
             "type": "git",
             "url": "https://github.com/zdoom/gzdoom.git",
-            "tag": "g4.10.0",
-            "commit": "75da94aecd9b1c4c2e16b449dea1b9f9838c1af2",
+            "tag": "g4.11.0",
+            "commit": "d07de089c0c205c50c9d8e74b5f7d7866770a9f5",
             "x-checker-data": {
                 "type": "anitya",
                 "project-id": 17531,
@@ -32,10 +32,6 @@
         {
             "type": "patch",
             "path": "description.patch"
-        },
-        {
-            "type": "patch",
-            "path": "gcc13.patch"
         }
     ],
     "post-install": [
