@@ -32,10 +32,6 @@
         {
             "type": "patch",
             "path": "description.patch"
-        },
-        {
-            "type": "patch",
-            "path": "gcc13.patch"
         }
     ],
     "post-install": [
