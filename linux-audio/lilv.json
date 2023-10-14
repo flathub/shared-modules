@@ -39,6 +39,7 @@
         "/bin",
         "/include",
         "/lib/pkgconfig",
+        "/share/doc",
         "/share/man"
       ]
     },
@@ -74,6 +75,7 @@
   "cleanup": [
     "/bin",
     "/etc",
+    "/include",
     "/lib/pkgconfig",
     "/share/man"
   ]

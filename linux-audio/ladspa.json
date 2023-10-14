@@ -7,6 +7,9 @@
         "INSTALL_INCLUDE_DIR=/app/include",
         "INSTALL_BINARY_DIR=/app/bin"
     ],
+    "cleanup": [
+        "/include"
+    ],
     "sources": [
         {
             "type": "archive",
