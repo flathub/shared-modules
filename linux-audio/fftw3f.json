@@ -35,6 +35,7 @@
         "/lib/cmake",
         "/lib/pkgconfig",
         "/share/man",
+        "/share/info",
         "*.la",
         "*.so"
     ]

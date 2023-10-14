@@ -4,7 +4,9 @@
     "cleanup": [
         "/include",
         "/lib/pkgconfig",
-        "*.so"
+        "*.so",
+        "*.la",
+        "/share/man"
     ],
     "config-opts": [
         "--disable-static"
@@ -16,8 +18,10 @@
             "cleanup": [
                 "/include",
                 "/lib/pkgconfig",
+                "*.la",
                 "/share/gtk-doc",
-                "*.so"
+                "*.so",
+                "/share/man"
             ],
             "config-opts": [
                 "--disable-static"

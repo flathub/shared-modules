@@ -6,6 +6,11 @@
         "--disable-serv-inst",
         "CFLAGS=-D_GNU_SOURCE"
     ],
+    "cleanup": [
+        "/include",
+        "/lib/pkgconfig",
+        "*.la"
+    ],
     "sources": [
         {
             "type": "archive",

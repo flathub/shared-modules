@@ -5,7 +5,9 @@
         "-DLIB_SUFFIX="
     ],
     "cleanup": [
-	"/share/doc"
+        "/include",
+        "/lib/pkgconfig",
+        "/share/doc"
     ],
     "sources": [
         {
