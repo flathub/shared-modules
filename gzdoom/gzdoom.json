@@ -14,8 +14,8 @@
         {
             "type": "git",
             "url": "https://github.com/zdoom/gzdoom.git",
-            "tag": "g4.11.1",
-            "commit": "a6c5ccca29140f5b79f7bcf9e52b0d4dbb89ab18",
+            "tag": "g4.11.2",
+            "commit": "df5a3c1a9c673aed528813aead6002c833ac24ac",
             "x-checker-data": {
                 "type": "anitya",
                 "project-id": 17531,
@@ -25,7 +25,7 @@
         },
         {
             "type": "file",
-            "url": "https://github.com/zdoom/gzdoom/raw/g4.11.1/soundfont/gzdoom.sf2",
+            "url": "https://github.com/zdoom/gzdoom/raw/g4.11.2/soundfont/gzdoom.sf2",
             "sha256": "a9058609b07c1f0e0c1f420e76c2e80ba78136e6173e836caab51ffb13e552f1"
         },
         {
