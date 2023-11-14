@@ -44,3 +44,6 @@ rm .gitmodules
 
 
 Please do not request adding modules unless they have many users in the Flathub repository.
+
+All shared modules manifests in this repository are, and need to be, in the JSON format,
+which is supported by both Flatpak manifest formats, JSON and YAML.
