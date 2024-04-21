@@ -14,8 +14,8 @@
         {
             "type": "git",
             "url": "https://github.com/zdoom/gzdoom.git",
-            "tag": "g4.11.3",
-            "commit": "6ce809efe2902e43ceaa7031b875225d3a0367de",
+            "tag": "g4.12.1",
+            "commit": "10a8a615cbaaa994ba9f6632c16ba3ce1a5c9430",
             "x-checker-data": {
                 "type": "anitya",
                 "project-id": 17531,
@@ -57,13 +57,13 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://bitbucket.org/mpyne/game-music-emu/downloads/game-music-emu-0.6.3.tar.gz",
-                    "sha256": "626e8a104e0dadd10ef6519a67aca880c7b40f81471659f1935b61754e12fc7b",
+                    "url": "https://github.com/libgme/game-music-emu/archive/refs/tags/0.6.3.tar.gz",
+                    "sha256": "4c5a7614acaea44e5cb1423817d2889deb82674ddbc4e3e1291614304b86fca0",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 866,
                         "stable-only": true,
-                        "url-template": "https://bitbucket.org/mpyne/game-music-emu/downloads/game-music-emu-$version.tar.gz"
+                        "url-template": "https://github.com/libgme/game-music-emu/archive/refs/tags/$version.tar.gz"
                   }
                 }
             ]
