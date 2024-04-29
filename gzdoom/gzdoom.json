@@ -14,8 +14,8 @@
         {
             "type": "git",
             "url": "https://github.com/zdoom/gzdoom.git",
-            "tag": "g4.12.1",
-            "commit": "10a8a615cbaaa994ba9f6632c16ba3ce1a5c9430",
+            "tag": "g4.12.2",
+            "commit": "71c40432e5e893c629a1c9c76a523a0ab22bd56a",
             "x-checker-data": {
                 "type": "anitya",
                 "project-id": 17531,
@@ -77,8 +77,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/zdoom/ZMusic/archive/1.1.12.tar.gz",
-                    "sha256": "da818594b395aa9174561a36362332b0ab8e7906d2e556ec47669326e67613d4",
+                    "url": "https://github.com/zdoom/ZMusic/archive/1.1.13.tar.gz",
+                    "sha256": "564e210837b653013e01d67f04d0d906a9f0a923521e0c305463ec4f4a139ed4",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 153600,
