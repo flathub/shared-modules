@@ -31,6 +31,8 @@
     "modules": [
         "../linux-audio/libinstpatch.json",
         "../linux-audio/fluidsynth2.json",
+        "./game-music-emu.json",
+        "./zmusic.json",
         {
             "name": "libsndfile",
             "buildsystem": "autotools",
@@ -44,46 +46,6 @@
                         "project-id": 13277,
                         "stable-only": true,
                         "url-template": "https://github.com/libsndfile/libsndfile/releases/download/$version/libsndfile-$version.tar.xz"
-                  }
-                }
-            ]
-        },
-        {
-            "name": "game-music-emu",
-            "buildsystem": "cmake-ninja",
-            "config-opts": [
-                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
-            ],
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://github.com/libgme/game-music-emu/archive/refs/tags/0.6.3.tar.gz",
-                    "sha256": "4c5a7614acaea44e5cb1423817d2889deb82674ddbc4e3e1291614304b86fca0",
-                    "x-checker-data": {
-                        "type": "anitya",
-                        "project-id": 866,
-                        "stable-only": true,
-                        "url-template": "https://github.com/libgme/game-music-emu/archive/refs/tags/$version.tar.gz"
-                  }
-                }
-            ]
-        },
-        {
-            "name": "zmusic",
-            "buildsystem": "cmake-ninja",
-            "config-opts": [
-                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
-            ],
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://github.com/zdoom/ZMusic/archive/1.1.13.tar.gz",
-                    "sha256": "564e210837b653013e01d67f04d0d906a9f0a923521e0c305463ec4f4a139ed4",
-                    "x-checker-data": {
-                        "type": "anitya",
-                        "project-id": 153600,
-                        "stable-only": true,
-                        "url-template": "https://github.com/zdoom/ZMusic/archive/$version.tar.gz"
                   }
                 }
             ]
