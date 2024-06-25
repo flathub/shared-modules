@@ -2,13 +2,18 @@ This repository contains commonly shared modules and is intended to be used as a
 
 Each submodule may include additional instructions to be used properly. Please check the folder containing that module to see if anything extra needs to be done.
 
+## Adding
+
 To use shared modules for packaging an application, add the submodule:
 
 ```
 git submodule add https://github.com/flathub/shared-modules.git
 ```
 
-Then modules from this repository can be specified in a JSON manifest file like this:
+## Usage
+
+Then modules from this repository can be specified in an application
+manifest.
 
 ```json
 "modules": [
@@ -26,12 +31,15 @@ modules:
   - name: foo
 ```
 
+## Updating
 
 To update the submodule:
 
 ```
 git submodule update --remote --merge
 ```
+
+## Removing
 
 To remove the submodule:
 
@@ -43,7 +51,8 @@ rm .gitmodules
 ```
 
 
-Please do not request adding modules unless they have many users in the Flathub repository.
+Please do not request adding modules unless they are widely used in
+the Flathub repository.
 
 All shared modules manifests in this repository are, and need to be, in the JSON format,
 which is supported by both Flatpak manifest formats, JSON and YAML.
