@@ -2,7 +2,7 @@
     "name": "gzdoom",
     "buildsystem": "cmake-ninja",
     "config-opts": [
-        "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+        "-DCMAKE_BUILD_TYPE=Release"
     ],
     "cleanup": [
         "/lib/*.a",
