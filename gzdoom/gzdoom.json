@@ -5,8 +5,7 @@
         "-DCMAKE_BUILD_TYPE=Release"
     ],
     "build-options" : {
-        "cxxflags-override": true,
-        "cxxflags": ""
+        "cxxflags": "-Wp,-U_GLIBCXX_ASSERTIONS"
     },
     "cleanup": [
         "/lib/*.a",
