@@ -26,6 +26,10 @@
         {
             "type": "patch",
             "path": "description.patch"
+        },
+        {
+            "type": "patch",
+            "path": "fix-MBF21-A_RadiusDamage.patch"
         }
     ],
     "modules": [
