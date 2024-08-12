@@ -4,15 +4,16 @@
     "config-opts": [
         "-DCMAKE_BUILD_TYPE=Release"
     ],
+    "build-options" : {
+        "cxxflags-override": true,
+        "cxxflags": ""
+    },
     "cleanup": [
         "/lib/*.a",
         "/lib/*.la",
         "/lib/pkgconfig",
         "/include"
-    ],
-    "env": {
-        "CXXFLAGS": ""
-    },
+    ]
     "sources": [
         {
             "type": "git",
