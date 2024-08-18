@@ -5,8 +5,8 @@
   "sources": [
     {
       "type": "archive",
-      "url": "https://github.com/libsdl-org/SDL/releases/download/release-2.30.3/SDL2-2.30.3.tar.gz",
-      "sha256": "820440072f8f5b50188c1dae104f2ad25984de268785be40c41a099a510f0aec"
+      "url": "https://github.com/libsdl-org/SDL/releases/download/release-2.30.6/SDL2-2.30.6.tar.gz",
+      "sha256": "c6ef64ca18a19d13df6eb22df9aff19fb0db65610a74cc81dae33a82235cacd4"
     }
   ],
   "cleanup": [ "/bin/sdl2-config",
