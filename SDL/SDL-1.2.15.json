@@ -26,6 +26,10 @@
             "path": "sdl-check-for-SDL_VIDEO_X11_BACKINGSTORE.patch"
         },
         {
+            "type": "patch",
+            "path": "sdl-sysloadso-buffer-length.patch"
+        },
+        {
             "type": "script",
             "dest-filename": "autogen.sh",
             "commands": [
