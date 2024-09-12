@@ -66,7 +66,10 @@
         },
         {
           "type": "patch",
-          "path": "gtk2-fix-crash-in-show-uri.patch"
+          "paths": [
+              "gtk2-fix-crash-in-show-uri.patch",
+              "gtk2-gcc14.patch"
+          ]
         }
       ]
     },
