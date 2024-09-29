@@ -1,8 +1,8 @@
 # Fallback on Flathub admins for unowned shared modules
 *                  @flathub/reviewers
 
-update-checker.sh  @orowith2os
-.github/workflows/update.yaml @orowith2os
+update-checker.sh  @orowith2os @flathub/reviewers
+.github/workflows/update.yaml @orowith2os @flathub/reviewers
 
 /dbus-glib/        @TingPing
 /clutter/          @A6GibKm
