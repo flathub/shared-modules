@@ -28,4 +28,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           # We don't want the default entrypoint, we want our own script
-          entrypoint: update-checker.sh
+          entrypoint: ./update-checker.sh
