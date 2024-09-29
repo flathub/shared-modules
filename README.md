@@ -54,7 +54,7 @@ We provide an automatic updating mechanism for submodules located here. In order
 
 - Set up x-checker-data for your sources: https://github.com/flathub/flatpak-external-data-checker#url-checker
 
-And it will check for an update every hour.
+And it will check for updates in a weekly basis.
 
 Please do not request adding modules unless they are widely used in
 the Flathub repository.

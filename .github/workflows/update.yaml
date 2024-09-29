@@ -1,7 +1,7 @@
 name: Check for updates
 on:
   schedule: # for scheduling to work this file must be in the default branch
-    - cron: "0 * * * *" # run every hour
+    - cron: "0 0 * * 0" # 00:00 on every Sunday
   workflow_dispatch: # can be manually dispatched under GitHub's "Actions" tab
 
 jobs:
@@ -13,7 +13,7 @@ jobs:
         branch: [ master ] # list all branches to check
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           ref: ${{ matrix.branch }}
 
