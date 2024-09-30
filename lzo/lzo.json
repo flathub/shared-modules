@@ -2,7 +2,7 @@
     "name": "lzo",
     "cleanup": [
         "/include",
-        "/lib/*.so",
+        "/lib/pkgconfig",
         "/share/doc",
         "*.la"
     ],
