@@ -3,9 +3,7 @@
     "buildsystem": "cmake-ninja",
     "cleanup": [
         "/include",
-        "/lib/girepository-1.0",
-        "/lib/pkgconfig",
-        "/share/gir-1.0"
+        "/lib/pkgconfig"
     ],
     "config-opts": [
         "-DENABLE_BINDINGS_MONO=NO",
