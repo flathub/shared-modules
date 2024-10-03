@@ -28,13 +28,8 @@
             "path": "lua.pc.in"
         },
         {
-            "type": "shell",
-            "commands": [
-                "sed -i \"s|/usr/local/|$FLATPAK_DEST/|;s|LUA_IDSIZE	60|LUA_IDSIZE	512|\" src/luaconf.h",
-                "# Lua 5.3.5 has wrong release version in its Makefile. Fix it.",
-                "sed 's/^R= \$V.4/R= \$V.5/' -i Makefile",
-                "sed -i '12 a\\\\n#define LUA_COMPAT_5_1\\n#define LUA_COMPAT_5_2' src/luaconf.h"
-            ]
+            "type": "patch",
+            "path": "luaconf.patch"
         }
     ],
     "cleanup": [
