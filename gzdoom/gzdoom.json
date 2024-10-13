@@ -14,8 +14,8 @@
         {
             "type": "git",
             "url": "https://github.com/zdoom/gzdoom.git",
-            "tag": "g4.12.2",
-            "commit": "71c40432e5e893c629a1c9c76a523a0ab22bd56a",
+            "tag": "g4.13.0",
+            "commit": "1a699c08af6f68b1ff3c1179fcf3b4ce680d6909",
             "x-checker-data": {
                 "type": "anitya",
                 "project-id": 17531,
@@ -26,10 +26,6 @@
         {
             "type": "patch",
             "path": "description.patch"
-        },
-        {
-            "type": "patch",
-            "path": "fix-MBF21-A_RadiusDamage.patch"
         }
     ],
     "modules": [
