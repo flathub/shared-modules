@@ -1,5 +1,21 @@
 #!/bin/bash
 
+set -e
+
+function reset_to_master() {
+    current_branch="$(git rev-parse --abbrev-ref HEAD)"
+
+    if [[ -n $(git status --porcelain) ]]; then
+        echo "Uncommitted changes present"
+        exit 1
+    fi
+
+    if [[ "$current_branch" == update-* ]]; then
+        echo "Resetting to master branch"
+        git checkout master
+    fi
+}
+
 # Args to pass to the data checker
 args=("--update" "--never-fork")
 
@@ -29,8 +45,10 @@ for path in "${file_paths[@]}"; do
  # running in a container and call the data checker directly.
   if [[ ! -f /run/.containerenv && ! -f /.dockerenv ]]; then
    flatpak run --filesystem="$(pwd)" org.flathub.flatpak-external-data-checker "${args[@]}" "$path"
+   reset_to_master
   else
    /app/flatpak-external-data-checker "${args[@]}" "$path"
+   reset_to_master
   fi
 done
 
