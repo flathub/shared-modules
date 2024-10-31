@@ -14,8 +14,8 @@
         {
             "type": "git",
             "url": "https://github.com/zdoom/gzdoom.git",
-            "tag": "g4.13.1",
-            "commit": "689dc61fa8a58a5df0bcc3c9a785e93151351641",
+            "tag": "g4.13.2",
+            "commit": "0c29e3a77880f3519cf2908d340e114964aba38e",
             "x-checker-data": {
                 "type": "anitya",
                 "project-id": 17531,
