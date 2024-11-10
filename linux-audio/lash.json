@@ -24,11 +24,11 @@
         },
         {
             "type": "patch",
-            "path": "patches/lash-gcc47.patch"
-        },
-        {
-            "type": "patch",
-            "path": "patches/lash-linking.patch"
+            "paths": [
+		"patches/lash-gcc47.patch",
+		"patches/lash-linking.patch",
+		"patches/lash-build.patch"
+	    ]
         },
         {
             "type": "patch",
