@@ -20,20 +20,18 @@
         {
             "type": "patch",
             "strip-components": 0,
-            "path": "patches/lash-0.5.3-no-static-lib.patch"
+            "paths": [
+                "patches/lash-0.5.3-no-static-lib.patch",
+                "patches/lash-configure.patch"
+            ]
         },
         {
             "type": "patch",
             "paths": [
-		"patches/lash-gcc47.patch",
-		"patches/lash-linking.patch",
-		"patches/lash-build.patch"
-	    ]
-        },
-        {
-            "type": "patch",
-            "strip-components": 0,
-            "path": "patches/lash-configure.patch"
+                "patches/lash-gcc47.patch",
+                "patches/lash-linking.patch",
+                "patches/lash-build.patch"
+            ]
         },
         {
             "type": "script",
