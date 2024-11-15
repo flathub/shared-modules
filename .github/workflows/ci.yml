@@ -23,7 +23,7 @@ jobs:
       - name: Validate manifests
         run: |
           set -e
-          for i in $(find . -type f -name "*.json"); do flatpak run org.flatpak.Builder --show-manifest --show-manifest "$i"; done
+          for i in $(find . -type f -name "*.json"); do flatpak run org.flatpak.Builder --show-manifest "$i"; done
           rm -rf .flatpak-builder
 
           find . -maxdepth 1 -mindepth 1 -type d ! -path './.github' ! -path './.git' | while read dir; do
