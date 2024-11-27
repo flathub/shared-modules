@@ -2,13 +2,14 @@ name: CI
 
 on:
   push:
+    branches: master
   pull_request:
+    branches: master
   workflow_dispatch:
 
 jobs:
   CI:
     runs-on: ubuntu-latest
-    if: (github.event_name == 'push' || github.event.pull_request.head.repo.full_name != github.repository)
     steps:
       - uses: actions/checkout@v4
 
