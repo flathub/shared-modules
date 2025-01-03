@@ -26,6 +26,12 @@
         {
             "type": "patch",
             "path": "description.patch"
+        },
+        {
+            "type": "shell",
+            "commands": [
+                "sed -i \"s/org.zdoom.GZDoom/${FLATPAK_ID}/g\" src/d_iwad.cpp"
+            ]            
         }
     ],
     "modules": [
