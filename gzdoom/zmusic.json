@@ -1,6 +1,9 @@
 {
     "name": "zmusic",
     "buildsystem": "cmake-ninja",
+    "build-options": {
+      "cxxflags": "-Wp,-U_GLIBCXX_ASSERTIONS"
+    },
     "config-opts": [
         "-DCMAKE_BUILD_TYPE=Release"
     ],
