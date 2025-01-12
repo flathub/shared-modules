@@ -15,6 +15,10 @@
                 "stable-only": true,
                 "url-template": "https://github.com/zdoom/ZMusic/archive/$version.tar.gz"
           }
+        },
+        {
+            "type": "patch",
+            "path": "0001-Fix-libxmp-playback.patch"
         }
     ]
 }
