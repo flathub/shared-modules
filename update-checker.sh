@@ -18,7 +18,9 @@ function reset_to_master() {
 
 # Args to pass to the data checker
 args=("--update" "--never-fork")
-
+exclusions=(
+    "./gtk2/gtk2-common-themes.json"
+)
 # Initialize an array to store file paths
 file_paths=()
 
@@ -39,6 +41,10 @@ done
 
 # Print the file paths in the array
 for path in "${file_paths[@]}"; do
+  if [[ " ${exclusions[*]} " == *" $path "* ]]; then
+    echo "Skipping excluded file: $path"
+    continue
+  fi
   echo "Running data checker on: $path"
 
  # If we're not running in a container, use the Flatpak. Else, assume we're
