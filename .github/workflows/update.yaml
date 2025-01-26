@@ -17,10 +17,6 @@ jobs:
         with:
           ref: ${{ matrix.branch }}
 
-      - name: Set safe directory
-        run: |
-          git config --global --add safe.directory "/github/workspace"
-
       - uses: docker://ghcr.io/flathub/flatpak-external-data-checker:latest
         env:
           GIT_AUTHOR_NAME: flathubbot
