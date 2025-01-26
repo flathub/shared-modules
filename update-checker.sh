@@ -2,6 +2,8 @@
 
 set -e
 
+git config --global --add safe.directory /github/workspace
+
 function reset_to_master() {
     current_branch="$(git rev-parse --abbrev-ref HEAD)"
 
