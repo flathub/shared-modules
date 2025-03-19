@@ -1,6 +1,8 @@
 {
     "name": "libusb",
-    "config-opts": [ "--disable-static" ],
+    "config-opts": [
+        "--disable-static"
+    ],
     "cleanup": [
         "/lib/*.la",
         "/lib/pkgconfig",
