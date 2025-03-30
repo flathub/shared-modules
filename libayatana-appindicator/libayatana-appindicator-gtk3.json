@@ -105,8 +105,8 @@
         {
             "type": "git",
             "url": "https://github.com/AyatanaIndicators/libayatana-appindicator.git",
-            "tag": "0.5.93",
-            "commit": "238c8b02718fa5b4af95ede72beeed762094f4cc",
+            "tag": "0.5.94",
+            "commit": "31e8bb083b307e1cc96af4874a94707727bd1e79",
             "x-checker-data": {
                 "type": "git",
                 "tag-pattern": "^([\\d.]+)$"
