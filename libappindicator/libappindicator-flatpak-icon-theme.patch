@@ -1,0 +1,139 @@
+From 40c3dd7249dcb2a178bb62019233479c433b4067 Mon Sep 17 00:00:00 2001
+From: bbhtt <bbhtt.zn0i8@slmail.me>
+Date: Sat, 17 May 2025 09:15:00 +0530
+Subject: [PATCH] app-indicator: Make icon theme path Flatpak aware
+
+---
+ src/app-indicator.c | 90 ++++++++++++++++++++++++++++++++++++---------
+ 1 file changed, 72 insertions(+), 18 deletions(-)
+
+diff --git a/src/app-indicator.c b/src/app-indicator.c
+index fabac67..6c95fc7 100644
+--- a/src/app-indicator.c
++++ b/src/app-indicator.c
+@@ -186,6 +186,7 @@ static void status_icon_changes (AppIndicator * self, gpointer data);
+ static void status_icon_activate (GtkStatusIcon * icon, gpointer data);
+ static void status_icon_menu_activate (GtkStatusIcon *status_icon, guint button, guint activate_time, gpointer user_data);
+ static void unfallback (AppIndicator * self, GtkStatusIcon * status_icon);
++static gchar * get_abs_icon_path (AppIndicator * self);
+ static gchar * append_panel_icon_suffix (const gchar * icon_name);
+ static void watcher_owner_changed (GObject * obj, GParamSpec * pspec, gpointer user_data);
+ static void theme_changed_cb (GtkIconTheme * theme, gpointer user_data);
+@@ -195,6 +196,9 @@ static void bus_method_call (GDBusConnection * connection, const gchar * sender,
+ static void bus_creation (GObject * obj, GAsyncResult * res, gpointer user_data);
+ static void bus_watcher_ready (GObject * obj, GAsyncResult * res, gpointer user_data);
+ 
++static gboolean is_inside_flatpak(void);
++static gchar * get_flatpak_app_path(void);
++
+ static const GDBusInterfaceVTable item_interface_table = {
+ 	method_call:    bus_method_call,
+ 	get_property:   bus_get_prop,
+@@ -2030,6 +2034,45 @@ app_indicator_set_label (AppIndicator *self, const gchar * label, const gchar *
+ 	return;
+ }
+ 
++static gboolean
++is_inside_flatpak(void)
++{
++    return g_file_test("/.flatpak-info", G_FILE_TEST_EXISTS);
++}
++
++static gchar *
++get_flatpak_app_path(void)
++{
++    g_autoptr(GKeyFile) keyfile = NULL;
++    g_autoptr(GError) error = NULL;
++    g_autofree gchar *path = NULL;
++
++    keyfile = g_key_file_new();
++    if (!g_key_file_load_from_file(keyfile, "/.flatpak-info", G_KEY_FILE_NONE, &error)) {
++        return NULL;
++    }
++
++    path = g_key_file_get_string(keyfile, "Instance", "app-path", &error);
++    if (path == NULL) {
++        return NULL;
++    }
++
++    return g_strdup(path);
++}
++
++static gchar *
++get_abs_icon_path(AppIndicator *self)
++{
++    if (is_inside_flatpak()) {
++        g_autofree gchar *app_path = get_flatpak_app_path();
++        if (app_path != NULL) {
++            return g_build_path(G_DIR_SEPARATOR_S, app_path, "share", "icons", NULL);
++        }
++    }
++
++    return g_build_path(G_DIR_SEPARATOR_S, g_get_user_data_dir(), "icons", NULL);
++}
++
+ /**
+  * app_indicator_set_icon_theme_path:
+  * @self: The #AppIndicator object to use
+@@ -2042,29 +2085,40 @@ app_indicator_set_icon_theme_path (AppIndicator *self, const gchar *icon_theme_p
+ {
+ 	g_return_if_fail (IS_APP_INDICATOR (self));
+ 
+-	if (g_strcmp0 (self->priv->icon_theme_path, icon_theme_path) != 0) {
+-		if (self->priv->icon_theme_path != NULL)
+-			g_free(self->priv->icon_theme_path);
++	gchar *resolved_path = NULL;
+ 
+-		self->priv->icon_theme_path = g_strdup(icon_theme_path);
++	if (is_inside_flatpak ()) {
++		resolved_path = get_abs_icon_path (self);
++		if (g_strcmp0 (self->priv->icon_theme_path, resolved_path) == 0) {
++			g_free(resolved_path);
++			return;
++		}
++	} else {
++		if (g_strcmp0 (self->priv->icon_theme_path, icon_theme_path) == 0)
++			return;
++		resolved_path = g_strdup (icon_theme_path);
++	}
+ 
+-		g_signal_emit (self, signals[NEW_ICON_THEME_PATH], 0, self->priv->icon_theme_path);
++	if (self->priv->icon_theme_path != NULL)
++		g_free (self->priv->icon_theme_path);
+ 
+-		if (self->priv->dbus_registration != 0 && self->priv->connection != NULL) {
+-			GError * error = NULL;
++	self->priv->icon_theme_path = resolved_path;
++	g_signal_emit (self, signals[NEW_ICON_THEME_PATH], 0, self->priv->icon_theme_path);
+ 
+-			g_dbus_connection_emit_signal(self->priv->connection,
+-										  NULL,
+-										  self->priv->path,
+-										  NOTIFICATION_ITEM_DBUS_IFACE,
+-										  "NewIconThemePath",
+-										  g_variant_new("(s)", self->priv->icon_theme_path),
+-										  &error);
++	if (self->priv->dbus_registration != 0 && self->priv->connection != NULL) {
++		GError * error = NULL;
+ 
+-			if (error != NULL) {
+-				g_warning("Unable to send signal for NewIconThemePath: %s", error->message);
+-				g_error_free(error);
+-			}
++		g_dbus_connection_emit_signal(self->priv->connection,
++									  NULL,
++									  self->priv->path,
++									  NOTIFICATION_ITEM_DBUS_IFACE,
++									  "NewIconThemePath",
++									  g_variant_new("(s)", self->priv->icon_theme_path),
++									  &error);
++
++		if (error != NULL) {
++			g_warning("Unable to send signal for NewIconThemePath: %s", error->message);
++			g_error_free(error);
+ 		}
+ 	}
+ 
+-- 
+2.49.0
+

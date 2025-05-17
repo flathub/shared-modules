@@ -43,6 +43,10 @@
       "path": "libappindicator-fix-crash-iterating-icon-themes.patch"
     },
     {
+      "type": "patch",
+      "path": "libappindicator-flatpak-icon-theme.patch"
+    },
+    {
       "type": "script",
       "commands": ["autoreconf -sfi"],
       "dest-filename": "autogen.sh"
