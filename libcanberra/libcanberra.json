@@ -2,7 +2,6 @@
     "name": "libcanberra",
     "cleanup": [
         "*.la",
-        "/bin",
         "/etc",
         "/include",
         "/lib/gnome-settings-daemon-3.0",
