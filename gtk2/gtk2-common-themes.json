@@ -304,6 +304,53 @@
                     "commit": "b36b379c9256b67e5f63a60c6faf6912f1845b66"
                 }
             ]
+        },
+        {
+            "name": "mint-gtk2-theme",
+            "buildsystem": "simple",
+            "build-commands": [
+                "./generate-themes.py",
+                "find ./usr/share -type d \\( -name cinnamon -o -name gtk-3.0 -o -name gtk-4.0 -o -name metacity-1 -o -name xfce-\\* -o -name xfwm4 \\) -exec rm -rf {} +",
+                "find ./usr/share -type d -empty -delete",
+                "mkdir -p ${FLATPAK_DEST}/share/themes",
+                "cp -a ./usr/share/themes/. ${FLATPAK_DEST}/share/themes"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/linuxmint/mint-themes.git",
+                    "commit": "a5e98184b6b86d469db48f17fad4b845f9eee5d8"
+                }
+            ],
+            "modules":[
+                {
+                    "name": "python3-pysass",
+                    "buildsystem": "simple",
+                    "cleanup": [
+                        "*"
+                    ],
+                    "build-commands": [
+                        "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pysass\" --no-build-isolation"
+                    ],
+                    "sources": [
+                        {
+                            "type": "file",
+                            "url": "https://files.pythonhosted.org/packages/79/b4/ab091585eaa77299558e3289ca206846aefc123fb320b5656ab2542c20ad/libsass-0.23.0.tar.gz",
+                            "sha256": "6f209955ede26684e76912caf329f4ccb57e4a043fd77fe0e7348dd9574f1880"
+                        },
+                        {
+                            "type": "file",
+                            "url": "https://files.pythonhosted.org/packages/90/06/fafe78968db294d582e4cfb8d4bcdbdaeeb1f6d1f269c25acdceb51ce11c/pysass-0.1.0-py3-none-any.whl",
+                            "sha256": "b473069cd9d8799366505b4586938ebfeb67d9df8b400bae3200297422530aff"
+                        },
+                        {
+                            "type": "file",
+                            "url": "https://files.pythonhosted.org/packages/db/7d/7f3d619e951c88ed75c6037b246ddcf2d322812ee8ea189be89511721d54/watchdog-6.0.0.tar.gz",
+                            "sha256": "9ddf7c82fda3ae8e24decda1338ede66e1c99883db93711d8fb941eaa2d8c282"
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }
