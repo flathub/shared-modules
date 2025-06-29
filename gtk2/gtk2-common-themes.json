@@ -59,7 +59,10 @@
                 },
                 {
                     "type": "patch",
-                    "path": "murrine-engine-fix-crash.patch"
+                    "paths": [
+                        "murrine-engine-fix-crash.patch",
+                        "gtk2-murrine-c99.patch"
+                    ]
                 },
                 {
                     "type": "script",
