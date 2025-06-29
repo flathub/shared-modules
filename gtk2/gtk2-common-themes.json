@@ -227,7 +227,8 @@
             "cleanup": [
                 "/share/themes/elementary/gtk-3.0",
                 "/share/themes/elementary/plank",
-                "/share/plank"
+                "/share/plank",
+                "/share/metainfo"
             ],
             "sources": [
                 {
