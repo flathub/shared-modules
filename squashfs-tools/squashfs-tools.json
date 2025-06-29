@@ -18,5 +18,8 @@
                 "tag-pattern": "^([\\d.]+)$"
             }
         }
+    ],
+    "modules": [
+        "../lzo/lzo.json"
     ]
 }
