@@ -13,7 +13,7 @@
     ],
     "buildsystem": "simple",
     "build-commands": [
-        "python setup.py cython install --prefix=/app --root=/"
+        "python setup.py install --prefix=/app --root=/"
     ],
     "cleanup": [
         "/include",
@@ -23,6 +23,7 @@
         "*.a"
     ],
     "build-options": {
+        "cflags": "-Wno-incompatible-pointer-types",
         "env": {
             "PORTMIDI_INC_PORTTIME": "1",
             "PYGAME_EXTRA_BASE": "/app"
@@ -51,6 +52,7 @@
         }
     },
     "modules": [
+        "../python2.7/python-2.7.json",
         "../SDL/SDL-1.2.15.json",
         "../SDL/SDL_image-1.2.12.json",
         "../SDL/SDL_ttf-2.0.11.json",
