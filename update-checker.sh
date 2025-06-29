@@ -20,9 +20,7 @@ function reset_to_master() {
 
 # Args to pass to the data checker
 args=("--update" "--never-fork")
-exclusions=(
-    "./gtk2/gtk2-common-themes.json"
-)
+exclusions=()
 # Initialize an array to store file paths
 file_paths=()
 
