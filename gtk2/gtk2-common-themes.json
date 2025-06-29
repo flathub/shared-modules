@@ -68,6 +68,10 @@
                         "autoreconf -si"
                     ]
                 }
+            ],
+            "modules": [
+                "../intltool/intltool-0.51.json",
+                "../gtk2/gtk2.json"
             ]
         },
         {
