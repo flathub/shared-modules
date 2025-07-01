@@ -1,29 +1,34 @@
 {
-  "name": "fluidsynth",
-  "buildsystem": "cmake-ninja",
-  "build-options": {
-    "cflags": "-fPIC",
-    "cxxflags": "-fPIC"
-  },
-  "config-opts": [
-    "-DBUILD_SHARED_LIBS=OFF",
-    "-Denable-jack=OFF",
-    "-Denable-pipewire=OFF"
-  ],
-  "cleanup": [
-    "/bin",
-    "/include",
-    "/lib/cmake",
-    "/lib/pkgconfig",
-    "/share/man",
-    "*.so",
-    "*.a"
-  ],
-  "sources": [
-    {
-      "type": "archive",
-      "url": "https://github.com/FluidSynth/fluidsynth/archive/v2.3.5.tar.gz",
-      "sha256": "f89e8e983ecfb4a5b4f5d8c2b9157ed18d15ed2e36246fa782f18abaea550e0d"
-    }
-  ]
+    "name": "fluidsynth",
+    "buildsystem": "cmake-ninja",
+    "build-options": {
+        "cflags": "-fPIC",
+        "cxxflags": "-fPIC"
+    },
+    "config-opts": [
+        "-DBUILD_SHARED_LIBS=OFF",
+        "-Denable-jack=OFF",
+        "-Denable-pipewire=OFF"
+    ],
+    "cleanup": [
+        "/bin",
+        "/include",
+        "/lib/cmake",
+        "/lib/pkgconfig",
+        "/share/man",
+        "*.so",
+        "*.a"
+    ],
+    "sources": [
+        {
+            "type": "archive",
+            "url": "https://github.com/FluidSynth/fluidsynth/archive/refs/tags/v2.4.6.tar.gz",
+            "sha256": "a6be90fd4842b9e7246500597180af5cf213c11bfa3998a3236dd8ff47961ea8",
+            "x-checker-data": {
+                "type": "anitya",
+                "project-id": 10437,
+                "url-template": "https://github.com/FluidSynth/fluidsynth/archive/refs/tags/v$version.tar.gz"
+            }
+        }
+    ]
 }
