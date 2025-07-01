@@ -13,12 +13,7 @@
         {
             "type": "archive",
             "url": "https://github.com/FluidSynth/fluidsynth/archive/refs/tags/v2.4.6.tar.gz",
-            "sha256": "a6be90fd4842b9e7246500597180af5cf213c11bfa3998a3236dd8ff47961ea8",
-            "x-checker-data": {
-                "type": "anitya",
-                "project-id": 10437,
-                "url-template": "https://github.com/FluidSynth/fluidsynth/archive/refs/tags/v$version.tar.gz"
-            }
+            "sha256": "a6be90fd4842b9e7246500597180af5cf213c11bfa3998a3236dd8ff47961ea8"
         }
     ]
 }
