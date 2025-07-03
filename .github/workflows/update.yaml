@@ -1,17 +1,15 @@
 name: Check for updates
 on:
-  schedule: # for scheduling to work this file must be in the default branch
-    - cron: "0 0 * * 0" # 00:00 on every Sunday
-  workflow_dispatch: # can be manually dispatched under GitHub's "Actions" tab
+  schedule:
+    - cron: "0 0 1,21 * *"
+  workflow_dispatch:
 
 jobs:
   flatpak-external-data-checker:
     runs-on: ubuntu-latest
-
     strategy:
       matrix:
-        branch: [ master ] # list all branches to check
-
+        branch: [ master ]
     steps:
         # 4.2.2
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
@@ -27,5 +25,4 @@ jobs:
           EMAIL: sysadmin@flathub.org
           GITHUB_TOKEN: ${{ secrets.FLATHUBBOT_TOKEN }}
         with:
-          # We don't want the default entrypoint, we want our own script
           entrypoint: ./update-checker.sh
