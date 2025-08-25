@@ -1,0 +1,28 @@
+{
+    "name": "SDL2_ttf",
+    "config-opts": ["--disable-static"],
+    "rm-configure": true,
+    "config-opts": [
+        "ac_cv_path_FREETYPE_CONFIG=pkg-config freetype2"
+    ],
+    "cleanup": [
+        "/include",
+        "/lib/pkgconfig",
+        "*.la",
+        "*.a"
+    ],
+    "sources": [
+        {
+            "type": "archive",
+            "url": "https://www.libsdl.org/projects/SDL_ttf/release/SDL2_ttf-2.24.0.tar.gz",
+            "sha256": "0b2bf1e7b6568adbdbc9bb924643f79d9dedafe061fa1ed687d1d9ac4e453bfd"
+        },
+        {
+            "type": "script",
+            "dest-filename": "autogen.sh",
+            "commands": [
+                "AUTOMAKE=\"automake --foreign\" autoreconf -vfi"
+            ]
+        }
+    ]
+}
