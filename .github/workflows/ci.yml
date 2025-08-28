@@ -45,6 +45,9 @@ jobs:
 
       - name: Build changed manifests
         if: github.event_name == 'pull_request'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
         run: |
           set -e
           FILES=$(gh pr view "${{ github.event.number }}" --json files --jq '.files[].path')
