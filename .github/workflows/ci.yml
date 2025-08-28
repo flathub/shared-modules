@@ -62,14 +62,14 @@ jobs:
                 | sort -V \
                 | tail -n1)
 
-              cat > manifest.yml <<EOF
-              id: org.example.test
-              runtime: org.freedesktop.Platform
-              runtime-version: '${RUNTIME_VERSION}'
-              sdk: org.freedesktop.Sdk
-              modules:
-                - "$f"
-              EOF
+              cat > org.example.test.yml <<EOF
+          id: org.example.test
+          runtime: org.freedesktop.Platform
+          runtime-version: '$RUNTIME_VERSION'
+          sdk: org.freedesktop.Sdk
+          modules:
+            - $f
+          EOF
 
               cat org.example.test.yml
               dbus-run-session flatpak run org.flatpak.Builder --verbose --user --force-clean \
