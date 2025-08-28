@@ -11,8 +11,8 @@
         {
             "type": "git",
             "url": "https://github.com/plougher/squashfs-tools.git",
-            "tag": "4.7",
-            "commit": "2e87d42ed089dc31990d83eeb07437b9d085d6d1",
+            "tag": "4.7.2",
+            "commit": "99d23a31b471433c51e9c145aeba2ab1536e34df",
             "x-checker-data": {
                 "type": "git",
                 "tag-pattern": "^([\\d.]+)$"
