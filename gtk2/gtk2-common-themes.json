@@ -155,8 +155,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.kde.org/stable/plasma/6.4.1/breeze-gtk-6.4.1.tar.xz",
-                    "sha256": "e108fe9cbc76a0f51fd8df9c630d39978a3c1fb6cfaf39d9ab2f555494627b58",
+                    "url": "https://download.kde.org/stable/plasma/6.4.4/breeze-gtk-6.4.4.tar.xz",
+                    "sha256": "b353cb1c5c36cc7493cb2d018b7cc5068fa4772345781f81d5f8108cf54b4e3f",
                     "dest": "breeze-gtk",
                     "x-checker-data": {
                         "type": "anitya",
@@ -167,8 +167,8 @@
                 },
                 {
                     "type": "archive",
-                    "url": "https://download.kde.org/stable/plasma/6.4.1/breeze-6.4.1.tar.xz",
-                    "sha256": "4fe0085ffa21b2e3aef49dc4e5c862f22ef13395a9681387a990308743f01c55",
+                    "url": "https://download.kde.org/stable/plasma/6.4.4/breeze-6.4.4.tar.xz",
+                    "sha256": "307cfcb5505bd376d959b364f5231cac4a280af938a938ce3a4e3b7a9f71f70d",
                     "dest": "breeze",
                     "x-checker-data": {
                         "type": "anitya",
@@ -322,7 +322,7 @@
                     "commit": "a5e98184b6b86d469db48f17fad4b845f9eee5d8"
                 }
             ],
-            "modules":[
+            "modules": [
                 {
                     "name": "python3-pysass",
                     "buildsystem": "simple",
