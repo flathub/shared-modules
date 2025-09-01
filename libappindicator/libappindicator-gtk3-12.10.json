@@ -2,7 +2,10 @@
   "name": "libappindicator",
   "build-options": {
     "cflags": "-Wno-error",
-    "make-args": [ "-j1" ]
+    "make-args": [ "-j1" ],
+    "env": {
+      "GTKDOCIZE": "true"
+    }
   },
   "rm-configure": true,
   "config-opts": [
