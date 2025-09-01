@@ -2,21 +2,9 @@
 
 set -e
 
+DEFAULT_BRANCH="master"
+
 git config --global --add safe.directory /github/workspace
-
-function reset_to_master() {
-    current_branch="$(git rev-parse --abbrev-ref HEAD)"
-
-    if [[ -n $(git status --porcelain) ]]; then
-        echo "Uncommitted changes present"
-        exit 1
-    fi
-
-    if [[ "$current_branch" == update-* ]]; then
-        echo "Resetting to master branch"
-        git checkout master
-    fi
-}
 
 # Args to pass to the data checker
 args=("--update" "--never-fork")
@@ -51,11 +39,12 @@ for path in "${file_paths[@]}"; do
  # If we're not running in a container, use the Flatpak. Else, assume we're
  # running in a container and call the data checker directly.
   if [[ ! -f /run/.containerenv && ! -f /.dockerenv ]]; then
+   git switch -fC "$DEFAULT_BRANCH" origin/"$DEFAULT_BRANCH"
    flatpak run --filesystem="$(pwd)" org.flathub.flatpak-external-data-checker "${args[@]}" "$path" || true
-   reset_to_master
+   git switch -fC "$DEFAULT_BRANCH" origin/"$DEFAULT_BRANCH"
   else
+   git switch -fC "$DEFAULT_BRANCH" origin/"$DEFAULT_BRANCH"
    /app/flatpak-external-data-checker "${args[@]}" "$path" || true
-   reset_to_master
+   git switch -fC "$DEFAULT_BRANCH" origin/"$DEFAULT_BRANCH"
   fi
 done
-
