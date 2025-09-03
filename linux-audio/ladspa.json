@@ -12,9 +12,15 @@
     ],
     "sources": [
         {
-            "type": "archive",
-            "url": "http://www.ladspa.org/download/ladspa_sdk_1.17.tgz",
-            "sha256": "27d24f279e4b81bd17ecbdcc38e4c42991bb388826c0b200067ce0eb59d3da5b"
+            "type": "git",
+            "url": "https://salsa.debian.org/multimedia-team/ladspa-sdk.git",
+            "commit": "19daa4a64ee2c45042fc737df8d5dff654b976b4"
+        },
+        {
+            "type": "shell",
+            "commands": [
+                "mkdir plugins bin"
+            ]
         }
     ]
 }
