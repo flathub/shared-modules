@@ -3,30 +3,27 @@
     "config-opts": [
         "--disable-static"
     ],
-    "rm-configure": true,
     "cleanup": [
         "/include",
+        "/lib/cmake",
         "/lib/pkgconfig",
         "*.la",
         "*.a"
     ],
     "sources": [
         {
-            "type": "git",
-            "url": "https://github.com/libsdl-org/SDL_image.git",
-            "tag": "release-2.8.8",
-            "commit": "c1bf2245b0ba63a25afe2f8574d305feca25af77",
+            "type": "archive",
+            "url": "https://www.libsdl.org/projects/SDL_image/release/SDL2_image-2.8.8.tar.gz",
+            "sha256": "2213b56fdaff2220d0e38c8e420cbe1a83c87374190cba8c70af2156097ce30a",
             "x-checker-data": {
-                "type": "git",
-                "tag-pattern": "^release-(2\\.[\\d.]+)$"
+                "type": "anitya",
+                "project-id": 382729,
+                "stable-only": true,
+                "versions": {
+                    "<": "3.0.0"
+                },
+                "url-template": "https://www.libsdl.org/projects/SDL_image/release/SDL2_image-$version.tar.gz"
             }
-        },
-        {
-            "type": "script",
-            "dest-filename": "autogen.sh",
-            "commands": [
-                "AUTOMAKE=\"automake --foreign\" autoreconf -vfi"
-            ]
         }
     ]
 }
