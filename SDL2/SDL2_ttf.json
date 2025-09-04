@@ -1,16 +1,15 @@
 {
     "name": "SDL2_ttf",
     "config-opts": [
-        "--disable-static",
-        "ac_cv_path_FREETYPE_CONFIG=pkg-config freetype2"
+        "-DSDL2TTF_HARFBUZZ=ON"
     ],
     "cleanup": [
         "/include",
-        "/lib/cmake",
-        "/lib/pkgconfig",
-        "*.la",
-        "*.a"
+        "/lib64/cmake",
+        "/lib64/pkgconfig"
     ],
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
     "sources": [
         {
             "type": "archive",

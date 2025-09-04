@@ -1,15 +1,12 @@
 {
     "name": "SDL2_image",
-    "config-opts": [
-        "--disable-static"
-    ],
     "cleanup": [
         "/include",
-        "/lib/cmake",
-        "/lib/pkgconfig",
-        "*.la",
-        "*.a"
+        "/lib64/cmake",
+        "/lib64/pkgconfig"
     ],
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
     "sources": [
         {
             "type": "archive",
@@ -19,9 +16,6 @@
                 "type": "anitya",
                 "project-id": 382729,
                 "stable-only": true,
-                "versions": {
-                    "<": "3.0.0"
-                },
                 "url-template": "https://www.libsdl.org/projects/SDL_image/release/SDL2_image-$version.tar.gz"
             }
         }
