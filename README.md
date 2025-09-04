@@ -69,10 +69,11 @@ for your sources and they will be checked for updates in a weekly basis.
 
 - The module manifest must be in JSON format.
 
+- The manifest must be buildable with the latest stable
+  and oldstable versions of the Freedesktop SDK runtime.
+
 ### Inclusion process
 
 Please open a [pull request](https://github.com/flathub/shared-modules/pulls)
 with the module manifest and add yourself as a [codeowner](https://github.com/flathub/shared-modules/blob/master/CODEOWNERS)
 of that module.
-
-The manifest must be buildable with the latest Freedesktop SDK runtime.
