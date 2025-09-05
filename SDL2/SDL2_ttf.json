@@ -5,8 +5,8 @@
     ],
     "cleanup": [
         "/include",
-        "/lib64/cmake",
-        "/lib64/pkgconfig"
+        "/lib/cmake",
+        "/lib/pkgconfig"
     ],
     "buildsystem": "cmake-ninja",
     "builddir": true,
