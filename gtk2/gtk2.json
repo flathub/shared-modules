@@ -68,7 +68,8 @@
           "type": "patch",
           "paths": [
               "gtk2-fix-crash-in-show-uri.patch",
-              "gtk2-gcc14.patch"
+              "gtk2-gcc14.patch",
+              "gtk2-gcc15.patch"
           ]
         }
       ]
@@ -108,6 +109,10 @@
           "type": "archive",
           "url": "https://github.com/ibus/ibus/releases/download/1.5.23/ibus-1.5.23.tar.gz",
           "sha256": "b7e8d5bdb7d71a5ba4ee43cdf374675f77121a71c1679c9b9e7e02875bd0e150"
+        },
+        {
+          "type": "patch",
+          "path": "ibus-gcc15.patch"
         }
       ]
     }
