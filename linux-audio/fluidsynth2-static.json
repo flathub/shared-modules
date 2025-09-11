@@ -8,7 +8,8 @@
   "config-opts": [
     "-DBUILD_SHARED_LIBS=OFF",
     "-Denable-jack=OFF",
-    "-Denable-pipewire=OFF"
+    "-Denable-pipewire=OFF",
+    "-Denable-sdl3=OFF"
   ],
   "cleanup": [
     "/bin",
