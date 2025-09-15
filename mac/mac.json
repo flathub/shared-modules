@@ -1,6 +1,9 @@
 {
   "name": "libmac",
   "buildsystem": "cmake",
+  "config-opts": [
+    "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+  ],
   "cleanup": [
     "/include/MAC"
   ],
