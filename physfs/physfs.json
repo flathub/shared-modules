@@ -1,7 +1,7 @@
 {
     "name": "PhysicsFS",
     "buildsystem": "cmake-ninja",
-    "config-opts": [ "-DPHYSFS_BUILD_TEST=OFF", "-DPHYSFS_BUILD_STATIC=OFF" ],
+    "config-opts": [ "-DPHYSFS_BUILD_TEST=OFF", "-DPHYSFS_BUILD_STATIC=OFF", "-DCMAKE_POLICY_VERSION_MINIMUM=3.5" ],
     "cleanup": [
         "/include",
         "/lib/pkgconfig",
