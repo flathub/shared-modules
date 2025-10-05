@@ -2,6 +2,9 @@
     "name": "SDL_pango",
     "config-opts": ["--disable-static"],
     "rm-configure": true,
+    "build-options":{
+        "cflags": "-Wno-implicit-function-declaration"
+    },
     "sources": [
         {
             "type": "archive",
