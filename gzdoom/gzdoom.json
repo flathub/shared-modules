@@ -30,7 +30,8 @@
         {
             "type": "shell",
             "commands": [
-                "sed -i \"s/org.zdoom.GZDoom/${FLATPAK_ID}/g\" src/d_iwad.cpp"
+                "sed -i \"s/org.zdoom.GZDoom/${FLATPAK_ID}/g\" src/d_iwad.cpp",
+                "install -D ./soundfont/gzdoom.sf2 /app/share/sounds/sf2/gzdoom.sf2"
             ]
         }
     ],
