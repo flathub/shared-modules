@@ -3,7 +3,6 @@
     "rm-configure": true,
     "config-opts": [
         "--disable-static",
-        "--disable-serv-inst",
         "CFLAGS=-D_GNU_SOURCE"
     ],
     "cleanup": [
@@ -19,18 +18,10 @@
         },
         {
             "type": "patch",
-            "strip-components": 0,
             "paths": [
-                "patches/lash-0.5.3-no-static-lib.patch",
-                "patches/lash-configure.patch"
-            ]
-        },
-        {
-            "type": "patch",
-            "paths": [
-                "patches/lash-gcc47.patch",
-                "patches/lash-linking.patch",
-                "patches/lash-build.patch"
+                "patches/lash/0001-configure-remove-aclocal-m4.patch",
+                "patches/lash/0002-Fix-build-with-recent-gcc.patch",
+                "patches/lash/0003-Fix-linking.patch"
             ]
         },
         {
