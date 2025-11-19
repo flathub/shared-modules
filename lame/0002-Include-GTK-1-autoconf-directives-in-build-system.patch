@@ -1,11 +1,25 @@
-Description: Include GTK-1 autoconf directives in build system.
+From 20d0bd4ed444cd99bcf09ad8d36e69b027d7b1a4 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Hubert=20Figui=C3=A8re?= <hub@figuiere.net>
+Date: Tue, 18 Nov 2025 20:35:36 -0500
+Subject: [PATCH 2/5] Include GTK-1 autoconf directives in build system.
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
 Origin: http://anonscm.debian.org/gitweb/?p=pkg-multimedia/lame.git;a=tree;f=debian/patches
 Forwarded: yes
 Applied-Upstream: http://lame.cvs.sf.net/viewvc/lame/lame/acinclude.m4?revision=1.6
 
+Signed-off-by: Hubert Figuière <hub@figuiere.net>
+---
+ acinclude.m4 | 193 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 193 insertions(+)
+
+diff --git a/acinclude.m4 b/acinclude.m4
+index 0b8f869..eef0c3d 100644
 --- a/acinclude.m4
 +++ b/acinclude.m4
-@@ -85,4 +85,197 @@
+@@ -85,4 +85,197 @@ int main(void)
  [AC_MSG_WARN(can't check for IEEE854 compliant 80 bit floats)]
  )])]) # alex_IEEE854_FLOAT80
  
@@ -203,3 +217,6 @@ Applied-Upstream: http://lame.cvs.sf.net/viewvc/lame/lame/acinclude.m4?revision=
 +  AC_SUBST(GTK_LIBS)
 +  rm -f conf.gtktest
 +])
+-- 
+2.51.0
+

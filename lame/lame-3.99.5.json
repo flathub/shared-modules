@@ -10,26 +10,21 @@
     },
     {
       "type": "patch",
-      "path": "lame-msse.patch"
-    },
-    {
-      "type": "patch",
-      "path": "lame-gtk1-ac-directives.patch"
-    },
-    {
-      "type": "patch",
-      "path": "lame-ansi2knr2devnull.patch"
-    },
-    {
-      "type": "patch",
-      "path": "lame-tinfo.patch",
-      "strip-components": 0
+      "paths": [
+        "0001-Build-xmm_quantize_sub.c-with-msse.patch",
+        "0002-Include-GTK-1-autoconf-directives-in-build-system.patch",
+        "0003-Patch-out-remaining-ansi2knr.patch",
+        "0004-initscr-is-not-used-anywhere-in-lame-sourcetree.patch",
+        "0005-Update-autoconf.patch"
+      ]
     },
     {
       "type": "script",
       "dest-filename": "autogen.sh",
       "commands": [
-        "autoreconf -vfi"
+        "mkdir m4",
+        "cp /usr/share/gettext/m4/*.m4 m4",
+        "autoreconf -vfi -I m4"
       ]
     }
   ],
