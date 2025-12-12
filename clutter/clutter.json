@@ -13,6 +13,9 @@
     "modules": [
         {
             "name": "cogl",
+            "build-options": {
+                "cflags": "-std=gnu18"
+            },
             "config-opts": [
                 "--disable-cogl-gst",
                 "--disable-gtk-doc",
