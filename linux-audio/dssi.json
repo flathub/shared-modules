@@ -1,6 +1,9 @@
 {
     "name": "dssi",
     "rm-configure": true,
+    "build-options": {
+        "cflags": "-std=gnu18 -Wno-error=incompatible-pointer-types"
+    },
     "config-opts": [
         "--disable-static"
     ],
@@ -19,11 +22,10 @@
             "sha256": "f2c82b073a947c8255284249097667f9b14e660bf86186f3fcd3b3b3e087814e"
         },
         {
-            "type": "script",
+            "type": "shell",
             "commands": [
                 "autoreconf -fiv"
-            ],
-            "dest-filename": "autogen.sh"
+            ]
         }
     ]
 }
