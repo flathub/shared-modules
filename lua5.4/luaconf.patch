@@ -1,5 +1,5 @@
 diff --git a/src/luaconf.h b/src/luaconf.h
-index 137103e..fe255c4 100644
+index 137103e..8cd54a7 100644
 --- a/src/luaconf.h
 +++ b/src/luaconf.h
 @@ -11,6 +11,9 @@
@@ -12,16 +12,18 @@ index 137103e..fe255c4 100644
  
  /*
  ** ===================================================================
-@@ -223,7 +226,7 @@
+@@ -223,7 +226,9 @@
  
  #else			/* }{ */
  
 -#define LUA_ROOT	"/usr/local/"
-+#define LUA_ROOT	"$FLATPAK_DEST/"
++#ifndef LUA_ROOT
++#define LUA_ROOT "/usr/local/"
++#endif
  #define LUA_LDIR	LUA_ROOT "share/lua/" LUA_VDIR "/"
  #define LUA_CDIR	LUA_ROOT "lib/lua/" LUA_VDIR "/"
  
-@@ -756,7 +759,7 @@
+@@ -756,7 +761,7 @@
  ** of a function in debug information.
  ** CHANGE it if you want a different size.
  */
