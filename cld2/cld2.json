@@ -6,7 +6,7 @@
     },
     "build-commands": [
         "cp CMakeLists.txt ./cld2",
-        "cd cld2 && mkdir build && cd build && cmake .. -DCMAKE_INSTALL_PREFIX=/app -DCMAKE_BUILD_TYPE=Release",
+        "cd cld2 && mkdir build && cd build && cmake .. -DCMAKE_INSTALL_PREFIX=/app -DCMAKE_BUILD_TYPE=Release -DCMAKE_POLICY_VERSION_MINIMUM=3.5",
         "cd cld2/build && make && make install"
     ],
     "sources":[
