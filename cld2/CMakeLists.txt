@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 2.8)
 project (cld2)
 enable_language(CXX)
 
+include(GNUInstallDirs)
+
 set (VERSION "0.0.197")
 set (common_SOURCE_FILES
     internal/cldutil.cc
@@ -10,7 +12,7 @@ set (common_SOURCE_FILES
     internal/compact_lang_det_hint_code.cc
     internal/compact_lang_det_impl.cc
     internal/debug.cc
-    internal/fixunicodevalue.cc 
+    internal/fixunicodevalue.cc
     internal/generated_entities.cc
     internal/generated_language.cc
     internal/generated_ulscript.cc
@@ -72,9 +74,9 @@ set_target_properties(cld2_dynamic PROPERTIES
   SOVERSION 0
   COMPILE_FLAGS "-DCLD2_DYNAMIC_MODE"
   )
-install(TARGETS cld2 DESTINATION lib/${CMAKE_LIBRARY_ARCHITECTURE})
-install(TARGETS cld2_full DESTINATION lib/${CMAKE_LIBRARY_ARCHITECTURE})
-install(TARGETS cld2_dynamic DESTINATION lib/${CMAKE_LIBRARY_ARCHITECTURE})
+install(TARGETS cld2 LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})
+install(TARGETS cld2_full LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})
+install(TARGETS cld2_dynamic LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})
 
 set (cld2_internal_HEADERS
     internal/cld2_dynamic_compat.h
@@ -108,12 +110,12 @@ set (cld2_internal_HEADERS
     internal/utf8statetable.h
     )
 
-install(FILES ${cld2_internal_HEADERS} DESTINATION include/cld2/internal)
+install(FILES ${cld2_internal_HEADERS} DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/cld2/internal)
 set (cld2_public_HEADERS
     public/compact_lang_det.h
     public/encodings.h
     )
-install(FILES ${cld2_public_HEADERS} DESTINATION include/cld2/public)
+install(FILES ${cld2_public_HEADERS} DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/cld2/public)
 
 set (full_SOURCE_FILES
     internal/cld_generated_cjk_uni_prop_80.cc
