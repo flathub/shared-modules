@@ -12,8 +12,8 @@
         {
             "type": "git",
             "url": "https://github.com/openresty/luajit2.git",
-            "tag": "v2.1-20251030",
-            "commit": "71fae383f6c4637d64b03a6d0ec76ae8c19d6821",
+            "tag": "v2.1-20260114",
+            "commit": "ccdd3299da29f6e0148192c7d2b4f11c9b553b7a",
             "x-checker-data": {
                 "type": "git",
                 "tag-pattern": "^v([\\d.-]+)$",
