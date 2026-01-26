@@ -5,6 +5,7 @@
         "/bin",
         "/etc",
         "/include",
+        "/lib/pkgconfig",
         "/libexec",
         "/share/gtk-doc",
         "/share/man"
