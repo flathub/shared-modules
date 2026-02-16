@@ -36,19 +36,12 @@
     },
     {
       "type": "patch",
-      "path": "libappindicator-ftbfs.patch"
-    },
-    {
-      "type": "patch",
-      "path": "libappindicator-no-python.patch"
-    },
-    {
-      "type": "patch",
-      "path": "libappindicator-fix-crash-from-incorrect-signal-emission.patch"
-    },
-    {
-      "type": "patch",
-      "path": "libappindicator-fix-crash-iterating-icon-themes.patch"
+      "paths": [
+        "patches/0001-libappindicator-ftbfs.patch",
+        "patches/0002-libappindicator-no-python.patch",
+        "patches/0003-libappindicator-fix-crash-from-incorrect-signal-emission.patch",
+        "patches/0004-libappindicator-fix-crash-iterating-icon-themes.patch"
+      ]
     },
     {
       "type": "script",
