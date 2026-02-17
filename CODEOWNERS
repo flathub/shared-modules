@@ -7,7 +7,6 @@ update-checker.sh  @flathub/reviewers
 /dbus-glib/        @TingPing
 /clutter/          @A6GibKm
 /gtk2/             @TingPing
-/gudev/            @Erick555
 /intltool/         @TingPing
 /libappindicator/  @TingPing
 /libcanberra/      @hadess
