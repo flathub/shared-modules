@@ -15,10 +15,7 @@ update-checker.sh  @flathub/reviewers
 /python2.7/        @bilelmoussaoui
 /linux-audio/      @hfiguiere
 /libsoup/          @hfiguiere
-/mac/              @enzo1982 @Eonfge
-/pygtk/            @Eonfge
-/gzdoom/           @Eonfge
-/vorbisgain/       @Eonfge
+/mac/              @enzo1982
 /luajit/           @ranisalt
 /lzo/              @AKoskovich
 /squashfs-tools/   @AKoskovich
