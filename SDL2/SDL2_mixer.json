@@ -18,11 +18,8 @@
             "sha256": "cb760211b056bfe44f4a1e180cc7cb201137e4d1572f2002cc1be728efd22660",
             "x-checker-data": {
                 "type": "anitya",
-                "project-id": 4782,
+                "project-id": 389478,
                 "stable-only": true,
-                "versions": {
-                    "<": "3.0.0"
-                },
                 "url-template": "https://github.com/libsdl-org/SDL_mixer/releases/download/release-$version/SDL2_mixer-$version.tar.gz"
             }
         }
