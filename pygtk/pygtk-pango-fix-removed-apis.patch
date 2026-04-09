@@ -1,0 +1,39 @@
+--- a/pango.defs
++++ b/pango.defs
+@@ -1410,13 +1410,6 @@
+   )
+ )
+
+-(define-virtual get_metrics
+-  (of-object "PangoFont")
+-  (return-type "PangoFontMetrics*")
+-  (parameters
+-    '("PangoLanguage*" "language")
+-  )
+-)
+
+ (define-virtual get_font_map
+   (of-object "PangoFont")
+@@ -1467,11 +1460,6 @@
+   )
+ )
+
+-(define-method get_shape_engine_type
+-  (of-object "PangoFontMap")
+-  (c-name "pango_font_map_get_shape_engine_type")
+-  (return-type "const-char*")
+-)
+
+ (define-method create_context
+   (of-object "PangoFontMap")
+@@ -1581,10 +1569,6 @@
+   )
+ )
+
+-(define-virtual get_metrics
+-  (of-object "PangoFontset")
+-  (return-type "PangoFontMetrics*")
+-)
+
+ (define-virtual get_language
+   (of-object "PangoFontset")
