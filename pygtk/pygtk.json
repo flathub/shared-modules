@@ -1,9 +1,11 @@
 {
   "name": "pygtk",
   "config-opts": [
-    "--disable-docs",
-    "CFLAGS=-Wno-error=implicit-function-declaration -Wno-error=int-conversion"
+    "--disable-docs"
   ],
+  "build-options": {
+    "cflags": "-Wno-error=implicit-function-declaration -Wno-error=int-conversion"
+  },
   "sources": [
     {
       "type": "archive",
