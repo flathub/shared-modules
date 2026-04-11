@@ -11,7 +11,10 @@
     },
     {
       "type": "patch",
-      "path": "pygtk.patch"
+      "paths": [
+        "pygtk.patch",
+        "pygtk-c99.patch"
+      ]
     },
     {
       "type": "shell",
