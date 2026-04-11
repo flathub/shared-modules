@@ -74,6 +74,11 @@
     {
       "name": "libglade",
       "rm-configure": true,
+      "build-options": {
+        "env": {
+          "GTKDOCIZE": "true"
+        }
+      },
       "cleanup": [
         "/bin",
         "/include/libglade-2.0",
