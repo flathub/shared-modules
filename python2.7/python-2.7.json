@@ -20,7 +20,6 @@
         "--enable-unicode=ucs4"
     ],
     "post-install": [
-        /* Theres seem to be a permissions missmatch that causes the debug stripping to fail */
         "chmod 644 $FLATPAK_DEST/lib/libpython2.7.so.1.0"
     ],
     "cleanup": [
@@ -34,22 +33,16 @@
         "/lib/pkgconfig",
         "/lib/python*/config",
         "/share",
-
-        /* Test scripts */
         "/lib/python*/test",
         "/lib/python*/*/test",
         "/lib/python*/*/tests",
         "/lib/python*/lib-tk/test",
         "/lib/python*/lib-dynload/_*_test.*.so",
         "/lib/python*/lib-dynload/_test*.*.so",
-
-        /* Unused modules */
         "/lib/python*/idlelib",
         "/lib/python*/tkinter*",
         "/lib/python*/turtle*",
         "/lib/python*/lib2to3*",
-
-        /* Static library */
         "/lib/python2.7/config/libpython2.7.a"
     ]
 }
