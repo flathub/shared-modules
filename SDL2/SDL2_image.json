@@ -1,6 +1,7 @@
 {
     "name": "SDL2_image",
     "config-opts": [
+        "-DSDL2IMAGE_BACKEND_STB=OFF",
         "-DSDL2IMAGE_DEPS_SHARED=OFF",
         "-DSDL2IMAGE_STRICT=ON"
     ],
