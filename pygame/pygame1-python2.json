@@ -23,7 +23,7 @@
         "*.a"
     ],
     "build-options": {
-        "cflags": "-Wno-incompatible-pointer-types",
+        "cflags": "-Wno-incompatible-pointer-types -std=gnu17",
         "env": {
             "PORTMIDI_INC_PORTTIME": "1",
             "PYGAME_EXTRA_BASE": "/app"
@@ -102,7 +102,8 @@
             "name": "fluidsynth",
             "buildsystem": "cmake-ninja",
             "config-opts": [
-                "-DCMAKE_BUILD_TYPE=Release"
+                "-DCMAKE_BUILD_TYPE=Release",
+                "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
             ],
             "cleanup": [
                 "/include",
