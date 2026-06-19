@@ -21,3 +21,4 @@ update-checker.sh  @flathub/reviewers
 /squashfs-tools/   @AKoskovich
 /libayatana-appindicator/  @AKoskovich
 /SDL2/             @tothxa
+/libhandy/         @yakushabb
