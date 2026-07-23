@@ -1,0 +1,24 @@
+{
+    "name": "SDL_gfx",
+    "config-opts": [
+        "--disable-static"
+    ],
+    "build-options": {
+        "arch": {
+            "aarch64": {
+                "//": "Code assumes that if __GNUC__ is defined and MMX is enabled, then x86-specific mmintrin.h is available",
+                "config-opts": [
+                    "--disable-static",
+                    "--disable-mmx"
+                ]
+            }
+        }
+    },
+    "sources": [
+        {
+            "type": "archive",
+            "url": "https://downloads.sourceforge.net/project/sdlgfx/SDL_gfx-2.0.25.tar.gz",
+            "sha256": "556eedc06b6cf29eb495b6d27f2dcc51bf909ad82389ba2fa7bdc4dec89059c0"
+        }
+    ]
+}
