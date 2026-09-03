@@ -12,6 +12,9 @@
     "--enable-static",
     "--disable-shared"
   ],
+  "build-options": {
+    "cflags": "-fPIC"
+  },
   "sources": [
     {
       "type": "archive",
