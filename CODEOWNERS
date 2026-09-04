@@ -4,6 +4,7 @@
 update-checker.sh  @flathub/reviewers
 .github/ @flathub/reviewers
 
+/appstream/        @hfiguiere
 /dbus-glib/        @TingPing
 /clutter/          @A6GibKm
 /gtk2/             @TingPing

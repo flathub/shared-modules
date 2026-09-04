@@ -1,0 +1,111 @@
+{
+    "name": "appstream",
+    "buildsystem": "meson",
+    "config-opts": [
+        "-Dcompose=true",
+        "-Dgir=false",
+        "-Dman=false",
+        "-Dapidocs=false",
+        "-Dstemming=false",
+        "-Dblake3-support=false",
+        "-Dsystemd=false",
+        "-Dbash-completion=false"
+    ],
+    "cleanup": [
+        "*"
+    ],
+    "sources": [
+        {
+            "type": "git",
+            "url": "https://github.com/ximion/appstream.git",
+            "commit": "ce52fb058e06f1f36320911e93e6773c6e3fe82e",
+            "tag": "v1.2.0"
+        }
+    ],
+    "modules": [
+        {
+            "name": "check",
+            "buildsystem": "cmake-ninja",
+            "cleanup": [
+                "*"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/libcheck/check/releases/download/0.15.2/check-0.15.2.tar.gz",
+                    "sha256": "a8de4e0bacfb4d76dd1c618ded263523b53b85d92a146d8835eb1a52932fa20a"
+                }
+            ]
+        },
+        {
+            "name": "libfyaml",
+            "buildsystem": "cmake-ninja",
+            "config-opts": [
+                "-DENABLE_NETWORK=OFF",
+                "-DENABLE_LIBCLANG=OFF"
+            ],
+            "cleanup": [
+                "*"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/pantoniou/libfyaml/releases/download/v0.9.6/libfyaml-0.9.6.tar.gz",
+                    "sha256": "a59cc3331e2eb903ec36933ad52a45888041cac31e44f553a00511131242c483"
+                }
+            ]
+        },
+        {
+            "name": "libxmlb",
+            "buildsystem": "meson",
+            "config-opts": [
+                "-Dstemmer=false",
+                "-Dintrospection=false",
+                "-Dgtkdoc=false"
+            ],
+            "cleanup": [
+                "*"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/hughsie/libxmlb.git",
+                    "commit": "d942cd68a7d78e35b312b9299e69f68f9cd2e503",
+                    "tag": "0.3.29"
+                }
+            ]
+        },
+        {
+            "name": "libvips",
+            "builddir": true,
+            "buildsystem": "meson",
+            "config-opts": [
+                "-Ddeprecated=false",
+                "-Dexamples=false",
+                "-Dintrospection=disabled",
+                "-Dmodules=disabled",
+                "-Dppm=false",
+                "-Danalyze=false",
+                "-Dradiance=false",
+                "-Dmagick=disabled",
+                "-Dpoppler=disabled",
+                "-Dtiff=disabled",
+                "-Dpng=enabled",
+                "-Djpeg-xl=enabled",
+                "-Drsvg=enabled",
+                "-Dwebp=enabled",
+                "-Dheif=enabled"
+            ],
+            "cleanup": [
+                "*"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/libvips/libvips/releases/download/v8.18.6/vips-8.18.6.tar.xz",
+                    "sha256": "3c41e1d5458081bfa4a5bc54e116c46259c75c6760a18027764555632b9dda3e"
+                }
+            ]
+        }
+    ]
+}
