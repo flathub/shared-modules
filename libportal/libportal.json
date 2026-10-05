@@ -5,6 +5,9 @@
         "-Dintrospection=false",
         "-Ddocs=false"
     ],
+    "cleanup": [
+        "/include"
+    ],
     "sources" : [
         {
             "type" : "git",
