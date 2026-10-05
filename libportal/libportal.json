@@ -1,0 +1,23 @@
+{
+    "name" : "libportal",
+    "buildsystem" : "meson",
+    "config-opts" : [
+        "-Dintrospection=false",
+        "-Ddocs=false"
+    ],
+    "cleanup": [
+        "/include"
+    ],
+    "sources" : [
+        {
+            "type" : "git",
+            "url" : "https://github.com/flatpak/libportal.git",
+            "tag" : "0.11.0",
+            "commit": "fc4d62cfe131e8494c82f597f92b2234d584c367",
+            "x-checker-data": {
+                "type": "git",
+                "tag-pattern": "^\d+(\.\d+)*$"
+            }
+        }
+    ]
+}
