@@ -13,7 +13,7 @@
             "commit": "fc4d62cfe131e8494c82f597f92b2234d584c367",
             "x-checker-data": {
                 "type": "git",
-                "tag-pattern": "^([\\d.]+)$"
+                "tag-pattern": "^\d+(\.\d+)*$"
             }
         }
     ]
