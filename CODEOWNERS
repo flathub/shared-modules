@@ -12,6 +12,7 @@ update-checker.sh  @flathub/reviewers
 /libappindicator/  @TingPing
 /libcanberra/      @hadess
 /libusb/           @A6GibKm
+/libportal/        @ostfriese4
 /physfs/           @Mailaender
 /python2.7/        @bilelmoussaoui
 /linux-audio/      @hfiguiere
