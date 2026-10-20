@@ -9,8 +9,8 @@
     "sources": [
         {
             "type": "archive",
-            "url": "https://github.com/swami/libinstpatch/archive/v1.1.7.tar.gz",
-            "sha256": "b388ab6f843559fc2da94837c37dfd4cf5973cf7cc2a0ce3cb33260b81377e9f"
+            "url": "https://github.com/swami/libinstpatch/archive/v1.1.8.tar.gz",
+            "sha256": "7edb57f29b475711ac2c0046262d5df0e4c2b9ddbc1b448605a2bb16c94b303d"
         }
     ]
 }
