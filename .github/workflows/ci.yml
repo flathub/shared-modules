@@ -80,6 +80,7 @@ jobs:
 
               cat org.example.stable.yml
               dbus-run-session flatpak run org.flatpak.Builder --verbose --user --force-clean \
+                --disable-rofiles-fuse \
                 --install-deps-from=flathub builddir org.example.stable.yml
             fi
           done
@@ -114,7 +115,7 @@ jobs:
 
               cat org.example.oldstable.yml
               dbus-run-session flatpak run org.flatpak.Builder --verbose --user --force-clean \
+                --disable-rofiles-fuse \
                 --install-deps-from=flathub builddir org.example.oldstable.yml
             fi
           done
-
