@@ -48,7 +48,15 @@ jobs:
 
       - name: Validate JSON
         run: |
-          find . -type f -name '*.json' -exec sh -c 'for f do jq empty "$f" 2>&1 >/dev/null | sed "s|^|$f: |"; done' sh {} \;
+          find . -type f -name '*.json' -exec sh -c '
+            for f do
+              jq empty "$f" >/dev/null || {
+                status=$?
+                printf "%s: invalid JSON\n" "$f" >&2
+                exit "$status"
+              }
+            done
+          ' sh {} +
 
       - name: Build changed manifests against stable Freedesktop SDK
         if: github.event_name == 'pull_request'
