@@ -58,7 +58,7 @@ rm .gitmodules
 
 We provide an automatic updating mechanism for submodules located here.
 In order to utilize it [set up x-checker-data](https://github.com/flathub/flatpak-external-data-checker)
-for your sources and they will be checked for updates in a weekly basis.
+for your sources. They are checked for updates twice a month, on the 1st and 21st.
 
 ### Inclusion criteria
 
