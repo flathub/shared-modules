@@ -5,19 +5,11 @@ update-checker.sh  @flathub/reviewers
 .github/ @flathub/reviewers
 
 /appstream/        @hfiguiere
-/dbus-glib/        @TingPing
-/clutter/          @A6GibKm
-/gtk2/             @TingPing
-/intltool/         @TingPing
-/libappindicator/  @TingPing
 /libcanberra/      @hadess
 /libportal/        @ostfriese4
-/physfs/           @Mailaender
-/python2.7/        @bilelmoussaoui
+/physfs/           @ranisalt
 /linux-audio/      @hfiguiere
 /libsoup/          @hfiguiere
 /mac/              @enzo1982
 /luajit/           @ranisalt
-/squashfs-tools/   @AKoskovich
-/libayatana-appindicator/  @AKoskovich
 /SDL2/             @tothxa @user1-github
