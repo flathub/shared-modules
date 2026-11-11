@@ -10,6 +10,5 @@ update-checker.sh  @flathub/reviewers
 /physfs/           @ranisalt
 /linux-audio/      @hfiguiere
 /libsoup/          @hfiguiere
-/mac/              @enzo1982
 /luajit/           @ranisalt
 /SDL2/             @tothxa @user1-github
