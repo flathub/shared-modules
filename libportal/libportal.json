@@ -10,13 +10,14 @@
     ],
     "sources" : [
         {
-            "type" : "git",
-            "url" : "https://github.com/flatpak/libportal.git",
-            "tag" : "0.11.0",
-            "commit": "fc4d62cfe131e8494c82f597f92b2234d584c367",
+            "type": "archive",
+            "url": "https://github.com/flatpak/libportal/releases/download/0.11.0/libportal-0.11.0.tar.xz",
+            "sha256": "abb9e452a1c372133bd3eb8f0bb30d07b2d0a8fb02001c4155cf287555db4040",
             "x-checker-data": {
-                "type": "git",
-                "tag-pattern": "^\\d+(\\.\\d+)*$"
+                "type": "json",
+                "url": "https://api.github.com/repos/flatpak/libportal/releases/latest",
+                "version-query": ".tag_name",
+                "url-query": ".assets[] | select(.name==\"libportal-\" + $version + \".tar.xz\") | .browser_download_url"
             }
         }
     ]
