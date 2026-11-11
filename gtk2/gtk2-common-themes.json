@@ -6,6 +6,9 @@
         {
             "name": "sassc",
             "// NOTE": "This is used by Yaru, Greybird, and Materia",
+            "config-opts": [
+                "--with-libsass=/app"
+            ],
             "cleanup": [
                 "*"
             ],
