@@ -155,8 +155,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.kde.org/stable/plasma/6.4.5/breeze-gtk-6.4.5.tar.xz",
-                    "sha256": "771e88ca19421a472f5f4235fb27ba2588b7ea267e8f2647e5e231c351f03a98",
+                    "url": "https://download.kde.org/stable/plasma/6.8.3/breeze-gtk-6.8.3.tar.xz",
+                    "sha256": "9b96db2c0dd1a6ca018f9bb1cea4ed0947f140cd30f2106d9652448202e47c50",
                     "dest": "breeze-gtk",
                     "x-checker-data": {
                         "type": "anitya",
@@ -167,8 +167,8 @@
                 },
                 {
                     "type": "archive",
-                    "url": "https://download.kde.org/stable/plasma/6.4.5/breeze-6.4.5.tar.xz",
-                    "sha256": "dcb8433d399511546958f4c8c1a8fae5ed22f2a698f053968d410ee75bd6d8b4",
+                    "url": "https://download.kde.org/stable/plasma/6.8.3/breeze-6.8.3.tar.xz",
+                    "sha256": "1d47a61f9f397f212d7a23d7ed7a7289b026757a050610304bb945dc067937e2",
                     "dest": "breeze",
                     "x-checker-data": {
                         "type": "anitya",
@@ -213,8 +213,8 @@
                     "sources": [
                         {
                             "type": "file",
-                            "url": "https://files.pythonhosted.org/packages/22/d9/1728840a22a4ef8a8f479b9156aa2943cd98c3907accd3849fb0d5f82bfd/pycairo-1.29.0.tar.gz",
-                            "sha256": "f3f7fde97325cae80224c09f12564ef58d0d0f655da0e3b040f5807bd5bd3142",
+                            "url": "https://files.pythonhosted.org/packages/bb/5e/19ab2572981a996ce96b853a189d2dcced40506b67d9555a7568457abcf2/pycairo-1.29.2.tar.gz",
+                            "sha256": "3e69fff74fe64f5ba2dfa31f67c6bdf26413342574047437d2ac520d35e9a489",
                             "x-checker-data": {
                                 "type": "pypi",
                                 "name": "pycairo"
